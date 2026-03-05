@@ -15,6 +15,7 @@
         :root {
             --st-navy: #064680;
             --st-teal: #58bbc2;
+            --st-purple: #a855f7;
             --primary: #0f172a;
             --bg: #fafaf9; /* stone-50 */
         }
@@ -30,17 +31,10 @@
             font-family: 'Lora', serif;
         }
 
-        /* Official ST Logo Box Styling - Exact Match to Pitch Page */
-        .logo-box {
-            width: 36px;
-            height: 36px;
-            background-color: #064680; /* Hardcoded to ensure visibility */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 800;
-            border-radius: 6px;
+        /* Logo Styling */
+        .brand-logo {
+            width: 48px;
+            height: 48px;
             flex-shrink: 0;
         }
 
@@ -93,9 +87,22 @@
     <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Brand/Logo Link back to index -->
-                <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-all group">
-                    <div class="logo-box font-serif group-hover:scale-105 transition-transform">ST</div>
+                <!-- Brand/Logo Link back to index with SVG Reconstruction of official logo -->
+                <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-all group no-underline">
+                    <div class="brand-logo group-hover:scale-105 transition-transform duration-300">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background Stack (Simplified Hexagon Marks) -->
+                            <!-- Top Outline -->
+                            <path d="M50 5L71.65 17.5V42.5L50 55L28.35 42.5V17.5L50 5Z" stroke="#064680" stroke-width="2"/>
+                            <!-- Middle Blue -->
+                            <path d="M40 25L61.65 37.5V62.5L40 75L18.35 62.5V37.5L40 25Z" fill="#3b82f6" fill-opacity="0.8"/>
+                            <!-- Bottom Purple -->
+                            <path d="M30 45L51.65 57.5V82.5L30 95L8.35 82.5V57.5L30 45Z" fill="#a855f7" fill-opacity="0.8"/>
+                            <!-- Right Outline with Teal Center -->
+                            <path d="M70 45L91.65 57.5V82.5L70 95L48.35 82.5V57.5L70 45Z" stroke="#064680" stroke-width="2"/>
+                            <path d="M70 65L78.66 70V80L70 85L61.34 80V70L70 65Z" fill="#2dd4bf"/>
+                        </svg>
+                    </div>
                     <div class="font-serif font-bold text-xl tracking-tight text-slate-900">
                         UNMASK<span style="color: #58bbc2">.</span>
                     </div>
@@ -243,7 +250,7 @@
 
     <!-- Section 3: ROI Visualization -->
     <section id="roi" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div class="p-10 bg-white rounded-3xl border border-stone-100 shadow-xl shadow-stone-200/50">
                     <h3 class="text-center font-bold text-slate-800 mb-8 text-[10px] uppercase tracking-[0.2em]">Investment vs. Cost of Inaction</h3>
@@ -271,7 +278,16 @@
     <!-- Footer -->
     <footer class="py-24 border-t border-stone-100 bg-white text-center">
         <div class="flex items-center justify-center gap-3 mb-10">
-            <div class="logo-box font-serif">ST</div>
+            <!-- Brand Mark in Footer -->
+            <div class="brand-logo">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 5L71.65 17.5V42.5L50 55L28.35 42.5V17.5L50 5Z" stroke="#064680" stroke-width="2"/>
+                    <path d="M40 25L61.65 37.5V62.5L40 75L18.35 62.5V37.5L40 25Z" fill="#3b82f6" fill-opacity="0.8"/>
+                    <path d="M30 45L51.65 57.5V82.5L30 95L8.35 82.5V57.5L30 45Z" fill="#a855f7" fill-opacity="0.8"/>
+                    <path d="M70 45L91.65 57.5V82.5L70 95L48.35 82.5V57.5L70 45Z" stroke="#064680" stroke-width="2"/>
+                    <path d="M70 65L78.66 70V80L70 85L61.34 80V70L70 65Z" fill="#2dd4bf"/>
+                </svg>
+            </div>
             <div class="font-serif font-bold text-xl tracking-tight text-slate-900">
                 UNMASK<span style="color: #58bbc2">.</span>
             </div>
