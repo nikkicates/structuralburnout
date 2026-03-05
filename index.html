@@ -14,6 +14,7 @@
     <meta property="og:url" content="https://strategicunmasking.com/">
     <meta property="og:title" content="UNMASK | Structural Leadership Architecture">
     <meta property="og:description" content="Stop fixing your people and start fixing your org chart. Structural burnout diagnostics for the AI-accelerated enterprise.">
+    <!-- Replace the content URL below with your hosted logo or a screenshot of the site -->
     <meta property="og:image" content="https://strategicunmasking.com/social-preview.jpg">
 
     <!-- Twitter -->
@@ -30,8 +31,8 @@
         :root {
             --st-navy: #064680;
             --st-teal: #58bbc2;
-            --st-purple: #9254a1; /* Matched to Logo */
-            --st-blue-mid: #2d9cdb; /* Matched to Logo */
+            --st-purple: #9254a1;
+            --st-blue-mid: #2d9cdb;
             --primary: #0f172a;
             --bg: #fafaf9;
         }
@@ -158,17 +159,15 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-4 cursor-pointer" onclick="showView('home')">
-                    <!-- High-Fidelity SVG Logo Recreated from Strategic Transformations LOGO.jpg -->
+                    <!-- SVG Logo Recreated exactly from LOGO.jpg -->
                     <svg width="55" height="45" viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Left Stack -->
                         <polygon points="25,55 45,55 55,70 45,85 25,85 15,70" fill="#064680" /> <!-- Navy -->
                         <polygon points="35,35 55,35 65,50 55,65 35,65 25,50" fill="#9254a1" /> <!-- Purple -->
                         <polygon points="45,15 65,15 75,30 65,45 45,45 35,30" fill="#2d9cdb" /> <!-- Mid Blue -->
                         
-                        <!-- Right Side -->
-                        <polygon points="60,10 100,10 120,40 100,70 60,70 40,40" fill="none" stroke="#064680" stroke-width="3.5" /> <!-- Outline Navy -->
-                        <polygon points="75,45 115,45 135,75 115,105 75,105 55,75" fill="none" stroke="#064680" stroke-width="3.5" /> <!-- Outline Navy 2 -->
-                        <polygon points="85,65 105,65 115,80 105,95 85,95 75,80" fill="#58bbc2" /> <!-- Inner Teal -->
+                        <polygon points="60,10 100,10 120,40 100,70 60,70 40,40" fill="none" stroke="#064680" stroke-width="3.5" /> 
+                        <polygon points="75,45 115,45 135,75 115,105 75,105 55,75" fill="none" stroke="#064680" stroke-width="3.5" /> 
+                        <polygon points="85,65 105,65 115,80 105,95 85,95 75,80" fill="#58bbc2" /> <!-- Teal -->
                     </svg>
                     <div class="flex flex-col">
                         <span class="font-serif font-bold text-lg leading-none tracking-tight text-slate-900">STRATEGIC</span>
@@ -178,7 +177,7 @@
                 <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
                     <a href="#crisis" onclick="showView('home')" class="hover:text-[#064680] transition-colors">The Crisis</a>
                     <a href="#framework" onclick="showView('home')" class="hover:text-[#064680] transition-colors">The Framework</a>
-                    <a href="javascript:void(0)" onclick="showView('investors')" class="hover:text-[#064680] transition-colors text-[#064680] border-b-2 border-[#58bbc2] pb-1">Investors</a>
+                    <a href="javascript:void(0)" onclick="showView('investors')" class="hover:text-[#064680] transition-colors">Investors</a>
                     <a href="#about" onclick="showView('home')" class="hover:text-[#064680] transition-colors">About</a>
                 </div>
                 <div class="flex items-center gap-4">
@@ -193,7 +192,7 @@
         </div>
     </nav>
 
-    <!-- MAIN LANDING VIEW -->
+    <!-- HOME VIEW -->
     <main id="home-view" class="view-section active">
         <!-- Hero -->
         <header class="pt-48 pb-24 px-6 max-w-7xl mx-auto text-center">
@@ -207,11 +206,14 @@
                 Stop fixing your people and start fixing your org chart. We build the leadership architecture that sustains high-performers in the AI-accelerated era.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-[#58bbc2] hover:bg-[#4aa8af] text-slate-900 rounded-lg font-bold text-lg transition-all shadow-xl shadow-teal-500/10">
+                <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="px-10 py-5 bg-[#58bbc2] hover:bg-[#4aa8af] text-slate-900 rounded-lg font-bold text-lg transition-all shadow-xl shadow-teal-500/10">
                     60-Sec Strain Audit
                 </a>
-                <a href="#calculator" class="w-full sm:w-auto px-10 py-5 bg-[#064680] hover:bg-slate-800 text-white rounded-lg font-bold text-lg transition-all shadow-xl shadow-slate-900/10">
+                <a href="#calculator" class="px-10 py-5 bg-[#064680] hover:bg-slate-800 text-white rounded-lg font-bold text-lg transition-all shadow-xl">
                     Run Fiscal Audit
+                </a>
+                <a href="#framework" class="px-10 py-5 bg-white border border-slate-200 text-slate-600 rounded-lg font-bold text-lg hover:bg-slate-50">
+                    The Process
                 </a>
             </div>
         </header>
@@ -221,7 +223,9 @@
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="mb-16 max-w-3xl">
                     <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">The High Cost of Failed Bridges</h2>
-                    <p class="text-lg text-slate-500">When authority-responsibility gaps are ignored, the system extracts more than human leaders can sustain.</p>
+                    <p class="text-lg text-slate-500 leading-relaxed">
+                        When you give a leader 100% of the responsibility but only 20% of the authority, you create a structural fracture point that leads to inevitable talent collapse.
+                    </p>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -234,7 +238,7 @@
                             <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Manager Burnout</p>
                         </div>
                         <div class="sm:col-span-2 p-8 bg-[#064680] text-white rounded-2xl shadow-xl">
-                            <p class="italic font-serif text-lg leading-relaxed">"You cannot 'yoga' your way out of a broken load-path."</p>
+                            <p class="italic font-serif text-lg leading-relaxed">"We are trying to solve structural engineering failures with individual wellness habits. You cannot 'yoga' your way out of a broken load-path."</p>
                         </div>
                     </div>
                     <div class="p-10 bg-white rounded-3xl border border-stone-100 shadow-xl shadow-stone-200/50">
@@ -249,24 +253,168 @@
 
         <!-- Calculator Section -->
         <section id="calculator" class="py-24 bg-stone-50">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="text-4xl font-serif font-bold text-slate-900 mb-16">The "Collapse Cost" Calculator</h2>
+            <div class="max-w-4xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-serif font-bold text-slate-900 mb-4">The "Collapse Cost" Calculator</h2>
+                    <p class="text-lg text-slate-500">Replacing a mid-level leader costs <strong>213% of their annual salary</strong>. Calculate your organization's hidden structural tax.</p>
+                </div>
                 <div class="bg-white p-10 md:p-16 rounded-[2.5rem] border border-slate-200 shadow-lg relative">
-                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#58bbc2] text-slate-900 text-[10px] font-bold px-6 py-2 rounded-full uppercase tracking-widest shadow-lg">Benchmark your organization</div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12 text-left">
+                    <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-[#58bbc2] text-slate-900 text-[10px] font-bold px-6 py-2 rounded-full uppercase tracking-widest shadow-lg">
+                        Benchmark against peers
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
                         <div>
-                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Avg Salary ($)</label>
-                            <input type="number" id="salaryInput" value="95000" class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-5 text-slate-900 font-bold text-xl focus:outline-none focus:border-[#58bbc2] transition-all">
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Manager Avg Salary ($)</label>
+                            <input type="number" id="salaryInput" value="95000" step="5000" class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-5 text-slate-900 font-bold text-xl focus:border-[#58bbc2] focus:outline-none">
                         </div>
                         <div>
-                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Attrition (Count)</label>
-                            <input type="number" id="attritionInput" value="5" class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-5 text-slate-900 font-bold text-xl focus:outline-none focus:border-[#58bbc2] transition-all">
+                            <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Annual Attrition (Count)</label>
+                            <input type="number" id="attritionInput" value="5" class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-5 text-slate-900 font-bold text-xl focus:border-[#58bbc2] focus:outline-none">
                         </div>
                     </div>
-                    <div class="pt-12 border-t border-slate-100">
+                    <div class="pt-12 border-t border-slate-100 text-center">
                         <p class="text-xs font-bold text-[#58bbc2] uppercase tracking-[0.3em] mb-4">Calculated Annual Fiscal Risk</p>
                         <div id="costResult" class="text-6xl md:text-8xl font-bold text-slate-900 tracking-tighter">$1,011,750</div>
-                        <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="mt-12 inline-block text-[#064680] font-bold text-xs uppercase tracking-widest border-b-2 border-[#58bbc2] pb-1 hover:text-[#58bbc2] transition-all">Take the Structural Strain Audit →</a>
+                        <div class="mt-12 flex flex-col items-center gap-4">
+                            <p class="text-sm text-slate-400 italic">This figure represents the direct cost of structural failure and replacement.</p>
+                            <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="text-[#064680] font-bold text-xs uppercase tracking-widest border-b-2 border-[#58bbc2] pb-1 hover:text-[#58bbc2] transition-all">
+                                Take the full Structural Strain Audit →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Section -->
+        <section id="framework" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="mb-16 text-center max-w-3xl mx-auto">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">The UNMASK Architecture</h2>
+                    <p class="text-lg text-slate-500">
+                        Our 3-stage diagnostic framework provides a technical roadmap to move leadership teams from systemic burnout to a state of Unbothered Agency.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4 mt-10">
+                        <div class="tool-pill bg-[#064680]/10 text-[#064680] border border-[#064680]/20">
+                            <span>⬡</span> AI Acceleration Burnout Index<span class="st-tm">™</span>
+                        </div>
+                        <div class="tool-pill bg-[#58bbc2]/10 text-[#0a6aa8] border border-[#58bbc2]/30">
+                            <span>◈</span> Leadership Masking Index<span class="st-tm">™</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Step 1: Capture -->
+                    <div class="step-card p-10 bg-slate-50 border border-slate-100 rounded-3xl">
+                        <div class="w-12 h-12 bg-[#064680] text-white flex items-center justify-center font-serif font-bold text-xl rounded-lg mb-6">01</div>
+                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4">Capture</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">
+                            We deploy proprietary instruments to surface what traditional surveys miss: real-time structural friction and hidden performance labor.
+                        </p>
+                        <div class="mb-4 p-4 bg-[#064680]/5 border border-[#064680]/10 rounded-xl">
+                            <div class="tool-pill bg-[#064680]/10 text-[#064680] mb-2 text-[8px]">AI Acceleration Burnout Index<span class="st-tm">™</span></div>
+                            <p class="text-xs text-slate-500 leading-relaxed">Measures structural load against real-time AI velocity to surface fracture points early.</p>
+                        </div>
+                        <div class="p-4 bg-[#58bbc2]/5 border border-[#58bbc2]/20 rounded-xl">
+                            <div class="tool-pill bg-[#58bbc2]/10 text-[#0a6aa8] mb-2 text-[8px]">Leadership Masking Index<span class="st-tm">™</span></div>
+                            <p class="text-xs text-slate-500 leading-relaxed">Quantifies the disproportionate "Masking Tax" — the invisible labor carried by diverse leaders.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Analyze -->
+                    <div class="step-card p-10 bg-white border-2 border-slate-100 rounded-3xl shadow-xl">
+                        <div class="w-12 h-12 bg-[#58bbc2] text-white flex items-center justify-center font-serif font-bold text-xl rounded-lg mb-6">02</div>
+                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4">Analyze</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">
+                            We map the Authority-Responsibility Gap where accountability exceeds decision-rights, revealing where masking amplifies that gap.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-slate-500">
+                                <span class="text-[#064680] font-bold mt-0.5">→</span>
+                                <span><strong class="text-slate-700">Load Path Mapping</strong> — Identifying where structural weight exceeds capacity.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-500">
+                                <span class="text-[#064680] font-bold mt-0.5">→</span>
+                                <span><strong class="text-slate-700">Masking Cost Analysis</strong> — Quantifying hidden ESG liabilities.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Step 3: Recalibrate -->
+                    <div class="step-card p-10 bg-slate-50 border border-slate-100 rounded-3xl">
+                        <div class="w-12 h-12 bg-slate-900 text-white flex items-center justify-center font-serif font-bold text-xl rounded-lg mb-6">03</div>
+                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4">Recalibrate</h3>
+                        <p class="text-slate-500 leading-relaxed mb-6">
+                            We deliver an automated Architecture Blueprint — structural adjustments that create leadership capacity without increasing extraction.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-sm text-slate-500">
+                                <span class="text-slate-900 font-bold mt-0.5">→</span>
+                                <span><strong class="text-slate-700">Boundary Protocols</strong> — Codifying where accountability ends.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-sm text-slate-500">
+                                <span class="text-slate-900 font-bold mt-0.5">→</span>
+                                <span><strong class="text-slate-700">Authority Realignment</strong> — Matching decision rights to load.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- LMI Banner -->
+                <div class="mt-16 p-10 bg-[#064680] rounded-3xl text-white grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-2">
+                        <div class="tool-pill bg-white/10 text-white border border-white/20 mb-4">Leadership Masking Index<span class="st-tm">™</span></div>
+                        <h3 class="text-2xl font-serif font-bold mb-4 italic">The Hidden Tax on Diverse Leaders</h3>
+                        <p class="text-slate-300 leading-relaxed text-sm">
+                            High-performing diverse leaders carry a disproportionate load: code-switching, identity management, and assimilation. The Leadership Masking Index™ is the first instrument to quantify this invisible labor as a structural cost — converting it from an anecdotal concern into a measurable fiscal liability.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <div class="p-6 bg-white/10 rounded-2xl border border-white/10 text-center">
+                            <div class="text-3xl font-bold text-[#58bbc2] mb-1">3×</div>
+                            <p class="text-xs font-bold text-slate-300 uppercase tracking-widest">Higher Attrition Risk for Leaders Carrying Masking Tax</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mechanics/AI Stress Section -->
+        <section id="mechanics" class="py-24 bg-stone-50 border-y border-stone-200">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+                    <div class="lg:col-span-5">
+                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8">The AI Efficiency Trap</h2>
+                        <p class="text-lg text-slate-500 mb-10 leading-relaxed">
+                            AI accelerates production timelines. Without recalibrating structural capacity, automation doesn't create efficiency — it automates exhaustion.
+                        </p>
+                        <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="inline-block px-6 py-3 border border-[#064680] text-[#064680] rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-[#064680] hover:text-white transition-all">
+                            Audit Your AI Stress-Load
+                        </a>
+                    </div>
+                    <div class="lg:col-span-7 bg-white p-12 rounded-[2rem] border border-slate-200 shadow-xl relative overflow-hidden">
+                        <div class="flex justify-between items-center mb-12 text-center w-full">
+                            <h3 class="font-serif font-bold text-2xl text-slate-900">Stress-Test Simulation</h3>
+                            <div id="statusBadge" class="px-4 py-1.5 bg-[#58bbc2]/10 text-[#064680] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] border border-[#58bbc2]/20">Status: Optimal</div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center space-y-8 min-h-[300px] mb-12 bg-slate-50 rounded-3xl p-10 shadow-inner">
+                            <div class="flex space-x-3" id="loadArrows">
+                                <span class="text-slate-300 text-2xl font-bold opacity-20 transition-all duration-300">&#8595;</span>
+                                <span class="text-slate-300 text-2xl font-bold opacity-20 transition-all duration-300">&#8595;</span>
+                                <span class="text-slate-300 text-2xl font-bold opacity-20 transition-all duration-300">&#8595;</span>
+                            </div>
+                            <div id="managerBlock" class="w-full max-w-sm bg-white border-2 border-slate-200 rounded-2xl p-8 text-center transition-all duration-300 relative shadow-sm">
+                                <div class="h-3 w-full bg-slate-100 rounded-full overflow-hidden mb-4">
+                                    <div id="loadFill" class="h-full bg-[#58bbc2] transition-all duration-300" style="width: 20%;"></div>
+                                </div>
+                                <p id="strainText" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Structural Integrity: 100%</p>
+                            </div>
+                        </div>
+                        <div class="max-w-md mx-auto text-center">
+                            <input type="range" id="velocitySlider" min="0" max="100" value="0">
+                            <p class="text-xs text-slate-400 mt-6 italic">Simulate organizational velocity (AI Acceleration)</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -276,21 +424,23 @@
         <section id="about" class="py-24 bg-white">
             <div class="max-w-7xl mx-auto px-6 lg:px-8">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div class="gradient-border p-8 md:p-12">
-                        <h2 class="text-4xl font-serif font-bold text-slate-900 mb-6">About Nikki Cates</h2>
-                        <div class="text-lg text-slate-600 space-y-6 leading-relaxed">
-                            <p>Nikki Cates is a <strong>Structural Burnout Strategist</strong> bridging the gap between architecture and human endurance.</p>
-                            <div class="flex flex-wrap gap-4 py-4">
-                                <a href="https://www.linkedin.com/in/nikkicatesmiller" target="_blank" class="linkedin-btn px-6 py-2.5 rounded-lg flex items-center gap-2 text-sm font-bold">Connect on LinkedIn</a>
-                                <a href="https://www.linkedin.com/in/nikkicatesmiller" target="_blank" class="px-6 py-2.5 border border-slate-200 rounded-lg text-sm font-bold hover:bg-slate-50">Join My Newsletter</a>
+                    <div class="relative">
+                        <div class="gradient-border p-8 md:p-12">
+                            <h2 class="text-4xl font-serif font-bold text-slate-900 mb-6">About Nikki Cates</h2>
+                            <div class="text-lg text-slate-600 space-y-6 leading-relaxed">
+                                <p>Nikki Cates is a <strong>Structural Burnout Strategist</strong> bridging the gap between architecture and human endurance.</p>
+                                <div class="flex flex-wrap gap-4 py-4">
+                                    <a href="https://www.linkedin.com/in/nikkicatesmiller" target="_blank" class="linkedin-btn px-6 py-2.5 rounded-lg flex items-center gap-2 text-sm font-bold">Connect on LinkedIn</a>
+                                    <a href="https://nikkicates.carrd.co/" target="_blank" class="px-6 py-2.5 border border-slate-200 rounded-lg text-sm font-bold hover:bg-slate-50 transition-all">Visit My Website</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2">Systems > Sentiment</h4><p class="text-xs text-slate-500">Fix the process, fix the mood.</p></div>
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2">Quantified Equity</h4><p class="text-xs text-slate-500">Making hidden labor billable.</p></div>
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2">Predictive Logic</h4><p class="text-xs text-slate-500">Solving attrition before it starts.</p></div>
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2">Unbothered Agency</h4><p class="text-xs text-slate-500">The ultimate outcome.</p></div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2 text-slate-800">Systems > Sentiment</h4><p class="text-xs text-slate-500">Fix the process, fix the mood.</p></div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2 text-slate-800">Quantified Equity</h4><p class="text-xs text-slate-500">Making hidden labor billable.</p></div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2 text-slate-800">Predictive Logic</h4><p class="text-xs text-slate-500">Solving attrition before it starts.</p></div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2 text-slate-800">Unbothered Agency</h4><p class="text-xs text-slate-500">The ultimate leadership outcome.</p></div>
                     </div>
                 </div>
             </div>
@@ -299,39 +449,83 @@
 
     <!-- INVESTOR VIEW -->
     <main id="investor-view" class="view-section py-32 px-6 max-w-7xl mx-auto">
-        <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-16">Investment Briefing <span class="text-[#58bbc2]">2026</span></h1>
+        <div class="mb-16">
+            <div class="tool-pill bg-[#064680]/10 text-[#064680] mb-6">Investor Briefing 2026</div>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-6">Investment <br/><span class="text-[#58bbc2]">Briefing</span></h1>
+            <p class="text-xl text-slate-500 max-w-2xl">Building the structural consulting category for the AI-accelerated era. Moving from validated concept to fully operational enterprise practice.</p>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             <div class="lg:col-span-2 space-y-12">
-                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm text-slate-600">
-                    <h3 class="text-xl font-serif font-bold text-[#064680] mb-6">The Opportunity</h3>
-                    <p class="mb-6 leading-relaxed">Global culture consulting hit $10B in 2024 and is scaling to $21.6B. Strategic Transformations differentiates by targeting structural misalignment at the mid-management layer.</p>
-                </div>
-                <div class="overflow-hidden bg-white rounded-3xl border border-slate-200 shadow-sm">
-                    <table class="w-full text-left">
-                        <thead class="bg-slate-50 border-b border-slate-200"><tr class="text-[10px] font-bold uppercase tracking-widest text-slate-400"><th class="p-6">Revenue Stream</th><th class="p-6">Conservative</th><th class="p-6">Moderate</th></tr></thead>
-                        <tbody class="text-sm">
-                            <tr class="border-b border-slate-100"><td class="p-6 font-bold">Speaking (Work)</td><td class="p-6">$39,500</td><td class="p-6">$56,000</td></tr>
-                            <tr class="border-b border-slate-100"><td class="p-6 font-bold">Cohorts (Within)</td><td class="p-6">$20,000</td><td class="p-6">$30,000</td></tr>
-                            <tr class="border-b border-slate-100"><td class="p-6 font-bold">Intensives (Architecture)</td><td class="p-6">$37,000</td><td class="p-6">$60,500</td></tr>
-                            <tr class="bg-slate-50 font-bold"><td class="p-6 text-[#064680]">TOTAL GROSS</td><td class="p-6 text-[#064680]">$105,500</td><td class="p-6 text-[#064680]">$160,000+</td></tr>
-                        </tbody>
-                    </table>
-                </div>
+                <section>
+                    <h2 class="text-2xl font-serif font-bold text-[#064680] mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded bg-[#064680] text-white flex items-center justify-center text-sm">1</span>
+                        The Opportunity
+                    </h2>
+                    <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm text-slate-600 leading-relaxed">
+                        <p class="mb-6">The global organizational culture market hit $10B in 2024 and is scaling to $21.6B. Strategic Transformations differentiates by targeting the systemic misalignment wellness programs ignore.</p>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-4"><span class="text-[#58bbc2] font-bold">✓</span> <span><strong>High-Stakes Problem:</strong> Organizations lose $190B annually to burnout-related losses.</span></li>
+                            <li class="flex items-start gap-4"><span class="text-[#58bbc2] font-bold">✓</span> <span><strong>AI Tailwinds:</strong> Automation speeds up requirements, increasing structural strain.</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-2xl font-serif font-bold text-[#064680] mb-6 flex items-center gap-3">
+                        <span class="w-8 h-8 rounded bg-[#064680] text-white flex items-center justify-center text-sm">2</span>
+                        Revenue Projections
+                    </h2>
+                    <div class="overflow-hidden bg-white rounded-3xl border border-slate-200 shadow-sm">
+                        <table class="w-full text-left">
+                            <thead class="bg-slate-50 border-b border-slate-200">
+                                <tr>
+                                    <th class="p-6 text-[10px] font-bold uppercase tracking-widest text-slate-400">Revenue Stream</th>
+                                    <th class="p-6 text-[10px] font-bold uppercase tracking-widest text-slate-400">Conservative</th>
+                                    <th class="p-6 text-[10px] font-bold uppercase tracking-widest text-slate-400">Moderate</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-sm">
+                                <tr class="border-b border-slate-100"><td class="p-6 font-bold">Speaking (Work)</td><td class="p-6">$39,500</td><td class="p-6">$56,000</td></tr>
+                                <tr class="border-b border-slate-100"><td class="p-6 font-bold">Cohorts (Within)</td><td class="p-6">$20,000</td><td class="p-6">$30,000</td></tr>
+                                <tr class="border-b border-slate-100"><td class="p-6 font-bold">Intensives (Architecture)</td><td class="p-6">$37,000</td><td class="p-6">$60,500</td></tr>
+                                <tr class="bg-slate-50 font-bold"><td class="p-6 text-[#064680]">TOTAL GROSS</td><td class="p-6 text-[#064680]">$105,500</td><td class="p-6 text-[#064680]">$160,000+</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
             </div>
+
             <div class="space-y-8">
                 <div class="p-8 bg-[#064680] text-white rounded-3xl shadow-xl">
                     <h3 class="text-xs font-bold uppercase tracking-widest mb-6 opacity-60">The Funding Ask</h3>
-                    <div class="text-5xl font-bold mb-8">$30,000</div>
-                    <div class="space-y-2 text-xs opacity-80">
-                        <div class="flex justify-between border-b border-white/10 pb-2"><span>Break-even</span><span>1st Intensive</span></div>
-                        <div class="flex justify-between"><span>Annual Overhead</span><span>$12k - $15k</span></div>
+                    <div class="text-5xl font-bold mb-4">$30,000</div>
+                    <p class="text-xs opacity-80 mb-6">Seed capital to move from validated concept to fully operational consultancy.</p>
+                    <div class="space-y-2 text-xs opacity-90 mb-8 border-t border-white/10 pt-6">
+                        <div class="flex justify-between"><span>Break-even</span><span class="font-bold">1st Intensive</span></div>
+                        <div class="flex justify-between"><span>Annual Overhead</span><span class="font-bold">$12k - $15k</span></div>
                     </div>
+                    
+                    <!-- FUNDING ALLOCATION BREAKDOWN -->
+                    <h4 class="text-[10px] font-bold uppercase tracking-[0.2em] mb-4 text-[#58bbc2]">Allocation of Funds</h4>
+                    <ul class="space-y-3 text-[10px] opacity-80">
+                        <li class="flex justify-between border-b border-white/5 pb-1"><span>Digital Infrastructure & CRM</span><span>$5,000</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-1"><span>Operational Runway (4mo)</span><span>$5,000</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-1"><span>UNMASK Tool Packaging</span><span>$3,500</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-1"><span>Enterprise Credentialing</span><span>$8,000</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-1"><span>AI Burnout Research Index</span><span>$3,000</span></li>
+                        <li class="flex justify-between border-b border-white/5 pb-1"><span>Sales, Marketing & IP</span><span>$5,500</span></li>
+                    </ul>
                 </div>
-                <div class="p-8 bg-[#064680] text-white rounded-3xl shadow-lg border border-white/10">
-                    <h3 class="text-xs font-bold text-[#58bbc2] uppercase tracking-widest mb-4 text-center">Market Potential</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed italic font-serif text-center">"One organizational relationship can generate <span class="text-white font-bold">$40,500</span> in total engagement value."</p>
+
+                <!-- ENGAGEMENT VALUE BOX -->
+                <div class="p-8 bg-[#064680] text-white rounded-3xl shadow-lg border border-white/10 text-center">
+                    <h3 class="text-xs font-bold text-[#58bbc2] uppercase tracking-widest mb-4">Engagement Value</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed italic font-serif text-center">
+                        "One organizational relationship entered through a single keynote can generate <span class="text-white font-bold">$40,500</span> in total engagement value across all three stages."
+                    </p>
                 </div>
-                <button onclick="showView('home')" class="w-full text-center text-xs font-bold text-slate-400 hover:text-[#064680] uppercase tracking-widest">← Back to Main</button>
+                <button onclick="showView('home')" class="w-full text-center text-xs font-bold text-slate-400 hover:text-[#064680] uppercase tracking-widest">← Return to Main Page</button>
             </div>
         </div>
     </main>
@@ -339,14 +533,23 @@
     <!-- Footer -->
     <footer id="contact" class="bg-slate-900 text-white py-24 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-serif font-bold mb-8 text-white">Ready to Build <br/><span class="text-[#58bbc2]">Unbothered Agency?</span></h2>
+            <h2 class="text-4xl font-serif font-bold mb-8">Ready to Build <br/><span class="text-[#58bbc2]">Unbothered Agency?</span></h2>
             <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="px-8 py-4 bg-[#58bbc2] text-slate-900 rounded-lg font-bold hover:bg-[#4aa8af] transition-all">Start Structural Audit</a>
-                <a href="https://www.linkedin.com/in/nikkicatesmiller" target="_blank" class="px-8 py-4 border border-white/20 rounded-lg font-bold hover:bg-white/5 transition-all">LinkedIn Newsletter</a>
+                <a href="https://www.linkedin.com/in/nikkicatesmiller" target="_blank" class="px-8 py-4 border border-white/20 rounded-lg font-bold hover:bg-white/5 transition-all">LinkedIn profile</a>
+            </div>
+            <div class="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm max-w-xl mx-auto mb-20">
+                <p class="text-xs text-slate-400 uppercase tracking-widest mb-6">Request Private Briefing</p>
+                <form class="space-y-4" onsubmit="event.preventDefault(); document.getElementById('success').classList.remove('hidden');">
+                    <input type="email" placeholder="Executive Email" class="w-full bg-slate-800 border-white/10 border p-4 rounded-xl focus:outline-none focus:border-[#58bbc2]" required>
+                    <button class="w-full bg-[#064680] text-white font-bold py-4 rounded-xl hover:bg-slate-700 transition-colors">Submit Request</button>
+                </form>
+                <p id="success" class="hidden text-teal-400 mt-4 text-sm font-bold">Briefing request sent. Expect a response within 48 hours.</p>
             </div>
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] text-slate-500 uppercase tracking-widest">
                 <div>&copy; 2024 Strategic Transformations. Nikki Cates.</div>
                 <div class="flex gap-8">
+                    <a href="https://nikkicates.carrd.co/" target="_blank" class="hover:text-white">Professional site</a>
                     <a href="javascript:void(0)" onclick="showView('investors')" class="hover:text-white">Investor Relations</a>
                     <a href="#" class="hover:text-white">Privacy</a>
                 </div>
@@ -396,13 +599,21 @@
         const mB = document.getElementById('managerBlock');
         const sT = document.getElementById('strainText');
         const sB = document.getElementById('statusBadge');
+        const arrows = document.getElementById('loadArrows') ? document.getElementById('loadArrows').children : [];
+
         if (vS) {
             vS.addEventListener('input', (e) => {
                 const v = e.target.value;
                 lF.style.width = (20 + v * 0.8) + '%';
-                if (v <= 35) { sB.innerText = 'Status: Optimal'; sB.style.background = '#58bbc21a'; sT.innerText = 'Integrity: 100%'; mB.classList.remove('fracture-alert'); lF.style.background = '#58bbc2'; }
-                else if (v <= 75) { sB.innerText = 'Status: Strained'; sB.style.background = '#0646801a'; sT.innerText = 'Warning: Fatigue'; mB.classList.remove('fracture-alert'); lF.style.background = '#064680'; }
-                else { sB.innerText = 'CRITICAL: FAILURE'; sB.style.background = '#fee2e2'; sT.innerText = 'Integrity: 12%'; mB.classList.add('fracture-alert'); lF.style.background = '#ea580c'; }
+                
+                Array.from(arrows).forEach((arrow, i) => {
+                    arrow.style.opacity = v > (i * 30) ? '1' : '0.2';
+                    arrow.style.color = v > 70 ? '#ea580c' : (v > 40 ? '#064680' : '#cbd5e1');
+                });
+
+                if (v <= 35) { sB.innerText = 'Status: Optimal'; sB.style.background = '#58bbc21a'; sB.style.color = '#064680'; sT.innerText = 'Structural Integrity: 100%'; mB.classList.remove('fracture-alert'); lF.style.background = '#58bbc2'; }
+                else if (v <= 75) { sB.innerText = 'Status: Strained'; sB.style.background = '#0646801a'; sB.style.color = '#064680'; sT.innerText = 'Warning: Material Fatigue'; mB.classList.remove('fracture-alert'); lF.style.background = '#064680'; }
+                else { sB.innerText = 'CRITICAL: FAILURE IMMINENT'; sB.style.background = '#fee2e2'; sB.style.color = '#991b1b'; sT.innerText = 'Structural Integrity: 12%'; mB.classList.add('fracture-alert'); lF.style.background = '#ea580c'; }
             });
         }
     </script>
