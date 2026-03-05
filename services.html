@@ -17,18 +17,7 @@
          3. Comparative ROI: A dynamic visualization comparing the "Cost of Inaction" vs "Investment Cost."
          4. The Solution Matrix: A comparison table for rapid synthesis of deliverables across tiers.
          5. Action Hub: Tier-specific CTAs to move leads into the sales pipeline.
-         
-         Why this structure? It mirrors the logical progression of a B2B sales conversation: Problem -> Solution Options -> Value Comparison -> Decision.
     -->
-    
-    <!-- Visualization & Content Choices: 
-         - Report Info: Tiered pricing and goals -> Goal: Organize/Explore -> Interactive Tier Cards (JS State) -> Interaction: Click cards to update deliverable details -> Justification: Prevents information overload.
-         - Report Info: ROI Goal -> Goal: Compare -> Grouped Bar Chart (Chart.js) -> Interaction: Hover for values -> Justification: Visually proves that a $45k investment prevents a $1M+ collapse.
-         - Report Info: Deliverables -> Goal: Organize -> Comparison Matrix (HTML/Tailwind) -> Interaction: Responsive layout -> Justification: Essential for executive side-by-side review.
-         - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. All visual elements are Canvas or HTML/CSS.
-    -->
-    
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,700&family=Urbanist:wght@300;400;500;600;700;800&display=swap');
@@ -49,6 +38,19 @@
 
         h1, h2, h3, h4, .font-serif {
             font-family: 'Lora', serif;
+        }
+
+        /* Official ST Logo Box Styling */
+        .logo-box {
+            width: 36px;
+            height: 36px;
+            background-color: var(--st-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            border-radius: 6px;
         }
 
         /* Strict Chart Container Requirements */
@@ -96,12 +98,13 @@
     <nav class="fixed w-full z-50 top-0 bg-white/90 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-8 h-8 bg-[#064680] text-white flex items-center justify-center font-serif font-bold text-lg rounded">ST</div>
+                <!-- Updated Brand/Logo Link back to index -->
+                <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-all group">
+                    <div class="logo-box font-serif group-hover:scale-105 transition-transform">ST</div>
                     <div class="font-serif font-bold text-xl tracking-tight text-slate-900">
                         UNMASK<span style="color: var(--st-teal)">.</span>
                     </div>
-                </div>
+                </a>
                 <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
                     <a href="#dashboard" class="hover:text-[#064680] transition-colors">Tiers</a>
                     <a href="#roi" class="hover:text-[#064680] transition-colors">ROI Case</a>
@@ -282,7 +285,7 @@
     <!-- Footer / CTA -->
     <footer class="py-24 border-t border-stone-100 bg-white text-center">
         <div class="flex items-center justify-center gap-3 mb-10">
-            <div class="w-8 h-8 bg-[#064680] text-white flex items-center justify-center font-serif font-bold text-lg rounded">ST</div>
+            <div class="logo-box font-serif">ST</div>
             <div class="font-serif font-bold text-xl tracking-tight text-slate-900">
                 UNMASK<span style="color: var(--st-teal)">.</span>
             </div>
