@@ -30,7 +30,8 @@
         :root {
             --st-navy: #064680;
             --st-teal: #58bbc2;
-            --st-purple: #9b51e0;
+            --st-purple: #9254a1; /* Matched to Logo */
+            --st-blue-mid: #2d9cdb; /* Matched to Logo */
             --primary: #0f172a;
             --bg: #fafaf9;
         }
@@ -157,12 +158,17 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <div class="flex items-center gap-4 cursor-pointer" onclick="showView('home')">
-                    <svg width="45" height="40" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
-                        <polygon points="30,10 50,10 60,27 50,44 30,44 20,27" fill="#064680" opacity="0.9" />
-                        <polygon points="45,25 65,25 75,42 65,59 45,59 35,42" fill="#2d9cdb" opacity="0.8" />
-                        <polygon points="30,40 50,40 60,57 50,74 30,74 20,57" fill="#9b51e0" opacity="0.7" />
-                        <polygon points="70,45 90,45 100,62 90,79 70,79 60,62" fill="none" stroke="#064680" stroke-width="3" />
-                        <polygon points="75,55 85,55 90,62 85,69 75,69 70,62" fill="#58bbc2" />
+                    <!-- High-Fidelity SVG Logo Recreated from Strategic Transformations LOGO.jpg -->
+                    <svg width="55" height="45" viewBox="0 0 140 120" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Left Stack -->
+                        <polygon points="25,55 45,55 55,70 45,85 25,85 15,70" fill="#064680" /> <!-- Navy -->
+                        <polygon points="35,35 55,35 65,50 55,65 35,65 25,50" fill="#9254a1" /> <!-- Purple -->
+                        <polygon points="45,15 65,15 75,30 65,45 45,45 35,30" fill="#2d9cdb" /> <!-- Mid Blue -->
+                        
+                        <!-- Right Side -->
+                        <polygon points="60,10 100,10 120,40 100,70 60,70 40,40" fill="none" stroke="#064680" stroke-width="3.5" /> <!-- Outline Navy -->
+                        <polygon points="75,45 115,45 135,75 115,105 75,105 55,75" fill="none" stroke="#064680" stroke-width="3.5" /> <!-- Outline Navy 2 -->
+                        <polygon points="85,65 105,65 115,80 105,95 85,95 75,80" fill="#58bbc2" /> <!-- Inner Teal -->
                     </svg>
                     <div class="flex flex-col">
                         <span class="font-serif font-bold text-lg leading-none tracking-tight text-slate-900">STRATEGIC</span>
@@ -250,71 +256,17 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12 text-left">
                         <div>
                             <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Avg Salary ($)</label>
-                            <input type="number" id="salaryInput" value="95000" class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-5 text-slate-900 font-bold text-xl">
+                            <input type="number" id="salaryInput" value="95000" class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-5 text-slate-900 font-bold text-xl focus:outline-none focus:border-[#58bbc2] transition-all">
                         </div>
                         <div>
                             <label class="block text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] mb-4">Attrition (Count)</label>
-                            <input type="number" id="attritionInput" value="5" class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-5 text-slate-900 font-bold text-xl">
+                            <input type="number" id="attritionInput" value="5" class="w-full bg-slate-50 border-2 border-slate-100 rounded-xl p-5 text-slate-900 font-bold text-xl focus:outline-none focus:border-[#58bbc2] transition-all">
                         </div>
                     </div>
                     <div class="pt-12 border-t border-slate-100">
                         <p class="text-xs font-bold text-[#58bbc2] uppercase tracking-[0.3em] mb-4">Calculated Annual Fiscal Risk</p>
                         <div id="costResult" class="text-6xl md:text-8xl font-bold text-slate-900 tracking-tighter">$1,011,750</div>
                         <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="mt-12 inline-block text-[#064680] font-bold text-xs uppercase tracking-widest border-b-2 border-[#58bbc2] pb-1 hover:text-[#58bbc2] transition-all">Take the Structural Strain Audit →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Framework Section -->
-        <section id="framework" class="py-24 bg-white">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="mb-16 text-center max-w-3xl mx-auto">
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-6">The UNMASK Architecture</h2>
-                    <div class="flex flex-wrap justify-center gap-4 mt-10">
-                        <div class="tool-pill bg-[#064680]/10 text-[#064680] border border-[#064680]/20">AI Acceleration Burnout Index<span class="st-tm">™</span></div>
-                        <div class="tool-pill bg-[#58bbc2]/10 text-[#0a6aa8] border border-[#58bbc2]/30">Leadership Masking Index<span class="st-tm">™</span></div>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="step-card p-10 bg-slate-50 border border-slate-100 rounded-3xl">
-                        <div class="w-12 h-12 bg-[#064680] text-white flex items-center justify-center font-serif font-bold text-xl rounded-lg mb-6">01</div>
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4">Capture</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Surface the real-time friction and hidden labor of identity-based performance.</p>
-                    </div>
-                    <div class="step-card p-10 bg-white border-2 border-slate-100 rounded-3xl shadow-xl">
-                        <div class="w-12 h-12 bg-[#58bbc2] text-white flex items-center justify-center font-serif font-bold text-xl rounded-lg mb-6">02</div>
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4">Analyze</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Map the Authority-Responsibility gap using dual-lens analysis of load paths and masking costs.</p>
-                    </div>
-                    <div class="step-card p-10 bg-slate-50 border border-slate-100 rounded-3xl">
-                        <div class="w-12 h-12 bg-slate-900 text-white flex items-center justify-center font-serif font-bold text-xl rounded-lg mb-6">03</div>
-                        <h3 class="text-2xl font-serif font-bold text-slate-900 mb-4">Recalibrate</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed">Deliver automated Architecture Blueprints for redistributing power and defining boundaries.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Mechanics/AI Section -->
-        <section id="mechanics" class="py-24 bg-stone-50 border-y border-stone-200">
-            <div class="max-w-7xl mx-auto px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
-                    <div class="lg:col-span-5">
-                        <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8">The AI Efficiency Trap</h2>
-                        <p class="text-lg text-slate-500 mb-10 leading-relaxed">Automation automates exhaustion if the human bridge isn't reinforced.</p>
-                        <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="inline-block px-6 py-3 border border-[#064680] text-[#064680] rounded-lg font-bold text-xs uppercase tracking-widest hover:bg-[#064680] hover:text-white transition-all">Audit Your AI Stress-Load</a>
-                    </div>
-                    <div class="lg:col-span-7 bg-white p-12 rounded-[2rem] border border-slate-200 shadow-xl relative overflow-hidden text-center">
-                        <h3 class="font-serif font-bold text-2xl text-slate-900 mb-12">Stress-Test Simulation</h3>
-                        <div id="statusBadge" class="inline-block px-4 py-1.5 bg-[#58bbc2]/10 text-[#064680] text-[10px] font-bold rounded-full uppercase tracking-[0.2em] mb-8">Status: Optimal</div>
-                        <div id="managerBlock" class="mx-auto w-full max-w-sm bg-slate-50 border border-slate-200 rounded-2xl p-8 mb-8 transition-all duration-300">
-                            <div class="h-3 w-full bg-slate-200 rounded-full overflow-hidden mb-4">
-                                <div id="loadFill" class="h-full bg-[#58bbc2] transition-all" style="width: 20%;"></div>
-                            </div>
-                            <p id="strainText" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Integrity: 100%</p>
-                        </div>
-                        <input type="range" id="velocitySlider" min="0" max="100" value="0" class="max-w-sm mx-auto">
                     </div>
                 </div>
             </div>
@@ -335,10 +287,10 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100"><h4 class="font-bold mb-2">Systems > Sentiment</h4><p class="text-xs text-slate-500">Fix the process, fix the mood.</p></div>
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100"><h4 class="font-bold mb-2">Quantified Equity</h4><p class="text-xs text-slate-500">Making hidden labor billable.</p></div>
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100"><h4 class="font-bold mb-2">Predictive Logic</h4><p class="text-xs text-slate-500">Solving attrition before it starts.</p></div>
-                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100"><h4 class="font-bold mb-2">Unbothered Agency</h4><p class="text-xs text-slate-500">The ultimate outcome.</p></div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2">Systems > Sentiment</h4><p class="text-xs text-slate-500">Fix the process, fix the mood.</p></div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2">Quantified Equity</h4><p class="text-xs text-slate-500">Making hidden labor billable.</p></div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2">Predictive Logic</h4><p class="text-xs text-slate-500">Solving attrition before it starts.</p></div>
+                        <div class="p-6 bg-slate-50 rounded-2xl border border-stone-100 shadow-sm"><h4 class="font-bold mb-2">Unbothered Agency</h4><p class="text-xs text-slate-500">The ultimate outcome.</p></div>
                     </div>
                 </div>
             </div>
@@ -350,9 +302,9 @@
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-16">Investment Briefing <span class="text-[#58bbc2]">2026</span></h1>
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-20">
             <div class="lg:col-span-2 space-y-12">
-                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm leading-relaxed text-slate-600">
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm text-slate-600">
                     <h3 class="text-xl font-serif font-bold text-[#064680] mb-6">The Opportunity</h3>
-                    <p class="mb-6">Global culture consulting is growing at 8% CAGR, hitting $21.6B by 2033. UNMASK targets the systemic misalignment wellness programs ignore.</p>
+                    <p class="mb-6 leading-relaxed">Global culture consulting hit $10B in 2024 and is scaling to $21.6B. Strategic Transformations differentiates by targeting structural misalignment at the mid-management layer.</p>
                 </div>
                 <div class="overflow-hidden bg-white rounded-3xl border border-slate-200 shadow-sm">
                     <table class="w-full text-left">
@@ -376,8 +328,8 @@
                     </div>
                 </div>
                 <div class="p-8 bg-[#064680] text-white rounded-3xl shadow-lg border border-white/10">
-                    <h3 class="text-xs font-bold text-[#58bbc2] uppercase tracking-widest mb-4">Market Potential</h3>
-                    <p class="text-xs text-slate-300 leading-relaxed italic font-serif">"One organizational relationship can generate <span class="text-white font-bold">$40,500</span> in total engagement value."</p>
+                    <h3 class="text-xs font-bold text-[#58bbc2] uppercase tracking-widest mb-4 text-center">Market Potential</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed italic font-serif text-center">"One organizational relationship can generate <span class="text-white font-bold">$40,500</span> in total engagement value."</p>
                 </div>
                 <button onclick="showView('home')" class="w-full text-center text-xs font-bold text-slate-400 hover:text-[#064680] uppercase tracking-widest">← Back to Main</button>
             </div>
@@ -417,22 +369,26 @@
             const total = (parseFloat(sIn.value)||0) * 2.13 * (parseFloat(aIn.value)||0);
             res.innerText = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(total);
         }
-        sIn.addEventListener('input', update); aIn.addEventListener('input', update);
+        if(sIn) sIn.addEventListener('input', update); 
+        if(aIn) aIn.addEventListener('input', update);
 
         window.onload = function() {
-            const ctx = document.getElementById('burnoutChart').getContext('2d');
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Oversight', 'Execution', 'Ambiguity', 'Masking Tax'],
-                    datasets: [{
-                        data: [85, 92, 78, 95],
-                        backgroundColor: ['#064680', '#064680', '#064680', '#58bbc2'],
-                        borderRadius: 8, barThickness: 40
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, scales: { y: { display: false }, x: { grid: { display: false } } }, plugins: { legend: { display: false } } }
-            });
+            const canvas = document.getElementById('burnoutChart');
+            if (canvas) {
+                const ctx = canvas.getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Oversight', 'Execution', 'Ambiguity', 'Masking Tax'],
+                        datasets: [{
+                            data: [85, 92, 78, 95],
+                            backgroundColor: ['#064680', '#064680', '#064680', '#58bbc2'],
+                            borderRadius: 8, barThickness: 40
+                        }]
+                    },
+                    options: { responsive: true, maintainAspectRatio: false, scales: { y: { display: false }, x: { grid: { display: false } } }, plugins: { legend: { display: false } } }
+                });
+            }
         };
 
         const vS = document.getElementById('velocitySlider');
@@ -440,13 +396,15 @@
         const mB = document.getElementById('managerBlock');
         const sT = document.getElementById('strainText');
         const sB = document.getElementById('statusBadge');
-        vS.addEventListener('input', (e) => {
-            const v = e.target.value;
-            lF.style.width = (20 + v * 0.8) + '%';
-            if (v <= 35) { sB.innerText = 'Status: Optimal'; sB.style.background = '#58bbc21a'; sT.innerText = 'Integrity: 100%'; mB.classList.remove('fracture-alert'); lF.style.background = '#58bbc2'; }
-            else if (v <= 75) { sB.innerText = 'Status: Strained'; sB.style.background = '#0646801a'; sT.innerText = 'Warning: Fatigue'; mB.classList.remove('fracture-alert'); lF.style.background = '#064680'; }
-            else { sB.innerText = 'CRITICAL: FAILURE'; sB.style.background = '#fee2e2'; sT.innerText = 'Integrity: 12%'; mB.classList.add('fracture-alert'); lF.style.background = '#ea580c'; }
-        });
+        if (vS) {
+            vS.addEventListener('input', (e) => {
+                const v = e.target.value;
+                lF.style.width = (20 + v * 0.8) + '%';
+                if (v <= 35) { sB.innerText = 'Status: Optimal'; sB.style.background = '#58bbc21a'; sT.innerText = 'Integrity: 100%'; mB.classList.remove('fracture-alert'); lF.style.background = '#58bbc2'; }
+                else if (v <= 75) { sB.innerText = 'Status: Strained'; sB.style.background = '#0646801a'; sT.innerText = 'Warning: Fatigue'; mB.classList.remove('fracture-alert'); lF.style.background = '#064680'; }
+                else { sB.innerText = 'CRITICAL: FAILURE'; sB.style.background = '#fee2e2'; sT.innerText = 'Integrity: 12%'; mB.classList.add('fracture-alert'); lF.style.background = '#ea580c'; }
+            });
+        }
     </script>
 </body>
 </html>
