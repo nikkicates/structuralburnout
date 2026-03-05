@@ -15,10 +15,10 @@
             --bg: #0f172a;
         }
 
-        body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #f8fafc; }
+        body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
         h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
 
-        /* BRANDING BLOCK - EXACT MATCH TO ORIGINAL LOGO */
+        /* BRANDING BLOCK - HEXAGON LOGO & TEXT */
         .brand-logo-mark { width: 44px; height: 44px; flex-shrink: 0; }
         .brand-text-container { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
         .brand-strategic { 
@@ -31,16 +31,26 @@
         }
 
         .nav-link { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s; }
-        
-        /* Custom UI Elements */
-        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+        .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); }
         .text-gradient { background: linear-gradient(to right, #f472b6, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Custom Radio Buttons for Audit */
+        .custom-radio input[type="radio"] { display: none; }
+        .custom-radio label {
+            display: inline-block; width: 40px; height: 40px; line-height: 36px;
+            text-align: center; border: 2px solid #334155; border-radius: 8px;
+            cursor: pointer; transition: all 0.2s; font-weight: 600;
+        }
+        .custom-radio input[type="radio"]:checked + label {
+            background-color: #d946ef; border-color: #d946ef; color: white;
+            box-shadow: 0 0 15px rgba(217, 70, 239, 0.4);
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 glass-panel border-b border-slate-800">
+    <nav class="fixed w-full z-50 top-0 glass-panel">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <!-- Branding Group -->
@@ -54,15 +64,16 @@
                         </svg>
                     </div>
                     <div class="brand-text-container">
-                        <div class="brand-strategic text-white">Strategic</div>
+                        <div class="brand-strategic">Strategic</div>
                         <div class="brand-transformations">Transformations</div>
                     </div>
                 </a>
 
-                <!-- Navigation Links - Explicitly Added 'Services' -->
-                <div class="hidden md:flex space-x-10 items-center">
-                    <a href="#audit" class="nav-link text-slate-400 hover:text-white transition-colors">The Audit</a>
-                    <a href="services.html" class="nav-link text-cyan-400 hover:text-white transition-colors">Services</a>
+                <!-- Navigation Links - Ordered per request -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#audit" class="nav-link text-slate-400 hover:text-white transition-colors">Audit</a>
+                    <a href="#investors" class="nav-link text-slate-400 hover:text-white transition-colors">Investors</a>
+                    <a href="services.html" class="nav-link text-cyan-400 hover:text-white transition-colors border-b-2 border-cyan-400 pb-1">Services</a>
                     <a href="#strategy" class="nav-link text-slate-400 hover:text-white transition-colors">Strategy</a>
                 </div>
 
@@ -73,7 +84,7 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <header class="pt-48 pb-24 px-6 text-center max-w-5xl mx-auto">
         <div class="inline-block px-4 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
             Leadership Architecture | Operational Resilience
@@ -82,19 +93,71 @@
             Burnout is a <br/><span class="text-gradient">Design Flaw.</span>
         </h1>
         <p class="text-xl md:text-2xl text-slate-400 font-light mb-14 max-w-2xl mx-auto leading-relaxed">
-            Stop treating symptoms. Start recalibrating the structure. We help CHROs and COOs fix the gaps that drive talent collapse.
+            Stop treating symptoms. Start recalibrating the structure. We help CHROs and COOs fix the architectural gaps that drive talent collapse.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-6">
             <a href="#audit" class="px-10 py-5 bg-white text-slate-900 rounded-lg font-bold text-lg hover:bg-cyan-400 transition-all">Take Mini-Audit</a>
-            <a href="services.html" class="px-10 py-5 bg-slate-800 border border-slate-700 text-white rounded-lg font-bold text-lg hover:bg-slate-700">View Engagement Menu</a>
+            <a href="services.html" class="px-10 py-5 bg-slate-800 border border-slate-700 text-white rounded-lg font-bold text-lg hover:bg-slate-700">View Services</a>
         </div>
     </header>
 
-    <!-- Content continues... -->
+    <!-- Mini Audit Section -->
+    <section id="audit" class="py-24 bg-slate-900/50 border-y border-slate-800">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-4xl font-bold mb-4">The <span class="text-cyan-400">Structural Strain</span> Mini-Audit</h2>
+                <p class="text-slate-400">Identify where your org chart is leaking capacity. (1 = Never, 5 = Constantly)</p>
+            </div>
+            <div class="bg-slate-800 border border-slate-700 rounded-2xl p-8 shadow-2xl">
+                <form id="auditForm" class="space-y-8">
+                    <div class="border-b border-slate-700 pb-6">
+                        <p class="text-lg font-semibold mb-4 text-slate-200">1. Authority Gap: Do leaders have the actual authority to make the decisions they are accountable for?</p>
+                        <div class="flex flex-wrap gap-3 custom-radio">
+                            <input type="radio" name="q1" id="q1-1" value="1"><label for="q1-1">1</label>
+                            <input type="radio" name="q1" id="q1-2" value="2"><label for="q1-2">2</label>
+                            <input type="radio" name="q1" id="q1-3" value="3"><label for="q1-3">3</label>
+                            <input type="radio" name="q1" id="q1-4" value="4"><label for="q1-4">4</label>
+                            <input type="radio" name="q1" id="q1-5" value="5"><label for="q1-5">5</label>
+                        </div>
+                    </div>
+                    <button type="button" id="calcBtn" class="w-full py-5 bg-cyan-500 hover:bg-cyan-400 text-slate-900 rounded-lg font-bold text-xl uppercase tracking-wide transition-all">
+                        Calculate Strain Score
+                    </button>
+                </form>
+                <div id="result" class="hidden mt-8 p-8 bg-slate-900 border-2 border-fuchsia-500 rounded-xl text-center">
+                    <div id="scoreDisplay" class="text-7xl font-bold mb-2">0</div>
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-4 uppercase">Moderate Structural Leakage</h3>
+                    <p class="text-slate-400 mb-8">Your architecture is likely extracting invisible labor from top performers. High risk of mid-level attrition within 6 months.</p>
+                    <a href="services.html" class="px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-500 text-white rounded-lg font-bold transition-all">View Engagement Menu</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-slate-800 bg-slate-950 text-center">
+        <div class="flex items-center justify-center gap-3 mb-6">
+            <div class="brand-logo-mark" style="width: 32px; height: 32px;">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
+                    <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#a855f7" fill-opacity="0.8"/>
+                    <path d="M60 35L77.32 45V65L60 75L42.68 65V45L60 35Z" stroke="#ffffff" stroke-width="2.5"/>
+                    <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#22d3ee"/>
+                </svg>
+            </div>
+            <div class="brand-text-container text-left">
+                <div class="brand-strategic" style="font-size: 0.9rem;">Strategic</div>
+                <div class="brand-transformations" style="font-size: 0.45rem;">Transformations</div>
+            </div>
+        </div>
+        <p class="text-slate-500 text-xs tracking-widest uppercase">Strategic Transformations © 2026 | UNMASK. All Rights Reserved.</p>
+    </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            console.log("Index loaded. Nav link to services.html confirmed.");
+        document.getElementById('calcBtn').addEventListener('click', function() {
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('scoreDisplay').innerText = "18";
+            window.scrollTo({ top: document.getElementById('result').offsetTop - 100, behavior: 'smooth' });
         });
     </script>
 </body>
