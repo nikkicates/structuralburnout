@@ -3,170 +3,429 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Transformations | Structural Burnout Strategist</title>
+    <title>UNMASK | Service Menu & Revenue Architecture</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Chosen Palette: Strategic Transformations Executive (Navy #064680, Teal #58bbc2, Stone-50) -->
+    
+    <!-- Application Structure Plan: 
+         The SPA is designed as an "Interactive Service Catalog" for high-stakes decision makers. 
+         Architecture:
+         1. Executive Intro: Framing the transition from "Wellness" to "Structural Architecture."
+         2. The Tier Dashboard: Interactive cards allowing users to explore Tier 1 through Tier 4.
+         3. Comparative ROI: A dynamic visualization comparing the "Cost of Inaction" vs "Investment Cost."
+         4. The Solution Matrix: A comparison table for rapid synthesis of deliverables across tiers.
+         5. Action Hub: Tier-specific CTAs to move leads into the sales pipeline.
+         
+         Why this structure? It mirrors the logical progression of a B2B sales conversation: Problem -> Solution Options -> Value Comparison -> Decision.
+    -->
+    
+    <!-- Visualization & Content Choices: 
+         - Report Info: Tiered pricing and goals -> Goal: Organize/Explore -> Interactive Tier Cards (JS State) -> Interaction: Click cards to update deliverable details -> Justification: Prevents information overload.
+         - Report Info: ROI Goal -> Goal: Compare -> Grouped Bar Chart (Chart.js) -> Interaction: Hover for values -> Justification: Visually proves that a $45k investment prevents a $1M+ collapse.
+         - Report Info: Deliverables -> Goal: Organize -> Comparison Matrix (HTML/Tailwind) -> Interaction: Responsive layout -> Justification: Essential for executive side-by-side review.
+         - CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. All visual elements are Canvas or HTML/CSS.
+    -->
+    
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Urbanist:wght@300;400;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,700&family=Urbanist:wght@300;400;500;600;700;800&display=swap');
         
         :root {
             --st-navy: #064680;
             --st-teal: #58bbc2;
-            --bg: #fafaf9; /* Reverted to light executive stone-50 */
+            --primary: #0f172a;
+            --bg: #fafaf9; /* stone-50 */
         }
 
-        body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #0f172a; overflow-x: hidden; }
-        h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
-
-        /* BRANDING BLOCK - EXACT SYNC TO ORIGINAL LIGHT DESIGN */
-        .brand-logo-mark { width: 44px; height: 44px; flex-shrink: 0; }
-        .brand-text-container { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
-        .brand-strategic { 
-            font-family: 'Lora', serif; font-weight: 700; font-size: 1.15rem; 
-            color: var(--st-navy); text-transform: uppercase; margin-bottom: 1px;
-        }
-        .brand-transformations { 
-            font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 0.55rem; 
-            color: var(--st-teal); letter-spacing: 0.35em; text-transform: uppercase;
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            line-height: 1.6;
         }
 
-        .nav-link { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s; color: #64748b; }
-        .nav-link:hover { color: var(--st-navy); }
-        
-        .glass-nav { background: rgba(250, 250, 249, 0.9); backdrop-filter: blur(12px); border-bottom: 1px solid #e7e5e4; }
-        
-        .text-gradient { 
-            background: linear-gradient(to right, #064680, #58bbc2); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Lora', serif;
         }
 
-        /* Custom Radio Buttons for Audit */
-        .custom-radio input[type="radio"] { display: none; }
-        .custom-radio label {
-            display: inline-block; width: 40px; height: 40px; line-height: 36px;
-            text-align: center; border: 2px solid #e7e5e4; border-radius: 8px;
-            cursor: pointer; transition: all 0.2s; font-weight: 600;
+        /* Strict Chart Container Requirements */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
         }
-        .custom-radio input[type="radio"]:checked + label {
-            background-color: var(--st-navy); border-color: var(--st-navy); color: white;
-            box-shadow: 0 4px 12px rgba(6, 70, 128, 0.2);
+
+        .tier-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+        .tier-card.active {
+            border-color: var(--st-teal);
+            background-color: white;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-8px);
+        }
+        .tier-card.active .check-icon {
+            background-color: var(--st-teal);
+            color: white;
+        }
+
+        .check-icon {
+            transition: all 0.3s ease;
+            background-color: #f1f5f9;
+            color: #94a3b8;
+        }
+
+        /* Table responsiveness */
+        .table-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-teal-100 selection:text-teal-900">
+<body class="antialiased selection:bg-[#58bbc2]/30 selection:text-[#064680]">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 glass-nav">
+    <nav class="fixed w-full z-50 top-0 bg-white/90 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Branding Group Linked to Index -->
-                <a href="index.html" class="flex items-center gap-3 no-underline group">
-                    <div class="brand-logo-mark group-hover:rotate-6 transition-transform duration-500">
-                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
-                            <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#a855f7" fill-opacity="0.8"/>
-                            <path d="M60 35L77.32 45V65L60 75L42.68 65V45L60 35Z" stroke="#064680" stroke-width="2.5"/>
-                            <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
-                        </svg>
+                <div class="flex items-center gap-3">
+                    <div class="w-8 h-8 bg-[#064680] text-white flex items-center justify-center font-serif font-bold text-lg rounded">ST</div>
+                    <div class="font-serif font-bold text-xl tracking-tight text-slate-900">
+                        UNMASK<span style="color: var(--st-teal)">.</span>
                     </div>
-                    <div class="brand-text-container">
-                        <div class="brand-strategic">Strategic</div>
-                        <div class="brand-transformations">Transformations</div>
-                    </div>
-                </a>
-
-                <!-- Nav Links: Audit -> Investors -> Services -> Strategy -->
-                <div class="hidden lg:flex space-x-8 items-center">
-                    <a href="#audit" class="nav-link">Audit</a>
-                    <a href="#investors" class="nav-link">Investors</a>
-                    <a href="services.html" class="nav-link" style="color: var(--st-teal); border-bottom: 2px solid var(--st-teal); padding-bottom: 4px;">Services</a>
-                    <a href="#strategy" class="nav-link">Strategy</a>
                 </div>
-
-                <a href="services.html" class="px-6 py-2.5 bg-[#064680] hover:bg-slate-800 text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all">
-                    Engagement Menu
+                <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                    <a href="#dashboard" class="hover:text-[#064680] transition-colors">Tiers</a>
+                    <a href="#roi" class="hover:text-[#064680] transition-colors">ROI Case</a>
+                    <a href="#matrix" class="hover:text-[#064680] transition-colors">Matrix</a>
+                </div>
+                <a href="mailto:info@strategicunmasking.com" class="px-6 py-2.5 bg-[#064680] hover:bg-slate-800 text-white rounded-md text-xs font-bold transition-all uppercase tracking-widest">
+                    Request Proposal
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="pt-48 pb-24 px-6 text-center max-w-5xl mx-auto">
-        <div class="inline-block px-4 py-1.5 rounded-full bg-[#064680]/5 border border-[#064680]/10 text-[#064680] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
-            Leadership Architecture | Operational Resilience
+    <!-- Header Section -->
+    <header class="pt-40 pb-20 px-6 max-w-7xl mx-auto text-center">
+        <div class="inline-block px-4 py-1.5 rounded-full bg-[#58bbc2]/10 border border-[#58bbc2]/20 text-[#064680] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
+            Service Menu & Revenue Architecture
         </div>
-        <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-[1.0] tracking-tighter text-slate-900">
-            Burnout is a <br/><span class="text-gradient italic">Design Flaw.</span>
+        <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-8 leading-[1.1]">
+            Productizing <br/><span style="color: var(--st-navy)" class="italic">Structural Expertise.</span>
         </h1>
-        <p class="text-xl md:text-2xl text-slate-500 font-light mb-14 max-w-2xl mx-auto leading-relaxed">
-            Stop treating symptoms. Start recalibrating the structure. We help high-stakes organizations fix the architectural gaps that drive talent collapse.
+        <p class="text-xl text-slate-500 font-light mb-10 max-w-3xl mx-auto leading-relaxed introductory-paragraph">
+            This interactive menu outlines the four engagement tiers of the UNMASK Leadership Architecture. From immediate individual diagnostics to full-scale enterprise recalibration, each tier is designed to remove the structural design flaws that drive talent extraction. Use this dashboard to explore deliverables, compare value, and visualize the ROI of structural integrity.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-6">
-            <a href="#audit" class="px-10 py-5 bg-[#064680] text-white rounded-lg font-bold text-lg hover:bg-slate-800 transition-all shadow-lg">Take Mini-Audit</a>
-            <a href="services.html" class="px-10 py-5 bg-white border border-stone-200 text-slate-600 rounded-lg font-bold text-lg hover:bg-stone-50 transition-all">View Services</a>
-        </div>
     </header>
 
-    <!-- Mini Audit Section -->
-    <section id="audit" class="py-24 bg-white border-y border-stone-100">
-        <div class="max-w-4xl mx-auto px-6 text-center">
+    <!-- Section 1: Interactive Tier Dashboard -->
+    <section id="dashboard" class="py-20 bg-white border-y border-stone-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="mb-12">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4 text-slate-900">The <span style="color: var(--st-teal)">Structural Strain</span> Snapshot</h2>
-                <p class="text-slate-500 max-w-xl mx-auto">Identify where your org chart is leaking capacity. (1 = Never, 5 = Constantly)</p>
+                <h2 class="text-3xl font-serif font-bold text-slate-900">Engagement Tiers</h2>
+                <p class="text-slate-500 mt-2">Select a tier to view full deliverable details and strategic goals.</p>
             </div>
-            <div class="bg-stone-50 border border-stone-200 rounded-3xl p-8 md:p-12 shadow-sm text-left max-w-3xl mx-auto">
-                <form id="auditForm" class="space-y-10">
-                    <div class="border-b border-stone-200 pb-8">
-                        <p class="text-lg font-semibold mb-6 text-slate-800 leading-snug">1. Authority Gap: Do leaders have the actual authority to make the decisions they are accountable for?</p>
-                        <div class="flex flex-wrap gap-4 custom-radio">
-                            <input type="radio" name="q1" id="q1-1" value="1"><label for="q1-1">1</label>
-                            <input type="radio" name="q1" id="q1-2" value="2"><label for="q1-2">2</label>
-                            <input type="radio" name="q1" id="q1-3" value="3"><label for="q1-3">3</label>
-                            <input type="radio" name="q1" id="q1-4" value="4"><label for="q1-4">4</label>
-                            <input type="radio" name="q1" id="q1-5" value="5"><label for="q1-5">5</label>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" id="tierGrid">
+                <!-- Tier 1 -->
+                <div class="tier-card p-8 bg-stone-50 border border-stone-200 rounded-2xl active" data-tier="1">
+                    <div class="check-icon w-8 h-8 rounded-full flex items-center justify-center mb-6 text-xs font-bold">01</div>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Starter Kit</h3>
+                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$147 - $297</div>
+                    <p class="text-sm text-slate-500">Individual structural self-audit and playbook.</p>
+                </div>
+                <!-- Tier 2 -->
+                <div class="tier-card p-8 bg-stone-50 border border-stone-200 rounded-2xl" data-tier="2">
+                    <div class="check-icon w-8 h-8 rounded-full flex items-center justify-center mb-6 text-xs font-bold">02</div>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Architecture Audit</h3>
+                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$7.5k - $15k</div>
+                    <p class="text-sm text-slate-500">Full-team diagnostic and structural integrity report.</p>
+                </div>
+                <!-- Tier 3 -->
+                <div class="tier-card p-8 bg-stone-50 border border-stone-200 rounded-2xl" data-tier="3">
+                    <div class="check-icon w-8 h-8 rounded-full flex items-center justify-center mb-6 text-xs font-bold">03</div>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">The Intensive</h3>
+                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$35k - $55k</div>
+                    <p class="text-sm text-slate-500">2-day redesign and 3 months of monitoring.</p>
+                </div>
+                <!-- Tier 4 -->
+                <div class="tier-card p-8 bg-stone-50 border border-stone-200 rounded-2xl" data-tier="4">
+                    <div class="check-icon w-8 h-8 rounded-full flex items-center justify-center mb-6 text-xs font-bold">04</div>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">The Retainer</h3>
+                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$2,500 / mo</div>
+                    <p class="text-sm text-slate-500">Ongoing monitoring and structural advisory.</p>
+                </div>
+            </div>
+
+            <!-- Detailed Content Block (Dynamic) -->
+            <div id="tierDetails" class="bg-stone-900 text-white rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-[#58bbc2]/10 rounded-full blur-[100px] pointer-events-none"></div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
+                    <div>
+                        <div id="detailLabel" class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-[0.3em] mb-4">Tier 01: The Structural Starter Kit</div>
+                        <h3 id="detailTitle" class="text-4xl font-serif font-bold mb-6">Self-Audit & Playbook</h3>
+                        <p id="detailGoal" class="text-slate-400 mb-10 text-lg leading-relaxed">
+                            <strong>Goal:</strong> High-volume lead generation and individual authority building. This tier is designed for managers in the "Squeezed Middle" seeking immediate, tactical recalibration tools without requiring enterprise-level budget approval.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="px-8 py-4 bg-[#58bbc2] text-[#064680] rounded-xl font-bold hover:bg-white transition-all uppercase tracking-widest text-xs">Access Now</button>
+                            <button class="px-8 py-4 bg-transparent border border-slate-700 text-white rounded-xl font-bold hover:bg-slate-800 transition-all uppercase tracking-widest text-xs">Share with Team</button>
                         </div>
                     </div>
-                    <button type="button" id="calcBtn" class="w-full py-5 bg-[#064680] hover:bg-slate-800 text-white rounded-xl font-bold text-xl uppercase tracking-wide transition-all">
-                        Calculate Strain Score
-                    </button>
-                </form>
-                
-                <div id="result" class="hidden mt-12 p-10 bg-white border-2 border-orange-500 rounded-2xl text-center shadow-xl">
-                    <div id="scoreDisplay" class="text-8xl font-bold mb-4 tracking-tighter text-slate-900">18</div>
-                    <h3 class="text-2xl font-bold text-orange-600 mb-4 uppercase tracking-wider">Emerging Structural Strain</h3>
-                    <p class="text-slate-500 mb-10 leading-relaxed">Your high-performers are likely masking their exhaustion. Recalibration is needed to prevent imminent talent loss.</p>
-                    <a href="services.html" class="px-10 py-4 bg-[#064680] text-white rounded-xl font-bold transition-all inline-block shadow-lg uppercase tracking-widest text-sm">Explore Engagement Tiers</a>
+                    <div class="bg-slate-800/50 p-8 rounded-3xl border border-slate-700 backdrop-blur-sm">
+                        <h4 class="font-bold text-white uppercase text-xs tracking-widest mb-6 border-b border-slate-700 pb-4">Key Deliverables</h4>
+                        <ul id="deliverableList" class="space-y-4">
+                            <li class="flex items-start"><span class="text-[#58bbc2] mr-3 font-bold text-lg">✓</span> <span class="text-slate-300">Full Access: AI Acceleration Burnout Index™ (Individual)</span></li>
+                            <li class="flex items-start"><span class="text-[#58bbc2] mr-3 font-bold text-lg">✓</span> <span class="text-slate-300">15-Page Digital Playbook: "Recalibrating Your Load Path"</span></li>
+                            <li class="flex items-start"><span class="text-[#58bbc2] mr-3 font-bold text-lg">✓</span> <span class="text-slate-300">The Boundary Protocol Cheat Sheet</span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-20 bg-stone-50 border-t border-stone-200 text-center">
-        <div class="flex flex-col items-center gap-6">
-            <div class="flex items-center gap-3">
-                <div class="brand-logo-mark" style="width: 32px; height: 32px;">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
-                        <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#a855f7" fill-opacity="0.8"/>
-                        <path d="M60 35L77.32 45V65L60 75L42.68 65V45L60 35Z" stroke="#064680" stroke-width="2.5"/>
-                        <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
-                    </svg>
+    <!-- Section 2: Comparison Matrix -->
+    <section id="matrix" class="py-24 bg-stone-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="mb-16 max-w-3xl">
+                <h2 class="text-4xl font-serif font-bold text-slate-900">The Solution Matrix</h2>
+                <p class="text-lg text-slate-500 mt-4 introductory-paragraph">
+                    Understanding the technical depth of each engagement is critical for executive synthesis. This matrix compares our service tiers across four key dimensions: scope, time-to-value, technical depth, and strategic ROI. Use this side-by-side comparison to identify which architecture best suits your current operational tempo.
+                </p>
+            </div>
+
+            <div class="table-container bg-white rounded-3xl border border-stone-200 shadow-sm overflow-hidden">
+                <table class="w-full text-left">
+                    <thead class="bg-[#064680] text-white">
+                        <tr>
+                            <th class="p-6 font-serif text-lg">Metric</th>
+                            <th class="p-6 font-serif text-lg">Tier 1: Kit</th>
+                            <th class="p-6 font-serif text-lg">Tier 2: Audit</th>
+                            <th class="p-6 font-serif text-lg">Tier 3: Intensive</th>
+                            <th class="p-6 font-serif text-lg">Tier 4: Retainer</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-stone-100">
+                            <td class="p-6 font-bold bg-stone-50">Target Size</td>
+                            <td class="p-6">Individual</td>
+                            <td class="p-6">Up to 15 Leaders</td>
+                            <td class="p-6">Whole Leadership Team</td>
+                            <td class="p-6">Continuous Team Support</td>
+                        </tr>
+                        <tr class="border-b border-stone-100">
+                            <td class="p-6 font-bold bg-stone-50">Diagnostic Depth</td>
+                            <td class="p-6">Self-Reported</td>
+                            <td class="p-6 text-teal-600 font-bold">R:A Ratio Mapping</td>
+                            <td class="p-6 text-teal-600 font-bold">Full Load-Path Simulation</td>
+                            <td class="p-6 text-teal-600 font-bold">Quarterly Benchmarking</td>
+                        </tr>
+                        <tr class="border-b border-stone-100">
+                            <td class="p-6 font-bold bg-stone-50">Time-to-Value</td>
+                            <td class="p-6 italic">Instant</td>
+                            <td class="p-6">14–21 Days</td>
+                            <td class="p-6">48-Hour Intensive</td>
+                            <td class="p-6">Continuous Lifecycle</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-bold bg-stone-50">Strategic Goal</td>
+                            <td class="p-6">Reset Capacity</td>
+                            <td class="p-6">Identify Fractures</td>
+                            <td class="p-6 font-bold">Systemic Transformation</td>
+                            <td class="p-6">Operational Maintenance</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: ROI Visualization -->
+    <section id="roi" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="p-10 bg-white rounded-3xl border border-stone-100 shadow-xl shadow-stone-200/50">
+                    <h3 class="text-center font-bold text-slate-800 mb-8 text-[10px] uppercase tracking-[0.2em]">Investment vs. Cost of Inaction</h3>
+                    <div class="chart-container">
+                        <canvas id="roiChart"></canvas>
+                    </div>
                 </div>
-                <div class="brand-text-container text-left">
-                    <div class="brand-strategic" style="font-size: 0.9rem; color: #064680;">Strategic</div>
-                    <div class="brand-transformations" style="font-size: 0.45rem;">Transformations</div>
+                <div>
+                    <h2 class="text-4xl font-serif font-bold text-slate-900 mb-8">The Economics of Recalibration</h2>
+                    <p class="text-lg text-slate-500 mb-10 leading-relaxed introductory-paragraph">
+                        This visualization compares the "Cost of Inaction" (the 213% turnover multiplier for a mid-level leadership collapse) against the investment cost of the UNMASK Recalibration Intensive. Proving the ROI is straightforward: A single Tier 3 engagement prevents the imminent fiscal loss associated with structural burnout, paying for itself by protecting just one manager from attrition.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-6 bg-[#58bbc2]/5 border-l-4 border-[#58bbc2] rounded-r-xl">
+                            <div class="font-bold text-[#064680] text-2xl">21x</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 uppercase text-xs tracking-widest">Return on Architecture</h4>
+                                <p class="text-sm text-slate-500">Protecting a \$100k manager saves \$213k in replacement costs—a 21x return on a Tier 2 Audit.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p class="text-slate-400 text-[10px] tracking-[0.4em] uppercase">Strategic Transformations © 2026 | UNMASK. All Rights Reserved.</p>
+        </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <footer class="py-24 border-t border-stone-100 bg-white text-center">
+        <div class="flex items-center justify-center gap-3 mb-10">
+            <div class="w-8 h-8 bg-[#064680] text-white flex items-center justify-center font-serif font-bold text-lg rounded">ST</div>
+            <div class="font-serif font-bold text-xl tracking-tight text-slate-900">
+                UNMASK<span style="color: var(--st-teal)">.</span>
+            </div>
+        </div>
+        <h2 class="text-3xl font-serif font-bold text-slate-900 mb-8 max-w-2xl mx-auto italic">"We aren't just fixing burnout. We are redesigning power."</h2>
+        <p class="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-12">Strategic Transformations © 2026</p>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-10 md:gap-20 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">
+            <a href="#" class="hover:text-[#064680] transition-colors">LinkedIn</a>
+            <a href="mailto:info@strategicunmasking.com" class="hover:text-[#064680] transition-colors">Proposal Request</a>
+            <a href="#" class="hover:text-[#064680] transition-colors">Technical Whitepaper</a>
         </div>
     </footer>
 
     <script>
-        document.getElementById('calcBtn').addEventListener('click', function() {
-            document.getElementById('result').classList.remove('hidden');
-            window.scrollTo({ top: document.getElementById('result').offsetTop - 120, behavior: 'smooth' });
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Global Config ---
+            Chart.defaults.font.family = "'Urbanist', sans-serif";
+            Chart.defaults.color = "#94a3b8";
+
+            // --- Tier Data Storage ---
+            const tierData = {
+                "1": {
+                    label: "Tier 01: The Structural Starter Kit",
+                    title: "Self-Audit & Playbook",
+                    price: "$147 - $297",
+                    goal: "<strong>Goal:</strong> High-volume lead generation and individual authority building. This tier is designed for managers in the \"Squeezed Middle\" seeking immediate, tactical recalibration tools without requiring enterprise-level budget approval.",
+                    deliverables: [
+                        "Full Access: AI Acceleration Burnout Index™ (Individual)",
+                        "15-Page Digital Playbook: \"Recalibrating Your Load Path\"",
+                        "The Boundary Protocol Cheat Sheet",
+                        "30-Day Structural Reset Tracker"
+                    ]
+                },
+                "2": {
+                    label: "Tier 02: The Leadership Architecture Audit",
+                    title: "The Diagnostic",
+                    price: "$7,500 - $15,000",
+                    goal: "<strong>Goal:</strong> The \"Foot-in-the-Door\" for enterprise contracts. This diagnostic provides the C-Suite with a technical map of Authority-Responsibility gaps, identifying exactly where organizational architecture is leaking capacity.",
+                    deliverables: [
+                        "Full Organizational Audit for up to 15 Leaders",
+                        "The Structural Integrity Report: Technical Gap Analysis",
+                        "90-Minute Executive Debrief & Strategy Session",
+                        "Prioritized Recalibration Roadmap"
+                    ]
+                },
+                "3": {
+                    label: "Tier 03: The Recalibration Intensive",
+                    title: "The Transformation",
+                    price: "$35,000 - $55,000",
+                    goal: "<strong>Goal:</strong> Massive operational ROI and talent retention for high-stakes firms. We move past the diagnostic and into a full structural redesign of decision-rights, escalation protocols, and boundary standards.",
+                    deliverables: [
+                        "2-Day On-site or Virtual Intensive for Leadership Team",
+                        "Custom Architecture Blueprint & Design Redesign",
+                        "3 Months of Structural Monitoring & Adjustments",
+                        "Executive Team \"Unbothered Agency\" Certification"
+                    ]
+                },
+                "4": {
+                    label: "Tier 04: The Retainer",
+                    title: "Structural Maintenance",
+                    price: "$2,500 / Month",
+                    goal: "<strong>Goal:</strong> Predictable recurring revenue and long-term partnership. We act as your external \"Structural Architect,\" ensuring that as your organization scales or integrates new AI tools, your leadership load remains balanced.",
+                    deliverables: [
+                        "Monthly Structural Strain Check-ins",
+                        "Quarter-over-Quarter Benchmarking Data",
+                        "Strategic Advisory for New Organizational Shifts",
+                        "Unlimited Access to Boundary Protocol Refreshers"
+                    ]
+                }
+            };
+
+            // --- Interactive Logic ---
+            const tierCards = document.querySelectorAll('.tier-card');
+            const detailLabel = document.getElementById('detailLabel');
+            const detailTitle = document.getElementById('detailTitle');
+            const detailGoal = document.getElementById('detailGoal');
+            const deliverableList = document.getElementById('deliverableList');
+
+            tierCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    // Update Active Class
+                    tierCards.forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+
+                    // Update Content
+                    const tier = card.getAttribute('data-tier');
+                    const data = tierData[tier];
+
+                    detailLabel.innerText = data.label;
+                    detailTitle.innerText = data.title;
+                    detailGoal.innerHTML = data.goal;
+
+                    // Update Deliverables
+                    deliverableList.innerHTML = '';
+                    data.deliverables.forEach(item => {
+                        const li = document.createElement('li');
+                        li.className = "flex items-start";
+                        li.innerHTML = `<span class="text-[#58bbc2] mr-3 font-bold text-lg">✓</span> <span class="text-slate-300">${item}</span>`;
+                        deliverableList.appendChild(li);
+                    });
+                });
+            });
+
+            // --- ROI Chart (Bar Chart) ---
+            const ctxRoi = document.getElementById('roiChart').getContext('2d');
+            new Chart(ctxRoi, {
+                type: 'bar',
+                data: {
+                    labels: ['Cost of Inaction (1 Collapse)', 'Investment: Tier 2 Audit', 'Investment: Tier 3 Intensive'],
+                    datasets: [{
+                        label: 'Fiscal Value ($)',
+                        data: [213000, 15000, 45000],
+                        backgroundColor: ['#ea580c', '#58bbc2', '#064680'],
+                        borderRadius: 6,
+                        maxBarThickness: 60
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: '#f1f5f9' },
+                            ticks: {
+                                callback: function(value) { return '$' + value / 1000 + 'k'; }
+                            }
+                        },
+                        x: { grid: { display: false } }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'Value: $' + context.raw.toLocaleString();
+                                }
+                            }
+                        }
+                    }
+                }
+            });
         });
     </script>
 </body>
