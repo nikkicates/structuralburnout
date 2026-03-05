@@ -18,7 +18,7 @@
         body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #f8fafc; overflow-x: hidden; }
         h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
 
-        /* BRANDING BLOCK - HEXAGON LOGO & TEXT */
+        /* BRANDING BLOCK - EXACT MATCH */
         .brand-logo-mark { width: 44px; height: 44px; flex-shrink: 0; }
         .brand-text-container { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
         .brand-strategic { 
@@ -27,14 +27,13 @@
         }
         .brand-transformations { 
             font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 0.55rem; 
-            color: var(--st-teal); letter-spacing: 0.35em; text-transform: uppercase;
+            color: #22d3ee; letter-spacing: 0.35em; text-transform: uppercase;
         }
 
         .nav-link { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s; }
         .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.1); }
         .text-gradient { background: linear-gradient(to right, #f472b6, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* Custom Radio Buttons for Audit */
         .custom-radio input[type="radio"] { display: none; }
         .custom-radio label {
             display: inline-block; width: 40px; height: 40px; line-height: 36px;
@@ -49,11 +48,9 @@
 </head>
 <body class="antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
 
-    <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 glass-panel">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Branding Group -->
                 <a href="index.html" class="flex items-center gap-3 no-underline group">
                     <div class="brand-logo-mark group-hover:rotate-6 transition-transform">
                         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,12 +61,11 @@
                         </svg>
                     </div>
                     <div class="brand-text-container">
-                        <div class="brand-strategic">Strategic</div>
+                        <div class="brand-strategic text-white">Strategic</div>
                         <div class="brand-transformations">Transformations</div>
                     </div>
                 </a>
 
-                <!-- Navigation Links - Ordered per request -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#audit" class="nav-link text-slate-400 hover:text-white transition-colors">Audit</a>
                     <a href="#investors" class="nav-link text-slate-400 hover:text-white transition-colors">Investors</a>
@@ -84,7 +80,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="pt-48 pb-24 px-6 text-center max-w-5xl mx-auto">
         <div class="inline-block px-4 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-cyan-400 text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
             Leadership Architecture | Operational Resilience
@@ -101,7 +96,6 @@
         </div>
     </header>
 
-    <!-- Mini Audit Section -->
     <section id="audit" class="py-24 bg-slate-900/50 border-y border-slate-800">
         <div class="max-w-4xl mx-auto px-6">
             <div class="mb-12 text-center">
@@ -126,15 +120,14 @@
                 </form>
                 <div id="result" class="hidden mt-8 p-8 bg-slate-900 border-2 border-fuchsia-500 rounded-xl text-center">
                     <div id="scoreDisplay" class="text-7xl font-bold mb-2">0</div>
-                    <h3 class="text-2xl font-bold text-cyan-400 mb-4 uppercase">Moderate Structural Leakage</h3>
-                    <p class="text-slate-400 mb-8">Your architecture is likely extracting invisible labor from top performers. High risk of mid-level attrition within 6 months.</p>
-                    <a href="services.html" class="px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-500 text-white rounded-lg font-bold transition-all">View Engagement Menu</a>
+                    <h3 class="text-2xl font-bold text-cyan-400 mb-4 uppercase text-center">Moderate Structural Leakage</h3>
+                    <p class="text-slate-400 mb-8 text-center">Your architecture is likely extracting invisible labor from top performers. High risk of mid-level attrition within 6 months.</p>
+                    <a href="services.html" class="px-8 py-4 bg-fuchsia-600 hover:bg-fuchsia-500 text-white rounded-lg font-bold transition-all inline-block mx-auto">View Engagement Menu</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-20 border-t border-slate-800 bg-slate-950 text-center">
         <div class="flex items-center justify-center gap-3 mb-6">
             <div class="brand-logo-mark" style="width: 32px; height: 32px;">
