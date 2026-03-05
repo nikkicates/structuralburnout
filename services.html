@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNMASK | Service Menu & Revenue Architecture</title>
+    <title>Strategic Transformations | Service Menu & Revenue Architecture</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
@@ -16,6 +16,7 @@
             --st-navy: #064680;
             --st-teal: #58bbc2;
             --st-purple: #a855f7;
+            --st-blue-light: #3b82f6;
             --primary: #0f172a;
             --bg: #fafaf9; /* stone-50 */
         }
@@ -31,11 +32,20 @@
             font-family: 'Lora', serif;
         }
 
-        /* Logo Styling */
-        .brand-logo {
-            width: 48px;
-            height: 48px;
+        /* High-Fidelity Logo Styling */
+        .brand-logo-mark {
+            width: 42px;
+            height: 42px;
             flex-shrink: 0;
+        }
+
+        .brand-text {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            font-size: 1.25rem; /* Adjusted for longer brand name */
+            letter-spacing: -0.01em;
+            color: #0f172a;
+            line-height: 1.1;
         }
 
         /* Strict Chart Container Requirements */
@@ -75,9 +85,9 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        /* Responsive spacing for mobile */
         @media (max-width: 768px) {
             .introductory-paragraph { font-size: 1.125rem; }
+            .brand-text { font-size: 1rem; }
         }
     </style>
 </head>
@@ -87,27 +97,26 @@
     <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Brand/Logo Link back to index with SVG Reconstruction of official logo -->
+                <!-- Strategic Transformations Logo & Text -->
                 <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-all group no-underline">
-                    <div class="brand-logo group-hover:scale-105 transition-transform duration-300">
+                    <div class="brand-logo-mark group-hover:scale-105 transition-transform duration-300">
                         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background Stack (Simplified Hexagon Marks) -->
-                            <!-- Top Outline -->
-                            <path d="M50 5L71.65 17.5V42.5L50 55L28.35 42.5V17.5L50 5Z" stroke="#064680" stroke-width="2"/>
-                            <!-- Middle Blue -->
-                            <path d="M40 25L61.65 37.5V62.5L40 75L18.35 62.5V37.5L40 25Z" fill="#3b82f6" fill-opacity="0.8"/>
-                            <!-- Bottom Purple -->
-                            <path d="M30 45L51.65 57.5V82.5L30 95L8.35 82.5V57.5L30 45Z" fill="#a855f7" fill-opacity="0.8"/>
-                            <!-- Right Outline with Teal Center -->
-                            <path d="M70 45L91.65 57.5V82.5L70 95L48.35 82.5V57.5L70 45Z" stroke="#064680" stroke-width="2"/>
-                            <path d="M70 65L78.66 70V80L70 85L61.34 80V70L70 65Z" fill="#2dd4bf"/>
+                            <!-- Hexagon 1: Top Outline -->
+                            <path d="M50 8L76 23V53L50 68L24 53V23L50 8Z" stroke="#064680" stroke-width="3"/>
+                            <!-- Hexagon 2: Middle Blue -->
+                            <path d="M42 28L68 43V73L42 88L16 73V43L42 28Z" fill="#3b82f6" fill-opacity="0.85"/>
+                            <!-- Hexagon 3: Bottom Purple -->
+                            <path d="M34 48L60 63V93L34 108L8 93V63L34 48Z" fill="#a855f7" fill-opacity="0.85" transform="translate(0, -10)"/>
+                            <!-- Hexagon 4: Right Outline with Teal Core -->
+                            <path d="M72 48L98 63V93L72 108L46 93V63L72 48Z" stroke="#064680" stroke-width="3" transform="translate(0, -10)"/>
+                            <path d="M72 70L82 75V86L72 91L62 86V75L72 70Z" fill="#2dd4bf" transform="translate(0, -10)"/>
                         </svg>
                     </div>
-                    <div class="font-serif font-bold text-xl tracking-tight text-slate-900">
-                        UNMASK<span style="color: #58bbc2">.</span>
+                    <div class="brand-text">
+                        Strategic<br class="md:hidden"/> Transformations
                     </div>
                 </a>
-                <div class="hidden md:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
+                <div class="hidden lg:flex space-x-10 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-500">
                     <a href="#dashboard" class="hover:text-[#064680] transition-colors">Tiers</a>
                     <a href="#roi" class="hover:text-[#064680] transition-colors">ROI Case</a>
                     <a href="#matrix" class="hover:text-[#064680] transition-colors">Matrix</a>
@@ -144,7 +153,7 @@
                 <div class="tier-card p-8 bg-stone-50 border border-stone-200 rounded-2xl active" data-tier="1">
                     <div class="check-icon w-8 h-8 rounded-full flex items-center justify-center mb-6 text-xs font-bold">01</div>
                     <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Starter Kit</h3>
-                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$147 - $297</div>
+                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$47</div>
                     <p class="text-sm text-slate-500">Individual structural self-audit and playbook.</p>
                 </div>
                 <div class="tier-card p-8 bg-stone-50 border border-stone-200 rounded-2xl" data-tier="2">
@@ -278,18 +287,18 @@
     <!-- Footer -->
     <footer class="py-24 border-t border-stone-100 bg-white text-center">
         <div class="flex items-center justify-center gap-3 mb-10">
-            <!-- Brand Mark in Footer -->
-            <div class="brand-logo">
+            <!-- Strategic Transformations Footer Logo & Text -->
+            <div class="brand-logo-mark">
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 5L71.65 17.5V42.5L50 55L28.35 42.5V17.5L50 5Z" stroke="#064680" stroke-width="2"/>
-                    <path d="M40 25L61.65 37.5V62.5L40 75L18.35 62.5V37.5L40 25Z" fill="#3b82f6" fill-opacity="0.8"/>
-                    <path d="M30 45L51.65 57.5V82.5L30 95L8.35 82.5V57.5L30 45Z" fill="#a855f7" fill-opacity="0.8"/>
-                    <path d="M70 45L91.65 57.5V82.5L70 95L48.35 82.5V57.5L70 45Z" stroke="#064680" stroke-width="2"/>
-                    <path d="M70 65L78.66 70V80L70 85L61.34 80V70L70 65Z" fill="#2dd4bf"/>
+                    <path d="M50 8L76 23V53L50 68L24 53V23L50 8Z" stroke="#064680" stroke-width="3"/>
+                    <path d="M42 28L68 43V73L42 88L16 73V43L42 28Z" fill="#3b82f6" fill-opacity="0.85"/>
+                    <path d="M34 48L60 63V93L34 108L8 93V63L34 48Z" fill="#a855f7" fill-opacity="0.85" transform="translate(0, -10)"/>
+                    <path d="M72 48L98 63V93L72 108L46 93V63L72 48Z" stroke="#064680" stroke-width="3" transform="translate(0, -10)"/>
+                    <path d="M72 70L82 75V86L72 91L62 86V75L72 70Z" fill="#2dd4bf" transform="translate(0, -10)"/>
                 </svg>
             </div>
-            <div class="font-serif font-bold text-xl tracking-tight text-slate-900">
-                UNMASK<span style="color: #58bbc2">.</span>
+            <div class="brand-text">
+                Strategic Transformations
             </div>
         </div>
         <h2 class="text-3xl font-serif font-bold text-slate-900 mb-8 max-w-2xl mx-auto italic">"We aren't just fixing burnout. We are redesigning power."</h2>
@@ -306,7 +315,7 @@
                 "1": {
                     label: "Tier 01: The Structural Starter Kit",
                     title: "Self-Audit & Playbook",
-                    price: "$147 - $297",
+                    price: "$47",
                     goal: "<strong>Goal:</strong> High-volume lead generation and individual authority building. This tier is designed for managers in the \"Squeezed Middle\" seeking immediate recalibration tools.",
                     deliverables: [
                         "Full Access: AI Acceleration Burnout Index™ (Individual)",
