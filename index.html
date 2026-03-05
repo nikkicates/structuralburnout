@@ -27,7 +27,7 @@
         }
         .brand-transformations { 
             font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 0.55rem; 
-            color: var(--st-teal); letter-spacing: 0.4em; text-transform: uppercase;
+            color: #22d3ee; letter-spacing: 0.4em; text-transform: uppercase;
         }
 
         .nav-link { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s; }
@@ -44,8 +44,8 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <!-- Branding Group -->
-                <div class="flex items-center gap-3">
-                    <div class="brand-logo-mark">
+                <a href="index.html" class="flex items-center gap-3 no-underline group">
+                    <div class="brand-logo-mark group-hover:rotate-6 transition-transform">
                         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
                             <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#a855f7" fill-opacity="0.8"/>
@@ -57,7 +57,7 @@
                         <div class="brand-strategic text-white">Strategic</div>
                         <div class="brand-transformations">Transformations</div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Navigation Links -->
                 <div class="hidden md:flex space-x-10">
@@ -91,7 +91,6 @@
     </header>
 
     <script>
-        // Simple audit mock for functionality
         document.addEventListener('DOMContentLoaded', () => {
             console.log("Index loaded. Nav link to services.html confirmed.");
         });
