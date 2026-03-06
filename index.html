@@ -18,7 +18,7 @@
         body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #0f172a; overflow-x: hidden; }
         h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
 
-        /* BRANDING BLOCK */
+        /* BRANDING BLOCK - EXACT LOGO SYNC */
         .brand-logo-mark { width: 44px; height: 44px; flex-shrink: 0; }
         .brand-text-container { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
         .brand-strategic { 
@@ -43,7 +43,7 @@
 
         /* Chart Containers - Specifically taller for Investors to avoid label clipping */
         .chart-container { position: relative; width: 100%; height: 320px; margin: 0 auto; }
-        .investor-chart-container { height: 360px; }
+        .investor-chart-container { height: 380px; }
 
         /* Simulator Animation */
         @keyframes structuralFracture {
@@ -101,10 +101,10 @@
             Leadership Architecture | Operational Resilience
         </div>
         <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-[1.0] tracking-tighter text-slate-900">
-            Burnout is a <br/><span class="text-gradient italic">Design Flaw.</span>
+            Burnout is a <br/><span class="text-gradient italic text-center">Design Flaw.</span>
         </h1>
         <p class="text-xl md:text-2xl text-slate-500 font-light mb-14 max-w-2xl mx-auto leading-relaxed">
-            Stop treating symptoms. Start recalibrating the structure. I help high-stakes organizations fix the architectural gaps that drive talent collapse.
+            Stop treating symptoms. Start recalibrating the structure. We help high-stakes organizations fix the architectural gaps that drive talent collapse.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-6">
             <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="px-10 py-5 bg-[#064680] text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-lg">Start Structural Audit</a>
@@ -178,7 +178,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <div class="mb-16">
                 <h2 class="text-4xl font-bold text-slate-900 mb-4 text-center text-gradient uppercase tracking-tight">Unified Master Launch Strategy</h2>
-                <p class="text-slate-500 max-w-2xl mx-auto font-light">Executing through three parallel engines to establish category authority and build the data moat.</p>
+                <p class="text-slate-500 max-w-2xl mx-auto font-light">Executing through three parallel engines to establish category authority and a proprietary data moat.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
                 <div class="p-10 bg-stone-50 rounded-3xl border border-stone-200">
@@ -205,42 +205,22 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white uppercase tracking-tighter">The Investor Briefing</h2>
-                <p class="text-teal-300 max-w-2xl mx-auto text-lg italic">"Transitioning from a high-margin consultancy to a data-native platform standard."</p>
-            </div>
-
-            <!-- Grant & Scale Content -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-                <div class="p-10 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
-                    <h3 class="text-xl font-bold mb-6 text-[#58bbc2] uppercase tracking-widest">Grant Alignment & R&D</h3>
-                    <p class="text-stone-400 text-sm mb-6 leading-relaxed">Positioned for SBIR/STTR workforce development tracks. Our technical moat is built on <strong>Observed Friction</strong> rather than <strong>Sentiment.</strong></p>
-                    <ul class="space-y-4 text-stone-300 text-sm leading-relaxed">
-                        <li class="flex items-start"><span class="text-[#58bbc2] mr-3">✓</span> <span><strong class="text-white">Validated Traction:</strong> 10+ major transformations completed; 87+ high-intent subscribers captured in 24 hours.</span></li>
-                        <li class="flex items-start"><span class="text-[#58bbc2] mr-3">✓</span> <span><strong class="text-white">Category Moat:</strong> Proprietary Burnout Index™ measures structure, protecting diverse leadership from the "Masking Tax."</span></li>
-                    </ul>
-                </div>
-                <div class="p-10 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-sm">
-                    <h3 class="text-xl font-bold mb-6 text-[#58bbc2] uppercase tracking-widest">The 90-Day Roadmap</h3>
-                    <ul class="space-y-4 text-stone-300 text-sm leading-relaxed">
-                        <li><strong class="text-white">Phase 1:</strong> Seed Funding & MVP Build for the AI Audit Agent.</li>
-                        <li><strong class="text-white">Phase 2:</strong> SAM.gov registration & Federal Resilience contract pursuit.</li>
-                        <li><strong class="text-white">Phase 3:</strong> Launch of the UNMASK Facilitator Certification Beta for enterprise scale.</li>
-                    </ul>
-                </div>
+                <p class="text-teal-300 max-w-2xl mx-auto text-lg italic">"Transitioning from a high-margin consultancy to a data-native diagnostic platform standard."</p>
             </div>
 
             <!-- Use of Funds Row -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
                 <div class="p-10 bg-white/5 border border-white/10 rounded-[2rem] shadow-2xl">
-                    <h3 class="text-center font-bold text-white mb-2 text-[10px] uppercase tracking-widest">Utilization of Seed Capital</h3>
-                    <p class="text-center text-teal-400 text-[10px] mb-8 font-bold uppercase">Transition to Data-Native Platform</p>
-                    <div class="investor-chart-container">
+                    <h3 class="text-center font-bold text-white mb-2 text-[10px] uppercase tracking-widest">Seed Allocation & Logic</h3>
+                    <p class="text-center text-teal-400 text-[10px] mb-8 font-bold uppercase">Funding the transition to Technical IP</p>
+                    <div class="investor-chart-container" style="position: relative;">
                         <canvas id="fundsChart"></canvas>
                     </div>
                     <!-- Redundant Text Key for Committees -->
-                    <div class="mt-6 grid grid-cols-3 gap-2 text-center text-[10px] font-bold uppercase tracking-widest">
-                        <div class="text-[#58bbc2]">40% Tech Build</div>
-                        <div class="text-white">30% IP & Outreach</div>
-                        <div class="text-stone-400">30% Compliance</div>
+                    <div class="mt-8 pt-8 border-t border-white/10 grid grid-cols-1 gap-4 text-xs text-stone-400 uppercase tracking-widest font-bold">
+                        <div class="flex justify-between"><span class="text-[#58bbc2]">Engineering / AI MVP</span><span>40%</span></div>
+                        <div class="flex justify-between"><span class="text-white">IP & Market Reach</span><span>30%</span></div>
+                        <div class="flex justify-between"><span class="text-stone-500">Compliance & Readiness</span><span>30%</span></div>
                     </div>
                 </div>
                 <div class="space-y-8">
@@ -249,40 +229,40 @@
                     <div class="space-y-6">
                         <div class="flex justify-between border-b border-white/10 pb-4">
                             <div>
-                                <span class="font-bold text-lg text-white">Engineering (40%)</span>
+                                <span class="font-bold text-lg text-white">Tech & Infrastructure (40%)</span>
                                 <p class="text-xs text-stone-400 mt-1">MVP build for the AI Audit Agent and proprietary scoring algorithms.</p>
                             </div>
                         </div>
                         <div class="flex justify-between border-b border-white/10 pb-4">
                             <div>
                                 <span class="font-bold text-lg text-white">IP & Market Outreach (30%)</span>
-                                <p class="text-xs text-stone-400 mt-1">Trademarks and strategic enterprise sector lead-generation.</p>
+                                <p class="text-xs text-stone-400 mt-1">Trademark protections and strategic enterprise sector lead-generation.</p>
                             </div>
                         </div>
                         <div class="flex justify-between">
                             <div>
                                 <span class="font-bold text-lg text-white">Compliance & Readiness (30%)</span>
-                                <p class="text-xs text-stone-400 mt-1">SAM.gov federal registration and federal ethics certifications.</p>
+                                <p class="text-xs text-stone-400 mt-1">SAM.gov federal registration and specialized readiness certifications.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Revenue Row -->
+            <!-- Revenue Mix Visualization -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="space-y-6 text-left">
-                    <h3 class="text-3xl font-bold italic text-[#58bbc2]">Revenue Source Forecast</h3>
-                    <p class="text-stone-300 text-lg leading-relaxed">Our dual-use model captures immediate cash flow through facilitation while building recurring long-tail licensing revenue.</p>
+                <div class="space-y-6">
+                    <h3 class="text-3xl font-bold italic text-[#58bbc2] text-left">Revenue Source Forecast</h3>
+                    <p class="text-stone-300 text-lg text-left leading-relaxed">Our dual-use model captures immediate cash flow through facilitation while building recurring long-tail licensing revenue.</p>
                     <div class="p-8 bg-white/10 rounded-2xl border border-white/5 shadow-inner">
-                        <div class="text-sm font-bold uppercase tracking-widest opacity-60 mb-2">Year 1 Gross Target</div>
-                        <div class="text-5xl font-bold tracking-tighter text-white">$96,000 - $134,500</div>
+                        <div class="text-sm font-bold uppercase tracking-widest opacity-60 mb-2 text-left">Year 1 Gross Target</div>
+                        <div class="text-5xl font-bold text-left tracking-tighter text-white">$96,000 - $134,500</div>
                     </div>
                 </div>
                 <div class="p-10 bg-white/5 border border-white/10 rounded-[2rem] shadow-2xl">
                     <h3 class="text-center font-bold text-white mb-2 text-[10px] uppercase tracking-widest">Growth Engine Distribution</h3>
-                    <p class="text-center text-teal-400 text-[10px] mb-8 font-bold uppercase">Balanced High-Margin Streams</p>
-                    <div class="investor-chart-container">
+                    <p class="text-center text-teal-400 text-[10px] mb-8 font-bold uppercase tracking-widest">Balanced High-Margin Streams</p>
+                    <div class="investor-chart-container" style="position: relative;">
                         <canvas id="revenueChart"></canvas>
                     </div>
                 </div>
@@ -295,7 +275,7 @@
         <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <div class="inline-block px-4 py-1 rounded-full bg-[#064680]/5 text-[#064680] text-[10px] font-bold uppercase tracking-widest mb-10">The Strategist</div>
             <h2 class="text-7xl font-black text-[#064680] mb-8 tracking-tighter uppercase leading-none" style="font-family: 'Urbanist', sans-serif;">Nikki Cates</h2>
-            <p class="text-xl text-slate-500 mb-12 leading-relaxed">
+            <p class="text-xl text-slate-500 mb-12 leading-relaxed font-light">
                 Nikki Cates is a Structural Recalibration Strategist specializing in the intersection of talent sustainability and AI acceleration. With over a decade in operational trenches, she pioneered the UNMASK Leadership Architecture<sup>TM</sup> to fix the design flaws that traditional HR surveys ignore. Explore her full strategic portfolio at <a href="https://nikkicates.carrd.co/" target="_blank" class="text-[#064680] font-bold border-b-2 border-[#58bbc2] hover:bg-[#58bbc2]/10 transition-all">nikkicates.carrd.co</a>.
             </p>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-12">
@@ -305,30 +285,37 @@
         </div>
     </section>
 
-    <!-- Executive Inquiry -->
+    <!-- Executive Inquiry Section -->
     <section id="contact" class="py-24 bg-white border-t border-stone-200">
         <div class="max-w-4xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-4xl font-serif font-bold text-slate-900 mb-6 leading-tight">Executive Inquiry</h2>
-                    <p class="text-slate-500 text-lg leading-relaxed mb-8">Discuss a custom structural diagnostic, keynote engagement, or workshop facilitation for your leadership core.</p>
+                    <p class="text-slate-500 text-lg leading-relaxed mb-8">
+                        Discuss a custom structural diagnostic, keynote engagement, or workshop facilitation for your leadership core.
+                    </p>
                     <div class="space-y-4">
                         <a href="mailto:info@strategicunmasking.com" class="flex items-center gap-4 group">
-                            <div class="w-10 h-10 rounded-full bg-[#064680]/5 flex items-center justify-center text-[#064680] group-hover:bg-[#064680] group-hover:text-white transition-all text-lg">&#9993;</div>
-                            <span class="text-sm font-bold uppercase tracking-widest text-slate-600">Request a Proposal</span>
+                            <div class="w-10 h-10 rounded-full bg-[#064680]/5 flex items-center justify-center text-[#064680] group-hover:bg-[#064680] group-hover:text-white transition-all text-lg">
+                                &#9993;
+                            </div>
+                            <span class="text-sm font-bold uppercase tracking-widest text-slate-600 text-left">Request a Proposal</span>
                         </a>
                         <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="flex items-center gap-4 group">
-                            <div class="w-10 h-10 rounded-full bg-[#58bbc2]/10 flex items-center justify-center text-[#58bbc2] group-hover:bg-[#58bbc2] group-hover:text-white transition-all text-lg">&#128197;</div>
-                            <span class="text-sm font-bold uppercase tracking-widest text-slate-600">Schedule Briefing</span>
+                            <div class="w-10 h-10 rounded-full bg-[#58bbc2]/10 flex items-center justify-center text-[#58bbc2] group-hover:bg-[#58bbc2] group-hover:text-white transition-all text-lg">
+                                &#128197;
+                            </div>
+                            <span class="text-sm font-bold uppercase tracking-widest text-slate-600 text-left">Schedule Briefing</span>
                         </a>
                     </div>
                 </div>
+                <!-- Inquiry Form -->
                 <div class="bg-stone-50 p-10 rounded-3xl border border-stone-200 shadow-inner">
-                    <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-widest mb-6">Send Direct Request</h4>
+                    <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-widest mb-6">Send Request to Strategist</h4>
                     <form action="mailto:info@strategicunmasking.com" method="post" enctype="text/plain" class="space-y-4">
                         <input type="text" name="name" placeholder="Name & Title" class="w-full bg-white border border-stone-200 rounded-xl p-4 text-sm focus:border-[#064680] outline-none">
                         <input type="email" name="email" placeholder="Organization Email" class="w-full bg-white border border-stone-200 rounded-xl p-4 text-sm focus:border-[#064680] outline-none">
-                        <textarea name="message" placeholder="Project Interest (e.g. Audit, Keynote)" class="w-full bg-white border border-stone-200 rounded-xl p-4 text-sm focus:border-[#064680] outline-none h-24 resize-none"></textarea>
+                        <textarea name="message" placeholder="Project Interest (e.g. Audit, Keynote)" class="w-full bg-white border border-stone-200 rounded-xl p-4 text-sm focus:border-[#064680] outline-none h-24 resize-none text-left"></textarea>
                         <button type="submit" class="w-full py-4 bg-[#064680] text-white font-bold rounded-xl uppercase tracking-widest text-xs hover:bg-slate-800 transition-all">Submit Briefing Request</button>
                     </form>
                 </div>
@@ -338,7 +325,7 @@
 
     <!-- Footer -->
     <footer class="py-20 bg-stone-50 border-t border-stone-200 text-center">
-        <div class="flex flex-col items-center gap-8">
+        <div class="flex flex-col items-center gap-8 text-center">
             <div class="flex items-center gap-3">
                 <div class="brand-logo-mark" style="width: 32px; height: 32px;">
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -348,7 +335,7 @@
                         <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
                     </svg>
                 </div>
-                <div class="brand-text-container text-left">
+                <div class="brand-text-container text-left text-center">
                     <div class="brand-strategic" style="font-size: 0.9rem; color: #064680;">Strategic</div>
                     <div class="brand-transformations" style="font-size: 0.45rem;">Transformations</div>
                 </div>
@@ -391,22 +378,23 @@
 
             // Global Chart Defaults
             Chart.defaults.font.family = "'Urbanist', sans-serif";
-            
-            // Managerial Strain Chart
+            const legendDefaults = { position: 'bottom', labels: { boxWidth: 10, padding: 25, font: { weight: 'bold', size: 10 } } };
+
+            // Burnout Chart
             new Chart(document.getElementById('burnoutChart').getContext('2d'), {
                 type: 'doughnut',
                 data: { labels: ['Structural Failure', 'Functional Alignment'], datasets: [{ data: [53, 47], backgroundColor: ['#064680', '#f1f5f9'], borderWidth: 0, cutout: '75%' }] },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 10, font: { weight: 'bold', size: 10 } } } } }
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: legendDefaults } }
             });
 
-            // Investor Funds Allocation (EXPLICIT LABELS)
+            // Investor Funds Allocation (EXPLICIT WHITE LABELS)
             new Chart(document.getElementById('fundsChart').getContext('2d'), {
                 type: 'doughnut',
                 data: { 
-                    labels: ['Tech/Engineering (40%)', 'IP & Outreach (30%)', 'Compliance (30%)'], 
+                    labels: ['Tech/Engineering (40%)', 'IP & Market (30%)', 'Compliance (30%)'], 
                     datasets: [{ 
                         data: [40, 30, 30], 
-                        backgroundColor: ['#58bbc2', '#064680', '#cbd5e1'], 
+                        backgroundColor: ['#58bbc2', '#ffffff', '#064680'], 
                         borderWidth: 2,
                         borderColor: '#020617'
                     }] 
@@ -424,11 +412,11 @@
                 }
             });
 
-            // Investor Revenue Mix (EXPLICIT LABELS)
+            // Investor Revenue Mix (EXPLICIT WHITE LABELS)
             new Chart(document.getElementById('revenueChart').getContext('2d'), {
                 type: 'bar',
                 data: { 
-                    labels: ['Speaking/Facilitation', 'Enterprise Diagnostics', 'IP Licensing', 'Digital Artifacts'], 
+                    labels: ['Speaking/Facilitation', 'Enterprise Audits', 'IP Licensing', 'Digital Artifacts'], 
                     datasets: [{ 
                         label: 'Year 1 Forecast ($)', 
                         data: [45000, 40000, 25000, 24500], 
