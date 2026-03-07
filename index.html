@@ -18,7 +18,6 @@
         body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #0f172a; overflow-x: hidden; }
         h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
 
-        /* BRANDING BLOCK - EXACT LOGO SYNC */
         .brand-logo-mark { width: 44px; height: 44px; flex-shrink: 0; }
         .brand-text-container { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
         .brand-strategic { 
@@ -41,11 +40,9 @@
             -webkit-text-fill-color: transparent; 
         }
 
-        /* Chart Containers - Specifically taller for Investors to avoid label clipping */
         .chart-container { position: relative; width: 100%; height: 320px; margin: 0 auto; }
         .investor-chart-container { height: 380px; }
 
-        /* Simulator Animation */
         @keyframes structuralFracture {
             0% { transform: translate(1px, 1px) rotate(0deg); }
             20% { transform: translate(-2px, 0px) rotate(-1deg); }
@@ -57,6 +54,10 @@
         input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
         input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: var(--st-navy); cursor: pointer; margin-top: -8px; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #e2e8f0; border-radius: 2px; }
+        
+        /* Mobile Menu Transitions */
+        #mobile-menu { transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out; }
+        #mobile-menu.hidden { transform: translateY(-10px); opacity: 0; pointer-events: none; display: none; }
     </style>
 </head>
 <body class="antialiased selection:bg-teal-100 selection:text-teal-900">
@@ -81,14 +82,40 @@
                     </div>
                 </a>
 
+                <!-- Desktop Navigation Links -->
                 <div class="hidden lg:flex space-x-8 items-center">
                     <a href="#crisis" class="nav-link">The Crisis</a>
                     <a href="javascript:void(0)" onclick="toggleInvestors()" class="nav-link">Investors</a>
                     <a href="services.html" class="nav-link" style="color: var(--st-teal);">Solutions</a>
                     <a href="#strategy" class="nav-link">Strategy</a>
+                    <a href="#" id="communityLink" class="nav-link text-orange-600">Community Capital</a>
                 </div>
 
-                <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-6 py-2.5 bg-[#064680] hover:bg-slate-800 text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all">
+                <!-- Action Button & Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="hidden sm:inline-block px-6 py-2.5 bg-[#064680] hover:bg-slate-800 text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all">
+                        Schedule Briefing
+                    </a>
+                    
+                    <!-- Mobile Hamburger Button -->
+                    <button id="mobile-menu-button" class="lg:hidden p-2 text-slate-600 hover:text-[#064680] focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-stone-200 shadow-xl overflow-hidden">
+            <div class="px-6 pt-4 pb-8 space-y-4 flex flex-col">
+                <a href="#crisis" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">The Crisis</a>
+                <a href="javascript:void(0)" onclick="toggleInvestorsMobile()" class="nav-link py-3 border-b border-stone-50 text-base">Investors</a>
+                <a href="services.html" class="nav-link py-3 border-b border-stone-50 text-base">Solutions Catalog</a>
+                <a href="#strategy" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">Strategy</a>
+                <a href="#" class="nav-link py-3 text-orange-600 text-base" onclick="closeMobileMenu()">Community Capital</a>
+                <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="w-full text-center py-4 bg-[#064680] text-white rounded-xl font-bold uppercase tracking-widest text-xs mt-4">
                     Schedule Briefing
                 </a>
             </div>
@@ -101,14 +128,14 @@
             Leadership Architecture | Operational Resilience
         </div>
         <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-[1.0] tracking-tighter text-slate-900">
-            Burnout is a <br/><span class="text-gradient italic text-center">Design Flaw.</span>
+            Burnout is a <br/><span class="text-gradient italic">Design Flaw.</span>
         </h1>
         <p class="text-xl md:text-2xl text-slate-500 font-light mb-14 max-w-2xl mx-auto leading-relaxed">
             Stop treating symptoms. Start recalibrating the structure. We help high-stakes organizations fix the architectural gaps that drive talent collapse.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-6">
             <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="px-10 py-5 bg-[#064680] text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-lg">Start Structural Audit</a>
-            <a href="services.html" class="px-10 py-5 bg-white border border-stone-200 text-slate-600 rounded-xl font-bold text-lg hover:bg-stone-50 transition-all text-center">Explore Solutions Catalog</a>
+            <a href="services.html" class="px-10 py-5 bg-white border border-stone-200 text-slate-600 rounded-xl font-bold text-lg hover:bg-stone-50 transition-all text-center">Solutions Catalog</a>
         </div>
     </header>
 
@@ -118,7 +145,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">The High Cost of <br/>Failed Bridges.</h2>
-                    <p class="text-lg text-slate-500 mb-10 leading-relaxed text-left">
+                    <p class="text-lg text-slate-500 mb-10 leading-relaxed text-left font-light">
                         Burnout isn't a wellness issue; it's an engineering failure. When you give a manager 100% of the responsibility but only 20% of the decision authority, you aren't leading—you are extracting human capacity until the bridge collapses.
                     </p>
                     <div class="grid grid-cols-2 gap-6 text-center">
@@ -148,7 +175,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8 text-left">AI Acceleration & Fracture</h2>
-                    <p class="text-lg text-slate-500 mb-10 leading-relaxed text-left">
+                    <p class="text-lg text-slate-500 mb-10 leading-relaxed text-left font-light">
                         AI speeds up production but quadruples the oversight load. If you don't reinforce the structure, automation doesn't create efficiency—it automates human exhaustion.
                     </p>
                     <div class="p-8 bg-white rounded-2xl border border-stone-200 shadow-sm">
@@ -193,7 +220,7 @@
                 </div>
                 <div class="p-10 bg-stone-50 rounded-3xl border border-stone-200">
                     <h3 class="text-xl font-bold mb-4 text-slate-900 uppercase tracking-tight">Recalibration Shop</h3>
-                    <p class="text-sm text-slate-500 mb-6 leading-relaxed text-center">Digital artifacts featuring tactical manuals and authority reset scripts now live at Stan Store.</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed text-center">Digital artifacts featuring tactical manuals and authority reset scripts for the Squeezed Middle.</p>
                     <a href="https://stan.store/nikkicates" target="_blank" class="text-[10px] font-bold text-white uppercase tracking-widest bg-[#064680] p-3 rounded-lg text-center block hover:bg-[#58bbc2] transition-all shadow-md">Explore Strategic Artifacts</a>
                 </div>
             </div>
@@ -205,10 +232,10 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 text-white uppercase tracking-tighter">The Investor Briefing</h2>
-                <p class="text-teal-300 max-w-2xl mx-auto text-lg italic">"Transitioning from a high-margin consultancy to a data-native diagnostic platform standard."</p>
+                <p class="text-teal-300 max-w-2xl mx-auto text-lg italic">"Transitioning from consultancy to a data-native diagnostic platform standard."</p>
             </div>
 
-            <!-- Use of Funds Row -->
+            <!-- Financials Row -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
                 <div class="p-10 bg-white/5 border border-white/10 rounded-[2rem] shadow-2xl">
                     <h3 class="text-center font-bold text-white mb-2 text-[10px] uppercase tracking-widest">Seed Allocation & Logic</h3>
@@ -216,7 +243,6 @@
                     <div class="investor-chart-container" style="position: relative;">
                         <canvas id="fundsChart"></canvas>
                     </div>
-                    <!-- Redundant Text Key for Committees -->
                     <div class="mt-8 pt-8 border-t border-white/10 grid grid-cols-1 gap-4 text-xs text-stone-400 uppercase tracking-widest font-bold">
                         <div class="flex justify-between"><span class="text-[#58bbc2]">Engineering / AI MVP</span><span>40%</span></div>
                         <div class="flex justify-between"><span class="text-white">IP & Market Reach</span><span>30%</span></div>
@@ -225,7 +251,7 @@
                 </div>
                 <div class="space-y-8">
                     <h3 class="text-3xl font-bold italic text-[#58bbc2] text-left leading-tight">Capital Deployment Strategy</h3>
-                    <p class="text-stone-300 text-lg leading-relaxed">We are seeking $30,000 in seed velocity to transition our methodology into a scalable, automated diagnostic engine.</p>
+                    <p class="text-stone-300 text-lg leading-relaxed text-left">We are seeking $30,000 in seed velocity to transition our methodology into a scalable, automated diagnostic engine.</p>
                     <div class="space-y-6">
                         <div class="flex justify-between border-b border-white/10 pb-4">
                             <div>
@@ -291,7 +317,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-4xl font-serif font-bold text-slate-900 mb-6 leading-tight">Executive Inquiry</h2>
-                    <p class="text-slate-500 text-lg leading-relaxed mb-8">
+                    <p class="text-slate-500 text-lg leading-relaxed mb-8 font-light text-left">
                         Discuss a custom structural diagnostic, keynote engagement, or workshop facilitation for your leadership core.
                     </p>
                     <div class="space-y-4">
@@ -325,7 +351,7 @@
 
     <!-- Footer -->
     <footer class="py-20 bg-stone-50 border-t border-stone-200 text-center">
-        <div class="flex flex-col items-center gap-8 text-center">
+        <div class="flex flex-col items-center gap-8 text-center px-6">
             <div class="flex items-center gap-3">
                 <div class="brand-logo-mark" style="width: 32px; height: 32px;">
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -335,7 +361,7 @@
                         <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
                     </svg>
                 </div>
-                <div class="brand-text-container text-left text-center">
+                <div class="brand-text-container text-left">
                     <div class="brand-strategic" style="font-size: 0.9rem; color: #064680;">Strategic</div>
                     <div class="brand-transformations" style="font-size: 0.45rem;">Transformations</div>
                 </div>
@@ -345,10 +371,37 @@
     </footer>
 
     <script>
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if(isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Change to X
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Change back to Hamburger
+            }
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        }
+
+        // Investor Toggles
         function toggleInvestors() {
             const section = document.getElementById('investors');
             section.classList.toggle('hidden');
             if(!section.classList.contains('hidden')) { section.scrollIntoView({ behavior: 'smooth' }); }
+        }
+
+        function toggleInvestorsMobile() {
+            closeMobileMenu();
+            toggleInvestors();
         }
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -376,22 +429,19 @@
                 }
             });
 
-            // Global Chart Defaults
             Chart.defaults.font.family = "'Urbanist', sans-serif";
             const legendDefaults = { position: 'bottom', labels: { boxWidth: 10, padding: 25, font: { weight: 'bold', size: 10 } } };
 
-            // Burnout Chart
             new Chart(document.getElementById('burnoutChart').getContext('2d'), {
                 type: 'doughnut',
                 data: { labels: ['Structural Failure', 'Functional Alignment'], datasets: [{ data: [53, 47], backgroundColor: ['#064680', '#f1f5f9'], borderWidth: 0, cutout: '75%' }] },
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: legendDefaults } }
             });
 
-            // Investor Funds Allocation (EXPLICIT WHITE LABELS)
             new Chart(document.getElementById('fundsChart').getContext('2d'), {
                 type: 'doughnut',
                 data: { 
-                    labels: ['Tech/Engineering (40%)', 'IP & Market (30%)', 'Compliance (30%)'], 
+                    labels: ['Engineering/Tech (40%)', 'IP & Market (30%)', 'Compliance (30%)'], 
                     datasets: [{ 
                         data: [40, 30, 30], 
                         backgroundColor: ['#58bbc2', '#ffffff', '#064680'], 
@@ -412,11 +462,10 @@
                 }
             });
 
-            // Investor Revenue Mix (EXPLICIT WHITE LABELS)
             new Chart(document.getElementById('revenueChart').getContext('2d'), {
                 type: 'bar',
                 data: { 
-                    labels: ['Speaking/Facilitation', 'Enterprise Audits', 'IP Licensing', 'Digital Artifacts'], 
+                    labels: ['Speaking', 'Enterprise Audits', 'IP Licensing', 'Digital Artifacts'], 
                     datasets: [{ 
                         label: 'Year 1 Forecast ($)', 
                         data: [45000, 40000, 25000, 24500], 
