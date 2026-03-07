@@ -12,13 +12,13 @@
         :root {
             --st-navy: #064680;
             --st-teal: #58bbc2;
-            --bg: #fafaf9; /* stone-50 */
+            --bg: #fafaf9;
         }
 
-        body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #0f172a; line-height: 1.6; }
+        body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #0f172a; line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
 
-        /* BRANDING BLOCK - 1:1 SYNC WITH HUB */
+        /* BRANDING BLOCK */
         .brand-logo-mark { width: 44px; height: 44px; flex-shrink: 0; }
         .brand-text-container { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
         .brand-strategic { 
@@ -38,6 +38,10 @@
         .tier-card.active .check-num { background-color: var(--st-teal); color: white; }
         
         .chart-container { position: relative; width: 100%; max-width: 650px; height: 300px; margin: 0 auto; }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu { transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out; }
+        #mobile-menu.hidden { transform: translateY(-10px); opacity: 0; pointer-events: none; display: none; }
     </style>
 </head>
 <body class="antialiased selection:bg-[#58bbc2]/30">
@@ -56,12 +60,13 @@
                             <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
                         </svg>
                     </div>
-                    <div class="brand-text-container">
+                    <div class="brand-text-container text-left">
                         <div class="brand-strategic">Strategic</div>
                         <div class="brand-transformations">Transformations</div>
                     </div>
                 </a>
 
+                <!-- Desktop Nav -->
                 <div class="hidden lg:flex space-x-10 items-center">
                     <a href="index.html" class="nav-link hover:text-[#064680]">Audit Home</a>
                     <a href="#keynotes" class="nav-link">Keynotes</a>
@@ -69,7 +74,29 @@
                     <a href="mailto:info@strategicunmasking.com" class="nav-link">Request Proposal</a>
                 </div>
 
-                <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-6 py-2.5 bg-[#064680] text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-slate-800">
+                <!-- Desktop CTA & Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="hidden sm:inline-block px-6 py-2.5 bg-[#064680] text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-slate-800">
+                        Schedule Briefing
+                    </a>
+                    
+                    <button id="mobile-menu-button" class="lg:hidden p-2 text-slate-600 hover:text-[#064680] focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Container -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-stone-200 shadow-xl overflow-hidden">
+            <div class="px-6 pt-4 pb-8 space-y-4 flex flex-col">
+                <a href="index.html" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">Audit Home</a>
+                <a href="#keynotes" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">Keynotes</a>
+                <a href="#dashboard" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">Solutions Catalog</a>
+                <a href="mailto:info@strategicunmasking.com" class="nav-link py-3 text-base">Request Proposal</a>
+                <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="w-full text-center py-4 bg-[#064680] text-white rounded-xl font-bold uppercase tracking-widest text-xs mt-4">
                     Schedule Briefing
                 </a>
             </div>
@@ -84,7 +111,7 @@
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-8 leading-[1.1]">
             Productizing <br/><span style="color: #064680" class="italic">Structural Expertise.</span>
         </h1>
-        <p class="text-xl text-slate-500 font-light mb-10 leading-relaxed">
+        <p class="text-xl text-slate-500 font-light mb-10 leading-relaxed font-light">
             The UNMASK Leadership Architecture<sup>TM</sup> translates diagnostic domain expertise into high-stakes operational results. From keynote exposure to full architectural redesign.
         </p>
     </header>
@@ -96,10 +123,10 @@
                 <div>
                     <div class="inline-block px-3 py-1 rounded bg-orange-100 text-orange-700 text-[10px] font-bold uppercase tracking-widest mb-6">The B2B Entry Point</div>
                     <h2 class="text-4xl font-serif font-bold text-slate-900 mb-6 leading-tight">Signature Keynotes & <br/>Executive Facilitation</h2>
-                    <p class="text-lg text-slate-500 mb-8 leading-relaxed">
+                    <p class="text-lg text-slate-500 mb-8 leading-relaxed font-light text-left">
                         The "Gatekeeper" engine. Our keynotes reframe the burnout conversation from personal failure to structural design flaw, opening the door for systemic transformation.
                     </p>
-                    <div class="space-y-4 mb-10">
+                    <div class="space-y-4 mb-10 text-left">
                         <div class="flex items-center gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
                             <div class="text-xl">🎤</div>
                             <div>
@@ -115,15 +142,15 @@
                             </div>
                         </div>
                     </div>
-                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-8 py-4 bg-[#064680] text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-all">Book Speaker</a>
+                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-8 py-4 bg-[#064680] text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-all block text-center sm:inline-block">Book Speaker</a>
                 </div>
                 <div class="bg-[#064680] rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-20 -mt-20"></div>
                     <h3 class="text-2xl font-serif font-bold mb-6 italic text-[#58bbc2]">The 30-Day Spark</h3>
-                    <p class="text-teal-50 text-sm mb-8 leading-relaxed">
+                    <p class="text-teal-50 text-sm mb-8 leading-relaxed text-left font-light">
                         Speaking engagements serve as the high-authority bridge to enterprise diagnostics. We use the stage to move leaders from "Wellness Management" to "Structural Architecture."
                     </p>
-                    <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/10">
+                    <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/10 text-left">
                         <div>
                             <div class="text-3xl font-bold mb-1">$3.5k - $6k</div>
                             <div class="text-[10px] font-bold uppercase tracking-widest opacity-50">Speaking Fees</div>
@@ -141,36 +168,36 @@
     <!-- The 4 Core Tiers -->
     <section id="dashboard" class="py-24 bg-stone-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
-            <h2 class="text-4xl font-serif font-bold text-slate-900 mb-4">Diagnostic & Transformation Tiers</h2>
-            <p class="text-slate-500 max-w-2xl mx-auto">Select a solution to view deliverables and structural outcomes.</p>
+            <h2 class="text-4xl font-serif font-bold text-slate-900 mb-4 text-center">Diagnostic & Transformation Tiers</h2>
+            <p class="text-slate-500 max-w-2xl mx-auto font-light">Select a solution to view deliverables and structural outcomes.</p>
         </div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" id="tierGrid">
                 <!-- Tier 1 -->
                 <div class="tier-card p-8 rounded-2xl active" data-tier="1">
                     <div class="check-num w-8 h-8 rounded-full bg-[#58bbc2] text-white flex items-center justify-center mb-6 text-xs font-bold transition-colors">01</div>
-                    <h3 class="font-serif font-bold text-xl mb-2">Starter Kit</h3>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Starter Kit</h3>
                     <div class="text-[#58bbc2] font-bold text-lg mb-4">$47</div>
                     <p class="text-xs text-slate-500 text-left">Tactical playbook for high-performance managers seeking individual recalibration.</p>
                 </div>
                 <!-- Tier 2 -->
                 <div class="tier-card p-8 rounded-2xl" data-tier="2">
                     <div class="check-num w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center mb-6 text-xs font-bold transition-colors">02</div>
-                    <h3 class="font-serif font-bold text-xl mb-2">Architecture Audit</h3>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Architecture Audit</h3>
                     <div class="text-[#58bbc2] font-bold text-lg mb-4">$7.5k - $15k</div>
-                    <p class="text-xs text-slate-500 text-left">Full-team diagnostic mapping Authority-Responsibility gaps within your leadership structure.</p>
+                    <p class="text-xs text-slate-500 text-left">Full-team diagnostic mapping Authority-Responsibility gaps within your structure.</p>
                 </div>
                 <!-- Tier 3 -->
                 <div class="tier-card p-8 rounded-2xl" data-tier="3">
                     <div class="check-num w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center mb-6 text-xs font-bold transition-colors">03</div>
-                    <h3 class="font-serif font-bold text-xl mb-2">Recalibration Intensive</h3>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Recalibration Intensive</h3>
                     <div class="text-[#58bbc2] font-bold text-lg mb-4">$35k - $55k</div>
                     <p class="text-xs text-slate-500 text-left">48-hour structural redesign and 3 months of implementation monitoring and benchmarks.</p>
                 </div>
                 <!-- Tier 4 -->
                 <div class="tier-card p-8 rounded-2xl" data-tier="4">
                     <div class="check-num w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center mb-6 text-xs font-bold transition-colors">04</div>
-                    <h3 class="font-serif font-bold text-xl mb-2">Architecture Retainer</h3>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Architecture Retainer</h3>
                     <div class="text-[#58bbc2] font-bold text-lg mb-4">$2,500 / mo</div>
                     <p class="text-xs text-slate-500 text-left">Ongoing oversight and strategic advisory as your organization scales or integrates AI.</p>
                 </div>
@@ -183,12 +210,12 @@
                     <div>
                         <div id="detailLabel" class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-[0.3em] mb-4 text-left">Tier 01: The Structural Starter Kit</div>
                         <h3 id="detailTitle" class="text-4xl font-serif font-bold mb-6 text-left">Self-Audit & Playbook</h3>
-                        <p id="detailGoal" class="text-slate-400 mb-10 text-lg text-left leading-relaxed">Goal: High-volume lead generation and individual authority building for leaders seeking immediate tools to identify structural friction.</p>
+                        <p id="detailGoal" class="text-slate-400 mb-10 text-lg text-left leading-relaxed font-light">Goal: High-volume lead generation and individual authority building for leaders seeking immediate tools to identify structural friction.</p>
                         <a href="https://stan.store/nikkicates" target="_blank" class="px-8 py-4 bg-[#58bbc2] text-[#064680] rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-white transition-colors">Access Now</a>
                     </div>
                     <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
                         <h4 class="font-bold text-white uppercase text-xs tracking-widest mb-6 border-b border-slate-700 pb-4 text-left">Key Deliverables</h4>
-                        <ul id="deliverableList" class="space-y-4 text-sm text-slate-300 text-left">
+                        <ul id="deliverableList" class="space-y-4 text-sm text-slate-300 text-left font-light">
                             <li>✓ AI Acceleration Burnout Index™ (Individual)</li>
                             <li>✓ 15-Page Digital Playbook: "Recalibrating Your Load Path"</li>
                             <li>✓ The Boundary Protocol Cheat Sheet</li>
@@ -199,35 +226,10 @@
         </div>
     </section>
 
-    <!-- ROI Case -->
-    <section id="roi" class="py-24 bg-white border-t border-stone-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                <div class="p-10 bg-stone-50 rounded-3xl border border-stone-200 shadow-xl">
-                    <h3 class="text-center font-bold text-slate-800 mb-8 text-[10px] uppercase tracking-widest">Investment vs. Cost of Inaction</h3>
-                    <div class="chart-container">
-                        <canvas id="roiChart"></canvas>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="text-4xl font-serif font-bold mb-8 text-slate-900 text-left">The Economics of Architecture</h2>
-                    <p class="text-lg text-slate-500 mb-10 text-left leading-relaxed">
-                        A single Tier 3 engagement pays for itself by preventing the $213,000 collapse of just one manager. In the AI era, structural resilience is your only scalable competitive advantage.
-                    </p>
-                    <div class="p-6 bg-[#58bbc2]/5 border-l-4 border-[#58bbc2] rounded-r-xl">
-                        <div class="font-bold text-[#064680] text-3xl">21x</div>
-                        <h4 class="font-bold text-slate-900 uppercase text-xs tracking-widest mt-1 text-left">Return on Architecture</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer class="py-24 bg-stone-50 border-t border-stone-200 text-center">
-        <div class="flex flex-col items-center gap-8">
+        <div class="flex flex-col items-center gap-8 text-center px-6">
             <div class="flex items-center gap-3">
-                <!-- Branding Group -->
                 <div class="brand-logo-mark">
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
@@ -246,64 +248,43 @@
                 <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="hover:text-[#064680] transition-colors">Schedule Briefing</a>
                 <a href="https://nikkicates.carrd.co/" target="_blank" class="hover:text-[#064680] transition-colors">Carrd Site</a>
             </div>
-            <p class="text-slate-400 text-[10px] tracking-[0.4em] uppercase">Strategic Transformations © 2026 | UNMASK. All Rights Reserved.</p>
+            <p class="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px] mt-4">Strategic Transformations © 2026 | UNMASK. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Setup ROI Chart
-            const ctxRoi = document.getElementById('roiChart').getContext('2d');
-            new Chart(ctxRoi, {
-                type: 'bar',
-                data: {
-                    labels: ['Cost of Inaction', 'Tier 2 Audit', 'Tier 3 Intensive'],
-                    datasets: [{
-                        label: 'Value ($)',
-                        data: [213000, 15000, 45000],
-                        backgroundColor: ['#ea580c', '#58bbc2', '#064680'],
-                        borderRadius: 6
-                    }]
-                },
-                options: { 
-                    responsive: true, maintainAspectRatio: false,
-                    plugins: { legend: { display: false } },
-                    scales: { y: { ticks: { callback: v => '$' + v/1000 + 'k' } } }
-                }
-            });
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
 
-            // Tier Selector Data & Logic
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if(isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+            }
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
             const tierData = {
-                "1": {
-                    label: "Tier 01: The Structural Starter Kit",
-                    title: "Self-Audit & Playbook",
-                    goal: "Goal: High-volume lead generation and individual authority building for leaders seeking immediate recalibration tools.",
-                    deliverables: ["✓ AI Acceleration Burnout Index™ (Individual)", "✓ 15-Page Digital Playbook: \"Recalibrating Your Load Path\"", "✓ The Boundary Protocol Cheat Sheet"]
-                },
-                "2": {
-                    label: "Tier 02: Architecture Audit",
-                    title: "The Diagnostic",
-                    goal: "Goal: Identify specific authority-responsibility gaps within your leadership core. Maps structural friction.",
-                    deliverables: ["✓ Full Team Structural Integrity Report", "✓ Executive Benchmarking Analysis", "✓ Recalibration Roadmap Proposal"]
-                },
-                "3": {
-                    label: "Tier 03: Recalibration Intensive",
-                    title: "The Transformation",
-                    goal: "Goal: Complete redesign of your organizational decision-rights and load-paths. Transformation through architecture.",
-                    deliverables: ["✓ 2-Day Strategic Intensive", "✓ Architecture Blueprint Design", "✓ 3 Months Structural Monitoring"]
-                },
-                "4": {
-                    label: "Tier 04: Architecture Retainer",
-                    title: "Sustained Governance",
-                    goal: "Goal: Continuous oversight for high-growth organizations integrating AI or shifting operational tempo.",
-                    deliverables: ["✓ Monthly Strain Check-ins", "✓ Quarterly Architecture Review", "✓ Priority Strategic Advisory Access"]
-                }
+                "1": { label: "Tier 01: The Structural Starter Kit", title: "Self-Audit & Playbook", goal: "Goal: High-volume lead generation and individual authority building for leaders seeking immediate tools to identify structural friction.", deliverables: ["✓ AI Acceleration Burnout Index™ (Individual)", "✓ 15-Page Digital Playbook: \"Recalibrating Your Load Path\"", "✓ The Boundary Protocol Cheat Sheet"] },
+                "2": { label: "Tier 02: Architecture Audit", title: "The Diagnostic", goal: "Goal: Identify specific authority-responsibility gaps within your leadership core. Maps structural friction.", deliverables: ["✓ Full Team Structural Integrity Report", "✓ Executive Benchmarking Analysis", "✓ Recalibration Roadmap Proposal"] },
+                "3": { label: "Tier 03: Recalibration Intensive", title: "The Transformation", goal: "Goal: Complete redesign of your organizational decision-rights and load-paths. Transformation through architecture.", deliverables: ["✓ 2-Day Strategic Intensive", "✓ Architecture Blueprint Design", "✓ 3 Months Structural Monitoring"] },
+                "4": { label: "Tier 04: Architecture Retainer", title: "Sustained Governance", goal: "Goal: Continuous oversight for high-growth organizations integrating AI or shifting operational tempo.", deliverables: ["✓ Monthly Strain Check-ins", "✓ Quarterly Architecture Review", "✓ Priority Strategic Advisory Access"] }
             };
 
             const tierCards = document.querySelectorAll('.tier-card');
             tierCards.forEach(card => {
                 card.addEventListener('click', () => {
-                    // Update UI selection
                     tierCards.forEach(c => {
                         c.classList.remove('active');
                         c.querySelector('.check-num').classList.replace('bg-[#58bbc2]', 'bg-slate-200');
@@ -312,20 +293,13 @@
                     card.classList.add('active');
                     card.querySelector('.check-num').classList.replace('bg-slate-200', 'bg-[#58bbc2]');
                     card.querySelector('.check-num').classList.replace('text-slate-500', 'text-white');
-
-                    // Update detail content
                     const data = tierData[card.getAttribute('data-tier')];
                     document.getElementById('detailLabel').innerText = data.label;
                     document.getElementById('detailTitle').innerText = data.title;
                     document.getElementById('detailGoal').innerText = data.goal;
-                    
                     const list = document.getElementById('deliverableList');
                     list.innerHTML = '';
-                    data.deliverables.forEach(d => {
-                        const li = document.createElement('li');
-                        li.innerText = d;
-                        list.appendChild(li);
-                    });
+                    data.deliverables.forEach(d => { const li = document.createElement('li'); li.innerText = d; list.appendChild(li); });
                 });
             });
         });
