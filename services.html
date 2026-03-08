@@ -35,41 +35,32 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-all group no-underline">
-                    <div class="w-11 h-11">
-                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#064680"/>
-                            <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#ac6dbf"/>
-                            <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
-                        </svg>
-                    </div>
-                    <div class="flex flex-col text-left">
-                        <div class="font-serif font-bold text-lg text-slate-900 uppercase leading-none">Strategic</div>
-                        <div class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-[0.3em]">Transformations</div>
-                    </div>
-                </a>
-                <div class="hidden lg:flex space-x-10 items-center">
-                    <a href="index.html" class="nav-link">Audit Home</a>
-                    <a href="#dashboard" class="nav-link">Tiers</a>
-                    <a href="#roi" class="nav-link">ROI</a>
-                    <a href="mailto:info@strategicunmasking.com" class="nav-link">Request Proposal</a>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between h-20 items-center">
+            <a href="index.html" class="flex items-center gap-3 no-underline group">
+                <div class="w-11 h-11">
+                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#064680"/>
+                        <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#ac6dbf"/>
+                        <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
+                    </svg>
                 </div>
-                <div class="flex items-center gap-4">
-                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-6 py-2.5 bg-[#064680] text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-slate-800">
-                        Schedule Briefing
-                    </a>
+                <div class="flex flex-col text-left">
+                    <div class="font-serif font-bold text-lg text-slate-900 uppercase leading-none">Strategic</div>
+                    <div class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-[0.3em]">Transformations</div>
                 </div>
+            </a>
+            <div class="hidden lg:flex space-x-10 items-center">
+                <a href="index.html" class="nav-link">Audit Home</a>
+                <a href="#dashboard" class="nav-link">Tiers</a>
+                <a href="#roi" class="nav-link">ROI</a>
             </div>
+            <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-6 py-2.5 bg-[#064680] text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all">Schedule Briefing</a>
         </div>
     </nav>
 
     <!-- Header Section -->
     <header class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto">
-        <div class="inline-block px-4 py-1.5 rounded-full bg-[#58bbc2]/10 text-[#064680] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
-            Solutions Catalog | Leadership Architecture
-        </div>
+        <div class="inline-block px-4 py-1.5 rounded-full bg-[#58bbc2]/10 text-[#064680] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Solutions Catalog</div>
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-8 leading-[1.1]">
             Productizing <br/><span style="color: #064680" class="italic">Structural Expertise.</span>
         </h1>
@@ -84,8 +75,8 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" id="tierGrid">
                 <!-- Tier 1 -->
                 <div class="tier-card p-8 active" data-tier="1">
-                    <div class="check-num w-8 h-8 rounded-full bg-[#58bbc2] text-white flex items-center justify-center mb-6 text-xs font-bold transition-colors">01</div>
-                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Resilience Kit</h3>
+                    <div class="check-num w-8 h-8 rounded-full bg-[#58bbc2] text-white flex items-center justify-center mb-6 text-xs font-bold">01</div>
+                    <h3 class="font-serif font-bold text-xl mb-2">Resilience Kit</h3>
                     <div class="text-[#064680] font-bold text-lg mb-4">$97.00</div>
                     <p class="text-xs text-slate-500 text-left">Tactical manual for leaders in the Squeezed Middle.</p>
                 </div>
@@ -100,15 +91,15 @@
                 <div class="tier-card p-8" data-tier="3">
                     <div class="check-num w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center mb-6 text-xs font-bold transition-colors">03</div>
                     <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Architecture Audit</h3>
-                    <div class="text-[#064680] font-bold text-lg mb-4">$7.5k - $15k</div>
-                    <p class="text-xs text-slate-500 text-left">Customized diagnostic for your core leadership team.</p>
+                    <div class="text-[#064680] font-bold text-lg mb-4">$7.5k+</div>
+                    <p class="text-xs text-slate-500 text-left">Full structural diagnostic for your core team.</p>
                 </div>
                 <!-- Tier 4 -->
                 <div class="tier-card p-8" data-tier="4">
                     <div class="check-num w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center mb-6 text-xs font-bold transition-colors">04</div>
                     <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">The Intensive</h3>
                     <div class="text-[#064680] font-bold text-lg mb-4">$35k+</div>
-                    <p class="text-xs text-slate-500 text-left">Full organizational redesign intensive and monitoring.</p>
+                    <p class="text-xs text-slate-500 text-left">Full organizational redesign and monitoring.</p>
                 </div>
             </div>
 
@@ -119,15 +110,14 @@
                     <div class="text-left">
                         <div id="detailLabel" class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-[0.3em] mb-4">Tier 01: The UNMASK Resilience Starter Kit</div>
                         <h3 id="detailTitle" class="text-4xl font-serif font-bold mb-6 text-white">Resilience Toolkit</h3>
-                        <p id="detailGoal" class="text-slate-400 mb-10 text-lg leading-relaxed font-light">Goal: Immediate authority-building. Provides the tactical manual for leaders who refuse to be structural "shock absorbers."</p>
+                        <p id="detailGoal" class="text-slate-400 mb-10 text-lg leading-relaxed font-light">Goal: Immediate authority-building and capacity protection. Provides the tactical manual for leaders who refuse to be structural "shock absorbers."</p>
                         <a id="detailLink" href="https://stan.store/nikkicates" target="_blank" class="px-8 py-4 bg-[#58bbc2] text-[#064680] rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-white transition-colors">Access Now</a>
                     </div>
                     <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700 text-left">
                         <h4 class="font-bold text-white uppercase text-xs tracking-widest mb-6 border-b border-slate-700 pb-4">Artifacts Included</h4>
                         <ul id="deliverableList" class="space-y-4 text-sm text-slate-300 font-light">
                             <li>✓ UNMASK Field Guide Vol. 1 (Digital Edition)</li>
-                            <li>✓ The Boundary Protocol: Executive Script Library</li>
-                            <li>✓ The False Urgency Audit Tool</li>
+                            <li>✓ The Boundary Protocol: Executive Scripts</li>
                             <li>✓ 30-Day Structural Reset Tracker</li>
                         </ul>
                     </div>
@@ -138,82 +128,29 @@
 
     <!-- ROI Section -->
     <section id="roi" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                <div class="text-left">
-                    <div class="text-[10px] font-bold text-[#064680] uppercase tracking-[0.3em] mb-6">The Fiscal Impact</div>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8 leading-tight">The Return on <br/><span class="italic">Structural Integrity.</span></h2>
-                    <p class="text-lg text-slate-500 mb-10 font-light">
-                        Investing in organizational architecture is a risk-mitigation strategy. We quantify the savings generated by identifying fracture points before they lead to talent collapse.
-                    </p>
-                    <div class="space-y-6">
-                        <div class="roi-stat-card">
-                            <div class="text-3xl font-bold text-[#064680] mb-1">213%</div>
-                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Turnover Tax Avoidance</div>
-                        </div>
-                        <div class="roi-stat-card">
-                            <div class="text-3xl font-bold text-[#58bbc2] mb-1">40%</div>
-                            <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Velocity Gain</div>
-                        </div>
-                    </div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="text-left">
+                <div class="text-[10px] font-bold text-[#064680] uppercase tracking-[0.3em] mb-6">The Fiscal Impact</div>
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8 leading-tight">The Return on <br/><span class="italic">Structural Integrity.</span></h2>
+                <div class="space-y-6">
+                    <div class="roi-stat-card"><div class="text-3xl font-bold text-[#064680]">213%</div><p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Replacement Cost Avoidance</p></div>
+                    <div class="roi-stat-card"><div class="text-3xl font-bold text-[#58bbc2]">40%</div><p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Velocity Gain</p></div>
                 </div>
-                <div class="p-10 bg-slate-900 rounded-[3rem] border border-slate-800">
-                    <h3 class="text-center font-bold text-white mb-8 text-[10px] uppercase tracking-widest">Attrition Risk vs. Structural Investment</h3>
-                    <div class="chart-container"><canvas id="roiChart"></canvas></div>
-                </div>
+            </div>
+            <div class="p-10 bg-slate-900 rounded-[3rem] border border-slate-800">
+                <h3 class="text-center font-bold text-white mb-8 text-[10px] uppercase tracking-widest">Attrition Risk vs. Structural Investment</h3>
+                <div class="chart-container"><canvas id="roiChart"></canvas></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-24 bg-stone-50 border-t border-stone-200 text-center">
-        <div class="flex flex-col items-center gap-6">
-            <div class="w-11 h-11">
-                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#064680"/>
-                    <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#ac6dbf"/>
-                    <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
-                </svg>
-            </div>
-            <p class="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px]">Strategic Transformations © 2026 | UNMASK. All Rights Reserved.</p>
-        </div>
-    </footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const tierData = {
-                "1": { 
-                    label: "Tier 01: The UNMASK Resilience Starter Kit", 
-                    title: "Resilience Toolkit", 
-                    goal: "Goal: Immediate authority-building. Provides the tactical manual for leaders who refuse to be structural 'shock absorbers.'", 
-                    btnText: "Access Now",
-                    btnUrl: "https://stan.store/nikkicates",
-                    deliverables: ["✓ UNMASK Field Guide Vol. 1 (Digital Edition)", "✓ The Boundary Protocol: Executive Script Library", "✓ The False Urgency Audit Tool", "✓ 30-Day Structural Reset Tracker"] 
-                },
-                "2": { 
-                    label: "Tier 02: Org Readiness Pack", 
-                    title: "The Leadership Diagnostic", 
-                    goal: "Goal: Equipping People Ops with a proprietary diagnostic system to identify systemic fracture points across departments.", 
-                    btnText: "Access Now",
-                    btnUrl: "https://stan.store/nikkicates",
-                    deliverables: ["✓ Access to the AI Structural Audit Dashboard", "✓ Executive Briefing Deck Template", "✓ Structural Risk Scan Protocol", "✓ 30-Min Virtual Implementation Brief"] 
-                },
-                "3": { 
-                    label: "Tier 03: Architecture Audit", 
-                    title: "The Team Diagnostic", 
-                    goal: "Goal: A technical map of Authority-Responsibility gaps within your core team. Professional briefing for the C-Suite.", 
-                    btnText: "Schedule a Briefing",
-                    btnUrl: "https://calendar.app.google/M75xXcnUFNTKFcSe6",
-                    deliverables: ["✓ Full Team Structural Integrity Audit", "✓ Fracture Point Analysis Report", "✓ 90-Minute Executive Debrief Session", "✓ Immediate Recalibration Roadmap"] 
-                },
-                "4": { 
-                    label: "Tier 04: The Recalibration Intensive", 
-                    title: "Full Organizational Transformation", 
-                    goal: "Goal: Total structural redesign of power and decision-rights for mission delivery and scale-up transitions.", 
-                    btnText: "Schedule a Briefing",
-                    btnUrl: "https://calendar.app.google/M75xXcnUFNTKFcSe6",
-                    deliverables: ["✓ 2-Day Strategic Leadership Intensive", "✓ Full Architecture Blueprint Redesign", "✓ 3 Months Structural Monitoring", "✓ Custom Enterprise Benchmarking"] 
-                }
+                "1": { label: "Tier 01: The UNMASK Resilience Starter Kit", title: "Resilience Toolkit", goal: "Goal: Immediate authority-building. Provides the manual for leaders who refuse to be structural 'shock absorbers.'", btnText: "Access Now", btnUrl: "https://stan.store/nikkicates", deliverables: ["✓ UNMASK Field Guide Vol. 1", "✓ The Boundary Protocol: Executive Scripts", "✓ 30-Day Structural Reset Tracker"] },
+                "2": { label: "Tier 02: Org Readiness Pack", title: "Audit Engine Access", goal: "Goal: Equipping People Ops with the proprietary diagnostic engine to map fracture points.", btnText: "Access Now", btnUrl: "https://stan.store/nikkicates", deliverables: ["✓ Access to the AI Structural Audit Dashboard", "✓ Executive Briefing Template", "✓ Structural Risk Scan Protocol"] },
+                "3": { label: "Tier 03: Architecture Audit", title: "Team Diagnostic", goal: "Goal: A technical map of Authority-Responsibility gaps within your core team.", btnText: "Schedule a Briefing", btnUrl: "https://calendar.app.google/M75xXcnUFNTKFcSe6", deliverables: ["✓ Full Team Integrity Audit", "✓ Fracture Point Analysis Report", "✓ 90-Minute Executive Debrief Session"] },
+                "4": { label: "Tier 04: The Intensive", title: "Full Redesign", goal: "Goal: Total structural overhaul of power and decision-rights for high-stakes mission delivery.", btnText: "Schedule a Briefing", btnUrl: "https://calendar.app.google/M75xXcnUFNTKFcSe6", deliverables: ["✓ 2-Day Leadership Intensive", "✓ Full Architecture Blueprint", "✓ 3 Months Structural Monitoring"] }
             };
 
             const tierCards = document.querySelectorAll('.tier-card');
@@ -222,21 +159,16 @@
                     tierCards.forEach(c => {
                         c.classList.remove('active');
                         c.querySelector('.check-num').classList.replace('bg-[#58bbc2]', 'bg-slate-200');
-                        c.querySelector('.check-num').classList.replace('text-white', 'text-slate-500');
                     });
                     card.classList.add('active');
                     card.querySelector('.check-num').classList.replace('bg-slate-200', 'bg-[#58bbc2]');
-                    card.querySelector('.check-num').classList.replace('text-slate-500', 'text-white');
-                    
                     const data = tierData[card.getAttribute('data-tier')];
                     document.getElementById('detailLabel').innerText = data.label;
                     document.getElementById('detailTitle').innerText = data.title;
                     document.getElementById('detailGoal').innerText = data.goal;
-                    
-                    const linkBtn = document.getElementById('detailLink');
-                    linkBtn.innerText = data.btnText;
-                    linkBtn.href = data.btnUrl;
-                    
+                    const btn = document.getElementById('detailLink');
+                    btn.innerText = data.btnText;
+                    btn.href = data.btnUrl;
                     const list = document.getElementById('deliverableList');
                     list.innerHTML = '';
                     data.deliverables.forEach(d => { const li = document.createElement('li'); li.innerText = d; list.appendChild(li); });
@@ -249,16 +181,11 @@
                 data: {
                     labels: ['M1', 'M3', 'M6', 'M12'],
                     datasets: [
-                        { label: 'Risk Cost', data: [20, 60, 140, 310], borderColor: '#ea580c', borderWidth: 2, fill: false, tension: 0.4 },
-                        { label: 'Structural Path', data: [15, 20, 25, 35], borderColor: '#58bbc2', borderWidth: 3, fill: false, tension: 0.4 }
+                        { label: 'Risk Cost', data: [20, 60, 140, 310], borderColor: '#ea580c', borderWidth: 2, tension: 0.4 },
+                        { label: 'Structural Path', data: [15, 20, 25, 35], borderColor: '#58bbc2', borderWidth: 3, tension: 0.4 }
                     ]
                 },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: { y: { display: false }, x: { grid: { display: false }, ticks: { color: '#ffffff', font: { size: 10 } } } },
-                    plugins: { legend: { position: 'bottom', labels: { color: '#ffffff', font: { size: 10, weight: 'bold' } } } }
-                }
+                options: { responsive: true, maintainAspectRatio: false, scales: { y: { display: false }, x: { grid: { display: false }, ticks: { color: '#ffffff', font: { size: 10 } } } }, plugins: { legend: { position: 'bottom', labels: { color: '#ffffff', font: { size: 10 } } } } }
             });
         });
     </script>
