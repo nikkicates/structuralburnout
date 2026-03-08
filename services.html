@@ -18,30 +18,19 @@
         body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #0f172a; line-height: 1.6; overflow-x: hidden; }
         h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
 
-        /* BRANDING BLOCK */
         .brand-logo-mark { width: 44px; height: 44px; flex-shrink: 0; }
         .brand-text-container { display: flex; flex-direction: column; justify-content: center; line-height: 1.1; }
-        .brand-strategic { 
-            font-family: 'Lora', serif; font-weight: 700; font-size: 1.15rem; 
-            color: var(--st-navy); text-transform: uppercase; margin-bottom: 1px;
-        }
-        .brand-transformations { 
-            font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 0.55rem; 
-            color: var(--st-teal); letter-spacing: 0.35em; text-transform: uppercase;
-        }
+        .brand-strategic { font-family: 'Lora', serif; font-weight: 700; font-size: 1.15rem; color: var(--st-navy); text-transform: uppercase; margin-bottom: 1px; }
+        .brand-transformations { font-family: 'Urbanist', sans-serif; font-weight: 700; font-size: 0.55rem; color: var(--st-teal); letter-spacing: 0.35em; text-transform: uppercase; }
 
         .nav-link { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s; color: #64748b; }
         .nav-link:hover { color: var(--st-navy); }
 
-        .tier-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border: 1px solid #e2e8f0; background: white; }
+        .tier-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; border: 1px solid #e2e8f0; background: white; border-radius: 1.5rem; }
         .tier-card.active { border-color: var(--st-teal); transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); }
         .tier-card.active .check-num { background-color: var(--st-teal); color: white; }
         
         .chart-container { position: relative; width: 100%; max-width: 650px; height: 300px; margin: 0 auto; }
-
-        /* Mobile Menu Transitions */
-        #mobile-menu { transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out; }
-        #mobile-menu.hidden { transform: translateY(-10px); opacity: 0; pointer-events: none; display: none; }
     </style>
 </head>
 <body class="antialiased selection:bg-[#58bbc2]/30">
@@ -50,7 +39,6 @@
     <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Branding Group -->
                 <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-all group no-underline">
                     <div class="brand-logo-mark group-hover:rotate-6 transition-transform">
                         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -65,40 +53,17 @@
                         <div class="brand-transformations">Transformations</div>
                     </div>
                 </a>
-
-                <!-- Desktop Nav -->
                 <div class="hidden lg:flex space-x-10 items-center">
                     <a href="index.html" class="nav-link hover:text-[#064680]">Audit Home</a>
-                    <a href="#keynotes" class="nav-link">Keynotes</a>
+                    <a href="index.html#crisis" class="nav-link">The Crisis</a>
                     <a href="#dashboard" class="nav-link" style="color: var(--st-navy); border-bottom: 2px solid var(--st-navy); padding-bottom: 4px;">Solutions</a>
                     <a href="mailto:info@strategicunmasking.com" class="nav-link">Request Proposal</a>
                 </div>
-
-                <!-- Desktop CTA & Mobile Toggle -->
                 <div class="flex items-center gap-4">
-                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="hidden sm:inline-block px-6 py-2.5 bg-[#064680] text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-slate-800">
+                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-6 py-2.5 bg-[#064680] text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-slate-800">
                         Schedule Briefing
                     </a>
-                    
-                    <button id="mobile-menu-button" class="lg:hidden p-2 text-slate-600 hover:text-[#064680] focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                        </svg>
-                    </button>
                 </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Container -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-stone-200 shadow-xl overflow-hidden">
-            <div class="px-6 pt-4 pb-8 space-y-4 flex flex-col">
-                <a href="index.html" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">Audit Home</a>
-                <a href="#keynotes" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">Keynotes</a>
-                <a href="#dashboard" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">Solutions Catalog</a>
-                <a href="mailto:info@strategicunmasking.com" class="nav-link py-3 text-base">Request Proposal</a>
-                <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="w-full text-center py-4 bg-[#064680] text-white rounded-xl font-bold uppercase tracking-widest text-xs mt-4">
-                    Schedule Briefing
-                </a>
             </div>
         </div>
     </nav>
@@ -106,119 +71,67 @@
     <!-- Header Section -->
     <header class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto">
         <div class="inline-block px-4 py-1.5 rounded-full bg-[#58bbc2]/10 text-[#064680] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
-            Service Solutions | Leadership Architecture
+            Solutions Catalog | Leadership Architecture
         </div>
         <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-8 leading-[1.1]">
             Productizing <br/><span style="color: #064680" class="italic">Structural Expertise.</span>
         </h1>
         <p class="text-xl text-slate-500 font-light mb-10 leading-relaxed font-light">
-            The UNMASK Leadership Architecture<sup>TM</sup> translates diagnostic domain expertise into high-stakes operational results. From keynote exposure to full architectural redesign.
+            We translate organizational diagnostics into high-stakes operational results. From individual resilience toolkits to full enterprise architectural redesign.
         </p>
     </header>
 
-    <!-- Entry Point: Speaking & Facilitation -->
-    <section id="keynotes" class="py-24 bg-white border-y border-stone-100">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="inline-block px-3 py-1 rounded bg-orange-100 text-orange-700 text-[10px] font-bold uppercase tracking-widest mb-6">The B2B Entry Point</div>
-                    <h2 class="text-4xl font-serif font-bold text-slate-900 mb-6 leading-tight">Signature Keynotes & <br/>Executive Facilitation</h2>
-                    <p class="text-lg text-slate-500 mb-8 leading-relaxed font-light text-left">
-                        The "Gatekeeper" engine. Our keynotes reframe the burnout conversation from personal failure to structural design flaw, opening the door for systemic transformation.
-                    </p>
-                    <div class="space-y-4 mb-10 text-left">
-                        <div class="flex items-center gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
-                            <div class="text-xl">🎤</div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm uppercase tracking-widest">Signature Keynote</h4>
-                                <p class="text-xs text-slate-400">Burnout is a Design Flaw: Redesigning Power.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-4 p-4 bg-stone-50 rounded-xl border border-stone-200">
-                            <div class="text-xl">🤝</div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm uppercase tracking-widest">Executive Session</h4>
-                                <p class="text-xs text-slate-400">Structural Stress-Testing for the C-Suite.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-8 py-4 bg-[#064680] text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-slate-800 transition-all block text-center sm:inline-block">Book Speaker</a>
-                </div>
-                <div class="bg-[#064680] rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-20 -mt-20"></div>
-                    <h3 class="text-2xl font-serif font-bold mb-6 italic text-[#58bbc2]">The 30-Day Spark</h3>
-                    <p class="text-teal-50 text-sm mb-8 leading-relaxed text-left font-light">
-                        Speaking engagements serve as the high-authority bridge to enterprise diagnostics. We use the stage to move leaders from "Wellness Management" to "Structural Architecture."
-                    </p>
-                    <div class="grid grid-cols-2 gap-6 pt-6 border-t border-white/10 text-left">
-                        <div>
-                            <div class="text-3xl font-bold mb-1">$3.5k - $6k</div>
-                            <div class="text-[10px] font-bold uppercase tracking-widest opacity-50">Speaking Fees</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-bold mb-1">100%</div>
-                            <div class="text-[10px] font-bold uppercase tracking-widest opacity-50">TCV Upsell Rate</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The 4 Core Tiers -->
-    <section id="dashboard" class="py-24 bg-stone-50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center mb-16">
-            <h2 class="text-4xl font-serif font-bold text-slate-900 mb-4 text-center">Diagnostic & Transformation Tiers</h2>
-            <p class="text-slate-500 max-w-2xl mx-auto font-light">Select a solution to view deliverables and structural outcomes.</p>
-        </div>
+    <!-- Tiers Section -->
+    <section id="dashboard" class="py-24 bg-stone-50 border-y border-stone-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16" id="tierGrid">
                 <!-- Tier 1 -->
-                <div class="tier-card p-8 rounded-2xl active" data-tier="1">
+                <div class="tier-card p-8 active" data-tier="1">
                     <div class="check-num w-8 h-8 rounded-full bg-[#58bbc2] text-white flex items-center justify-center mb-6 text-xs font-bold transition-colors">01</div>
-                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Starter Kit</h3>
-                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$47</div>
-                    <p class="text-xs text-slate-500 text-left">Tactical playbook for high-performance managers seeking individual recalibration.</p>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Resilience Kit</h3>
+                    <div class="text-[#064680] font-bold text-lg mb-4">$97</div>
+                    <p class="text-xs text-slate-500 text-left">Tactical AI-era protocols for high-performance individual leaders.</p>
                 </div>
                 <!-- Tier 2 -->
-                <div class="tier-card p-8 rounded-2xl" data-tier="2">
+                <div class="tier-card p-8" data-tier="2">
                     <div class="check-num w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center mb-6 text-xs font-bold transition-colors">02</div>
-                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Architecture Audit</h3>
-                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$7.5k - $15k</div>
-                    <p class="text-xs text-slate-500 text-left">Full-team diagnostic mapping Authority-Responsibility gaps within your structure.</p>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Org Readiness</h3>
+                    <div class="text-[#064680] font-bold text-lg mb-4">$297</div>
+                    <p class="text-xs text-slate-500 text-left">The leadership diagnostic engine for People Ops and Team Directors.</p>
                 </div>
                 <!-- Tier 3 -->
-                <div class="tier-card p-8 rounded-2xl" data-tier="3">
+                <div class="tier-card p-8" data-tier="3">
                     <div class="check-num w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center mb-6 text-xs font-bold transition-colors">03</div>
-                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Recalibration Intensive</h3>
-                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$35k - $55k</div>
-                    <p class="text-xs text-slate-500 text-left">48-hour structural redesign and 3 months of implementation monitoring and benchmarks.</p>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Architecture Audit</h3>
+                    <div class="text-[#064680] font-bold text-lg mb-4">$7.5k - $15k</div>
+                    <p class="text-xs text-slate-500 text-left">A full structural diagnostic of Authority-Responsibility gaps for your core team.</p>
                 </div>
                 <!-- Tier 4 -->
-                <div class="tier-card p-8 rounded-2xl" data-tier="4">
+                <div class="tier-card p-8" data-tier="4">
                     <div class="check-num w-8 h-8 rounded-full bg-slate-200 text-slate-500 flex items-center justify-center mb-6 text-xs font-bold transition-colors">04</div>
-                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">Architecture Retainer</h3>
-                    <div class="text-[#58bbc2] font-bold text-lg mb-4">$2,500 / mo</div>
-                    <p class="text-xs text-slate-500 text-left">Ongoing oversight and strategic advisory as your organization scales or integrates AI.</p>
+                    <h3 class="font-serif font-bold text-xl mb-2 text-slate-900">The Intensive</h3>
+                    <div class="text-[#064680] font-bold text-lg mb-4">$35k+</div>
+                    <p class="text-xs text-slate-500 text-left">Full organizational redesign intensive and 3 months of structural monitoring.</p>
                 </div>
             </div>
 
-            <!-- Dynamic Detail Block -->
-            <div id="tierDetails" class="bg-slate-900 text-white rounded-[2.5rem] p-10 md:p-16 relative overflow-hidden shadow-2xl">
+            <!-- Detail Block -->
+            <div id="tierDetails" class="bg-slate-900 text-white rounded-[3rem] p-10 md:p-16 relative overflow-hidden shadow-2xl">
                 <div class="absolute top-0 right-0 w-64 h-64 bg-[#58bbc2]/10 rounded-full blur-[100px] pointer-events-none"></div>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
                     <div>
-                        <div id="detailLabel" class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-[0.3em] mb-4 text-left">Tier 01: The Structural Starter Kit</div>
-                        <h3 id="detailTitle" class="text-4xl font-serif font-bold mb-6 text-left">Self-Audit & Playbook</h3>
-                        <p id="detailGoal" class="text-slate-400 mb-10 text-lg text-left leading-relaxed font-light">Goal: High-volume lead generation and individual authority building for leaders seeking immediate tools to identify structural friction.</p>
-                        <a href="https://stan.store/nikkicates" target="_blank" class="px-8 py-4 bg-[#58bbc2] text-[#064680] rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-white transition-colors">Access Now</a>
+                        <div id="detailLabel" class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-[0.3em] mb-4 text-left">Tier 01: The Structural Resilience Kit</div>
+                        <h3 id="detailTitle" class="text-4xl font-serif font-bold mb-6 text-left">Individual Resilience Toolkit</h3>
+                        <p id="detailGoal" class="text-slate-400 mb-10 text-lg text-left leading-relaxed font-light">Goal: Immediate authority-building and capacity protection. Provides the specific "Unbothered" protocols for individuals navigating the Squeezed Middle.</p>
+                        <a href="https://stan.store/nikkicates" target="_blank" class="px-8 py-4 bg-[#58bbc2] text-[#064680] rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-white transition-colors">Get the Toolkit</a>
                     </div>
                     <div class="bg-slate-800 p-8 rounded-2xl border border-slate-700">
-                        <h4 class="font-bold text-white uppercase text-xs tracking-widest mb-6 border-b border-slate-700 pb-4 text-left">Key Deliverables</h4>
+                        <h4 class="font-bold text-white uppercase text-xs tracking-widest mb-6 border-b border-slate-700 pb-4 text-left">Key Artifacts Included</h4>
                         <ul id="deliverableList" class="space-y-4 text-sm text-slate-300 text-left font-light">
-                            <li>✓ AI Acceleration Burnout Index™ (Individual)</li>
-                            <li>✓ 15-Page Digital Playbook: "Recalibrating Your Load Path"</li>
-                            <li>✓ The Boundary Protocol Cheat Sheet</li>
+                            <li>✓ The AI-Human Oversight Protocol (Time Recalibration)</li>
+                            <li>✓ The Boundary Protocol: Executive Script Library</li>
+                            <li>✓ 30-Day Structural Reset Tracker</li>
+                            <li>✓ R:A Ratio Calculation Sheet (Personal)</li>
                         </ul>
                     </div>
                 </div>
@@ -227,59 +140,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-24 bg-stone-50 border-t border-stone-200 text-center">
-        <div class="flex flex-col items-center gap-8 text-center px-6">
-            <div class="flex items-center gap-3">
-                <div class="brand-logo-mark">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
-                        <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#a855f7" fill-opacity="0.8"/>
-                        <path d="M60 35L77.32 45V65L60 75L42.68 65V45L60 35Z" stroke="#064680" stroke-width="2.5"/>
-                        <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
-                    </svg>
-                </div>
-                <div class="brand-text-container text-left">
-                    <div class="brand-strategic" style="color: #064680;">Strategic</div>
-                    <div class="brand-transformations">Transformations</div>
-                </div>
+    <footer class="py-24 bg-white text-center">
+        <div class="flex flex-col items-center gap-6">
+            <div class="brand-logo-mark">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
+                    <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#a855f7" fill-opacity="0.8"/>
+                    <path d="M60 35L77.32 45V65L60 75L42.68 65V45L60 35Z" stroke="#064680" stroke-width="2.5"/>
+                    <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
+                </svg>
             </div>
-            <div class="flex flex-wrap justify-center gap-8 text-[10px] font-bold uppercase tracking-widest text-slate-400">
-                <a href="mailto:info@strategicunmasking.com" class="hover:text-[#064680] transition-colors">Request a Proposal</a>
-                <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="hover:text-[#064680] transition-colors">Schedule Briefing</a>
-                <a href="https://nikkicates.carrd.co/" target="_blank" class="hover:text-[#064680] transition-colors">Carrd Site</a>
-            </div>
-            <p class="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px] mt-4">Strategic Transformations © 2026 | UNMASK. All Rights Reserved.</p>
+            <p class="text-slate-400 font-bold uppercase tracking-[0.3em] text-[10px]">Strategic Transformations © 2026 | UNMASK. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Logic
-        const menuBtn = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        menuBtn.addEventListener('click', () => {
-            const isHidden = mobileMenu.classList.contains('hidden');
-            if(isHidden) {
-                mobileMenu.classList.remove('hidden');
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-            } else {
-                mobileMenu.classList.add('hidden');
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-            }
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.add('hidden');
-            menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
             const tierData = {
-                "1": { label: "Tier 01: The Structural Starter Kit", title: "Self-Audit & Playbook", goal: "Goal: High-volume lead generation and individual authority building for leaders seeking immediate tools to identify structural friction.", deliverables: ["✓ AI Acceleration Burnout Index™ (Individual)", "✓ 15-Page Digital Playbook: \"Recalibrating Your Load Path\"", "✓ The Boundary Protocol Cheat Sheet"] },
-                "2": { label: "Tier 02: Architecture Audit", title: "The Diagnostic", goal: "Goal: Identify specific authority-responsibility gaps within your leadership core. Maps structural friction.", deliverables: ["✓ Full Team Structural Integrity Report", "✓ Executive Benchmarking Analysis", "✓ Recalibration Roadmap Proposal"] },
-                "3": { label: "Tier 03: Recalibration Intensive", title: "The Transformation", goal: "Goal: Complete redesign of your organizational decision-rights and load-paths. Transformation through architecture.", deliverables: ["✓ 2-Day Strategic Intensive", "✓ Architecture Blueprint Design", "✓ 3 Months Structural Monitoring"] },
-                "4": { label: "Tier 04: Architecture Retainer", title: "Sustained Governance", goal: "Goal: Continuous oversight for high-growth organizations integrating AI or shifting operational tempo.", deliverables: ["✓ Monthly Strain Check-ins", "✓ Quarterly Architecture Review", "✓ Priority Strategic Advisory Access"] }
+                "1": { label: "Tier 01: The Structural Resilience Kit", title: "Individual Resilience Toolkit", goal: "Goal: Immediate authority-building and capacity protection. Provides the specific 'Unbothered' protocols for individuals navigating the Squeezed Middle.", deliverables: ["✓ The AI-Human Oversight Protocol (Time Recalibration)", "✓ The Boundary Protocol: Executive Script Library", "✓ 30-Day Structural Reset Tracker", "✓ R:A Ratio Calculation Sheet (Personal)"] },
+                "2": { label: "Tier 02: The Org Readiness Pack", title: "The Leadership Diagnostic", goal: "Goal: Equipping Team Leads and People Ops with the logic to audit their own departments. Focuses on collective structural integrity.", deliverables: ["✓ AI Audit Agent Scoring Logic (Team Level)", "✓ Executive Briefing Deck Template", "✓ Structural Risk Scan Protocol", "✓ 30-Min Virtual Implementation Brief"] },
+                "3": { label: "Tier 03: Architecture Audit", title: "The Team Diagnostic", goal: "Goal: A technical map of Authority-Responsibility gaps within your core team. Includes professional presentation of findings to the C-Suite.", deliverables: ["✓ Full Team Structural Integrity Audit", "✓ Fracture Point Analysis Report", "✓ 90-Minute Executive Debrief Session", "✓ Immediate Recalibration Roadmap"] },
+                "4": { label: "Tier 04: The Recalibration Intensive", title: "Full Organizational Transformation", goal: "Goal: Total structural redesign of power and decision-rights. Designed for high-stakes mission delivery.", deliverables: ["✓ 2-Day Strategic Leadership Intensive", "✓ Full Architecture Blueprint Redesign", "✓ 3 Months Structural Monitoring", "✓ Custom Enterprise Benchmarking"] }
             };
 
             const tierCards = document.querySelectorAll('.tier-card');
