@@ -52,9 +52,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: clamp(1.5rem, 4vw, 3rem);
-            padding-bottom: 200px; /* generous room so quote fully clears nav */
+            justify-content: flex-start;
+            padding: clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem) 0;
+            padding-bottom: clamp(220px, 28vh, 280px);
+            overflow: hidden;
             opacity: 0;
             transform: translateY(28px);
             pointer-events: none;
@@ -156,8 +157,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 0 1rem 1.5rem;
-            background: linear-gradient(to top, rgba(7,14,36,0.98) 70%, transparent);
+            padding: 2.5rem 1rem 1.75rem;
+            background: linear-gradient(to top, rgba(7,14,36,1) 55%, rgba(7,14,36,0.85) 80%, transparent);
         }
 
         /* Counter row */
@@ -220,12 +221,21 @@
 
         /* ── RESPONSIVE ADJUSTMENTS ───────────────────── */
         @media (max-height: 650px) {
-            .slide { padding-bottom: 160px; }
-            .graphic-wrap { max-width: 380px; }
+            .slide { padding-bottom: 180px; }
+            .graphic-wrap { max-width: 340px; }
+            .slide-title { font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 1rem; }
         }
 
         @media (min-width: 768px) {
-            .slide { padding-bottom: 180px; }
+            .slide { padding-bottom: clamp(240px, 26vh, 300px); }
+        }
+
+        @media (min-width: 1024px) {
+            .slide { 
+                justify-content: center;
+                padding-top: 2rem;
+                padding-bottom: clamp(200px, 22vh, 260px);
+            }
         }
     </style>
 </head>
@@ -286,36 +296,34 @@
         <div class="slide-label">Diagnostic Model 02</div>
         <h2 class="slide-title">The Authority Gap Index™</h2>
 
-        <div class="graphic-wrap" style="max-width:420px;">
-            <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+        <div class="graphic-wrap" style="max-width:320px;">
+            <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg">
                 <!-- Baseline -->
-                <line x1="40" y1="240" x2="380" y2="240" stroke="#1e293b" stroke-width="2"/>
+                <line x1="40" y1="210" x2="380" y2="210" stroke="#1e293b" stroke-width="2"/>
 
-                <!-- Responsibility bar (full height = 200px tall) -->
-                <rect x="80" y="40" width="90" height="200" rx="6" fill="#1e293b"/>
+                <!-- Responsibility bar (full height = 170px) -->
+                <rect x="80" y="40" width="90" height="170" rx="6" fill="#1e293b"/>
                 <rect x="80" y="40" width="90" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
                 <text x="125" y="30" text-anchor="middle" fill="#64748b" font-size="11" font-weight="900" letter-spacing="1">RESPONSIBILITY</text>
-                <text x="125" y="270" text-anchor="middle" fill="white" font-size="22" font-weight="900">100%</text>
+                <text x="125" y="235" text-anchor="middle" fill="white" font-size="22" font-weight="900">100%</text>
 
-                <!-- Authority bar (30% of 200 = 60px tall, so top at 240-60=180) -->
-                <rect x="250" y="180" width="90" height="60" rx="6" fill="#58bbc2"/>
-                <!-- Glow effect via two overlapping rects -->
-                <rect x="250" y="180" width="90" height="60" rx="6" fill="rgba(88,187,194,0.3)" style="filter:blur(8px);"/>
-                <rect x="250" y="180" width="90" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
-                <text x="295" y="170" text-anchor="middle" fill="#58bbc2" font-size="11" font-weight="900" letter-spacing="1">AUTHORITY</text>
-                <text x="295" y="270" text-anchor="middle" fill="#58bbc2" font-size="22" font-weight="900">30%</text>
+                <!-- Authority bar (30% of 170 = 51px, top at 210-51=159) -->
+                <rect x="250" y="159" width="90" height="51" rx="6" fill="#58bbc2"/>
+                <rect x="250" y="159" width="90" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
+                <text x="295" y="149" text-anchor="middle" fill="#58bbc2" font-size="11" font-weight="900" letter-spacing="1">AUTHORITY</text>
+                <text x="295" y="235" text-anchor="middle" fill="#58bbc2" font-size="22" font-weight="900">30%</text>
 
-                <!-- Gap annotation arrow -->
+                <!-- Gap annotation -->
                 <line x1="195" y1="40" x2="225" y2="40" stroke="rgba(244,63,94,0.5)" stroke-width="1.5" stroke-dasharray="4,3"/>
-                <line x1="195" y1="180" x2="225" y2="180" stroke="rgba(244,63,94,0.5)" stroke-width="1.5" stroke-dasharray="4,3"/>
-                <line x1="210" y1="45" x2="210" y2="175" stroke="rgba(244,63,94,0.6)" stroke-width="1.5"/>
+                <line x1="195" y1="159" x2="225" y2="159" stroke="rgba(244,63,94,0.5)" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <line x1="210" y1="45" x2="210" y2="154" stroke="rgba(244,63,94,0.6)" stroke-width="1.5"/>
                 <polygon points="204,50 210,38 216,50" fill="rgba(244,63,94,0.7)"/>
-                <polygon points="204,170 210,182 216,170" fill="rgba(244,63,94,0.7)"/>
-                <text x="215" y="115" fill="#f43f5e" font-size="10" font-weight="900" letter-spacing="1">GAP</text>
+                <polygon points="204,149 210,161 216,149" fill="rgba(244,63,94,0.7)"/>
+                <text x="215" y="100" fill="#f43f5e" font-size="10" font-weight="900" letter-spacing="1">GAP</text>
             </svg>
         </div>
 
-        <p class="quote">
+        <p class="quote" style="margin-top:0.75rem;">
             "We pay leaders for 100% responsibility, but structurally restrict them to 30% authority. This gap is where your <strong>payroll leaks</strong>."
         </p>
     </div>
