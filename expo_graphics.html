@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNMASK | Signature Visuals Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&family=Urbanist:wght@900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #070e24; color: white; font-family: 'Urbanist', sans-serif; overflow: hidden; }
+        .graphic-card { display: none; height: 100vh; width: 100vw; flex-direction: column; align-items: center; justify-content: center; padding: 40px; }
+        .active { display: flex; animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .font-serif { font-family: 'Lora', serif; }
+        .nav-btn { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); transition: all 0.2s; }
+        .nav-btn.active-btn { background: #58bbc2; color: #070e24; box-shadow: 0 0 15px rgba(88,187,194,0.4); }
+    </style>
+</head>
+<body>
 
+    <!-- Navigation Overlay (Fixed at bottom for easy thumb access) -->
+    <div class="fixed bottom-10 left-1/2 -translate-x-1/2 flex gap-6 z-50 bg-black/60 backdrop-blur-xl p-3 rounded-full border border-white/10 shadow-2xl">
+        <button onclick="showGraphic(1)" id="btn1" class="nav-btn active-btn w-14 h-14 rounded-full flex items-center justify-center text-sm font-black transition-all active:scale-90">01</button>
+        <button onclick="showGraphic(2)" id="btn2" class="nav-btn w-14 h-14 rounded-full flex items-center justify-center text-sm font-black transition-all active:scale-90">02</button>
+        <button onclick="showGraphic(3)" id="btn3" class="nav-btn w-14 h-14 rounded-full flex items-center justify-center text-sm font-black transition-all active:scale-90">03</button>
+    </div>
+
+    <!-- GRAPHIC 1: THE STRAIN TRANSFER FUNNEL -->
+    <div id="g1" class="graphic-card active">
+        <div class="text-[10px] font-black uppercase tracking-[0.5em] text-[#58bbc2] mb-4">Diagnostic Model 01</div>
+        <h2 class="text-5xl font-serif italic text-white mb-16">The Strain Transfer Funnel</h2>
+        <svg width="600" height="400" viewBox="0 0 600 400" class="max-w-full drop-shadow-2xl">
+            <!-- Funnel Shell -->
+            <path d="M50 50 L550 50 L350 350 L250 350 Z" fill="none" stroke="#1e293b" stroke-width="2"/>
+            <!-- Top Arrows (Mandates) -->
+            <path d="M100 20 L100 70 M300 20 L300 70 M500 20 L500 70" stroke="white" stroke-width="4" stroke-linecap="round"/>
+            <text x="300" y="15" fill="#64748b" text-anchor="middle" font-size="12" font-weight="900" class="uppercase tracking-widest">Strategic Mandates</text>
+            
+            <!-- Mid Arrows (Transfer) -->
+            <path d="M250 150 L300 220 L350 150" fill="none" stroke="#58bbc2" stroke-width="8" opacity="0.6"/>
+            
+            <!-- Bottom Pressure -->
+            <circle cx="300" cy="350" r="45" fill="#f43f5e" opacity="0.2">
+                <animate attributeName="opacity" values="0.2;0.6;0.2" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="r" values="40;50;40" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <text x="300" y="315" fill="#f43f5e" text-anchor="middle" font-size="16" font-weight="900" class="uppercase tracking-widest">Load Accumulation Zone</text>
+        </svg>
+        <p class="max-w-3xl text-center text-slate-400 mt-12 text-2xl font-light leading-relaxed">
+            "Burnout isn't a cloud; it's a <span class="text-white font-bold">load</span> that is transferred downward until it hits the layer with the least authority to push back."
+        </p>
+    </div>
+
+    <!-- GRAPHIC 2: THE AUTHORITY GAP -->
+    <div id="g2" class="graphic-card">
+        <div class="text-[10px] font-black uppercase tracking-[0.5em] text-[#58bbc2] mb-4">Diagnostic Model 02</div>
+        <h2 class="text-5xl font-serif italic text-white mb-16">The Authority Gap Index™</h2>
+        <div class="flex items-end gap-24 h-[350px]">
+            <!-- Responsibility Bar -->
+            <div class="flex flex-col items-center">
+                <div class="w-28 h-[100%] bg-slate-800 rounded-t-2xl relative border-t-2 border-white/20">
+                    <div class="absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white/10 to-transparent"></div>
+                </div>
+                <span class="mt-6 text-xs font-black uppercase tracking-widest text-slate-500">Responsibility</span>
+                <span class="text-3xl font-black mt-2">100%</span>
+            </div>
+            <!-- Decision Rights Bar -->
+            <div class="flex flex-col items-center">
+                <div class="w-28 h-[30%] bg-[#58bbc2] rounded-t-2xl shadow-[0_0_40px_rgba(88,187,194,0.4)] relative">
+                    <div class="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-white/20 to-transparent"></div>
+                </div>
+                <span class="mt-6 text-xs font-black uppercase tracking-widest text-[#58bbc2]">Decision Authority</span>
+                <span class="text-3xl font-black text-[#58bbc2] mt-2">30%</span>
+            </div>
+        </div>
+        <p class="max-w-3xl text-center text-slate-400 mt-20 text-2xl font-light leading-relaxed">
+            "We pay leaders for 100% responsibility, but structurally restrict them to 30% authority. This gap is where your <span class="text-white font-bold">payroll leaks</span>."
+        </p>
+    </div>
+
+    <!-- GRAPHIC 3: THE AI ACCELERATION CURVE -->
+    <div id="g3" class="graphic-card">
+        <div class="text-[10px] font-black uppercase tracking-[0.5em] text-[#58bbc2] mb-4">Diagnostic Model 03</div>
+        <h2 class="text-5xl font-serif italic text-white mb-16">The AI Acceleration Risk</h2>
+        <svg width="600" height="400" viewBox="0 0 600 400" class="max-w-full drop-shadow-2xl">
+            <!-- Axes -->
+            <path d="M50 350 L550 350 M50 350 L50 50" stroke="#1e293b" stroke-width="2"/>
+            
+            <!-- Human Capacity (Linear) -->
+            <line x1="50" y1="250" x2="550" y2="200" stroke="#64748b" stroke-width="2" stroke-dasharray="10,5"/>
+            <text x="560" y="200" fill="#64748b" font-size="10" font-weight="900" class="uppercase">Human Capacity</text>
+
+            <!-- AI Speed (Exponential) -->
+            <path d="M50 340 Q 200 330, 500 50" fill="none" stroke="#f43f5e" stroke-width="5">
+                <animate attributeName="stroke-dasharray" from="0,1000" to="1000,0" dur="2.5s" fill="freeze" />
+            </path>
+            
+            <!-- Intersection Point -->
+            <circle cx="320" cy="225" r="12" fill="#f43f5e">
+                <animate attributeName="r" values="10;16;10" dur="1s" repeatCount="indefinite" />
+            </circle>
+            <text x="345" y="245" fill="#f43f5e" font-size="14" font-weight="900" class="uppercase tracking-widest">Systemic Collapse</text>
+        </svg>
+        <p class="max-w-3xl text-center text-slate-400 mt-12 text-2xl font-light leading-relaxed">
+            "AI accelerates whatever structure exists. If your bridge is cracked, AI just puts <span class="text-white font-bold">10x more traffic</span> on it until it fails."
+        </p>
+    </div>
+
+    <script>
+        function showGraphic(num) {
+            // Hide all cards
+            document.querySelectorAll('.graphic-card').forEach(g => g.classList.remove('active'));
+            // Reset all buttons
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-btn'));
+            
+            // Show selected card and highlight button
+            document.getElementById('g' + num).classList.add('active');
+            document.getElementById('btn' + num).classList.add('active-btn');
+            
+            // Haptic-like feedback for iPad
+            if (window.navigator.vibrate) {
+                window.navigator.vibrate(10);
+            }
+        }
+    </script>
+</body>
+</html>
