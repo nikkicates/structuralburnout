@@ -55,7 +55,6 @@
         input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; height: 20px; width: 20px; border-radius: 50%; background: var(--st-navy); cursor: pointer; margin-top: -8px; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 4px; background: #e2e8f0; border-radius: 2px; }
         
-        /* Mobile Menu Transitions */
         #mobile-menu { transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out; }
         #mobile-menu.hidden { transform: translateY(-10px); opacity: 0; pointer-events: none; display: none; }
     </style>
@@ -66,13 +65,11 @@
     <nav class="fixed w-full z-50 top-0 glass-nav">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Branding Group -->
                 <a href="index.html" class="flex items-center gap-3 no-underline group">
                     <div class="brand-logo-mark group-hover:rotate-6 transition-transform duration-500">
                         <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
-                            <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#a855f7" fill-opacity="0.8"/>
-                            <path d="M60 35L77.32 45V65L60 75L42.68 65V45L60 35Z" stroke="#064680" stroke-width="2.5"/>
+                            <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#064680"/>
+                            <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#ac6dbf"/>
                             <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
                         </svg>
                     </div>
@@ -82,22 +79,18 @@
                     </div>
                 </a>
 
-                <!-- Desktop Navigation Links -->
                 <div class="hidden lg:flex space-x-8 items-center">
                     <a href="#crisis" class="nav-link">The Crisis</a>
                     <a href="javascript:void(0)" onclick="toggleInvestors()" class="nav-link">Investors</a>
-                    <a href="services.html" class="nav-link" style="color: var(--st-teal);">Solutions</a>
+                    <a href="/structuralburnout/services.html" class="nav-link" style="color: var(--st-teal);">Solutions</a>
                     <a href="#strategy" class="nav-link">Strategy</a>
                     <a href="#" id="communityLink" class="nav-link text-orange-600">Community Capital</a>
                 </div>
 
-                <!-- Action Button & Mobile Toggle -->
                 <div class="flex items-center gap-4">
                     <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="hidden sm:inline-block px-6 py-2.5 bg-[#064680] hover:bg-slate-800 text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all">
                         Schedule Briefing
                     </a>
-                    
-                    <!-- Mobile Hamburger Button -->
                     <button id="mobile-menu-button" class="lg:hidden p-2 text-slate-600 hover:text-[#064680] focus:outline-none">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -107,12 +100,11 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Container -->
         <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-stone-200 shadow-xl overflow-hidden">
             <div class="px-6 pt-4 pb-8 space-y-4 flex flex-col">
                 <a href="#crisis" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">The Crisis</a>
                 <a href="javascript:void(0)" onclick="toggleInvestorsMobile()" class="nav-link py-3 border-b border-stone-50 text-base">Investors</a>
-                <a href="services.html" class="nav-link py-3 border-b border-stone-50 text-base">Solutions Catalog</a>
+                <a href="/structuralburnout/services.html" class="nav-link py-3 border-b border-stone-50 text-base">Solutions Catalog</a>
                 <a href="#strategy" class="nav-link py-3 border-b border-stone-50 text-base" onclick="closeMobileMenu()">Strategy</a>
                 <a href="#" class="nav-link py-3 text-orange-600 text-base" onclick="closeMobileMenu()">Community Capital</a>
                 <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="w-full text-center py-4 bg-[#064680] text-white rounded-xl font-bold uppercase tracking-widest text-xs mt-4">
@@ -122,7 +114,7 @@
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- ─── FIX 4: UPDATED HERO POSITIONING LINE ─── -->
     <header class="pt-48 pb-24 px-6 text-center max-w-5xl mx-auto">
         <div class="inline-block px-4 py-1.5 rounded-full bg-[#064680]/5 border border-[#064680]/10 text-[#064680] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">
             Leadership Architecture | Operational Resilience
@@ -130,33 +122,47 @@
         <h1 class="text-6xl md:text-8xl font-bold mb-8 leading-[1.0] tracking-tighter text-slate-900">
             Burnout is a <br/><span class="text-gradient italic">Design Flaw.</span>
         </h1>
-        <p class="text-xl md:text-2xl text-slate-500 font-light mb-14 max-w-2xl mx-auto leading-relaxed">
-            Stop treating symptoms. Start recalibrating the structure. We help high-stakes organizations fix the architectural gaps that drive talent collapse.
+        <!-- FIX 4: Replaced generic subhead with sharp positioning statement -->
+        <p class="text-xl md:text-2xl text-slate-500 font-light mb-6 max-w-2xl mx-auto leading-relaxed">
+            We don't fix people. We fix the structures that are breaking them.
+        </p>
+        <p class="text-base text-slate-400 font-light mb-14 max-w-2xl mx-auto leading-relaxed">
+            Mid-sized organizations are running AI-era complexity on 1995 management structures. We find the structural break, fix it in 90 days, and show you the receipts.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-6">
             <a href="https://form.typeform.com/to/eo5W8Zio" target="_blank" class="px-10 py-5 bg-[#064680] text-white rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-lg">Start Structural Audit</a>
-            <a href="services.html" class="px-10 py-5 bg-white border border-stone-200 text-slate-600 rounded-xl font-bold text-lg hover:bg-stone-50 transition-all text-center">Solutions Catalog</a>
+            <a href="/structuralburnout/services.html" class="px-10 py-5 bg-white border border-stone-200 text-slate-600 rounded-xl font-bold text-lg hover:bg-stone-50 transition-all text-center">Solutions Catalog</a>
         </div>
     </header>
 
-    <!-- The Crisis Section -->
+    <!-- ─── FIX 3: CRISIS SECTION — ADDED 213% STAT ─── -->
     <section id="crisis" class="py-24 bg-white border-y border-stone-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-bold mb-6 text-slate-900 leading-tight">The High Cost of <br/>Failed Bridges.</h2>
                     <p class="text-lg text-slate-500 mb-10 leading-relaxed text-left font-light">
-                        Burnout isn't a wellness issue; it's an engineering failure. When you give a manager 100% of the responsibility but only 20% of the decision authority, you aren't leading—you are extracting human capacity until the bridge collapses.
+                        Burnout isn't a wellness issue — it's an engineering failure. When you give a manager 100% of the responsibility but only 20% of the decision authority, you aren't leading. You are extracting human capacity until the bridge collapses.
                     </p>
-                    <div class="grid grid-cols-2 gap-6 text-center">
-                        <div class="p-8 bg-stone-50 rounded-2xl border border-stone-100 shadow-sm">
-                            <div class="text-4xl font-bold text-orange-600 mb-2">$190B</div>
-                            <div class="text-[10px] font-bold uppercase tracking-widest text-stone-400">Annual U.S. Loss</div>
+                    <!-- FIX 3: Three stats — added 213% replacement cost -->
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100 shadow-sm">
+                            <div class="text-3xl font-bold text-orange-600 mb-2">$190B</div>
+                            <div class="text-[9px] font-bold uppercase tracking-widest text-stone-400">Annual U.S. Loss</div>
                         </div>
-                        <div class="p-8 bg-stone-50 rounded-2xl border border-stone-100 shadow-sm">
-                            <div class="text-4xl font-bold text-[#064680] mb-2">53%</div>
-                            <div class="text-[10px] font-bold uppercase tracking-widest text-stone-400">Manager Burnout</div>
+                        <div class="p-6 bg-stone-50 rounded-2xl border border-stone-100 shadow-sm">
+                            <div class="text-3xl font-bold text-[#064680] mb-2">53%</div>
+                            <div class="text-[9px] font-bold uppercase tracking-widest text-stone-400">Manager Burnout</div>
                         </div>
+                        <!-- NEW STAT -->
+                        <div class="p-6 bg-[#064680] rounded-2xl border border-[#064680] shadow-sm">
+                            <div class="text-3xl font-bold text-[#58bbc2] mb-2">213%</div>
+                            <div class="text-[9px] font-bold uppercase tracking-widest text-blue-200">Replacement Cost Per Manager</div>
+                        </div>
+                    </div>
+                    <!-- ROI CALLOUT -->
+                    <div class="mt-6 p-5 bg-[#58bbc2]/10 border border-[#58bbc2]/20 rounded-2xl">
+                        <p class="text-sm font-bold text-[#064680] leading-relaxed text-center">One UNMASK engagement costs less than replacing a single manager.<br/><span class="font-normal text-slate-500">Every quarter you wait, you pay for broken architecture in the people you can't afford to lose.</span></p>
                     </div>
                 </div>
                 <div class="p-10 bg-white rounded-3xl border border-stone-100 shadow-xl">
@@ -169,14 +175,14 @@
         </div>
     </section>
 
-    <!-- AI Fracture Simulator -->
+    <!-- AI Fracture Simulator — unchanged -->
     <section class="py-24 bg-stone-50 overflow-hidden border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                 <div>
                     <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-8 text-left">AI Acceleration & Fracture</h2>
                     <p class="text-lg text-slate-500 mb-10 leading-relaxed text-left font-light">
-                        AI speeds up production but quadruples the oversight load. If you don't reinforce the structure, automation doesn't create efficiency—it automates human exhaustion.
+                        AI speeds up production but quadruples the oversight load. If you don't reinforce the structure, automation doesn't create efficiency — it automates human exhaustion.
                     </p>
                     <div class="p-8 bg-white rounded-2xl border border-stone-200 shadow-sm">
                         <h4 class="font-bold text-slate-900 mb-4 uppercase text-xs tracking-widest text-center">Simulate Workflow Velocity</h4>
@@ -200,7 +206,7 @@
         </div>
     </section>
 
-    <!-- Strategy Tracks -->
+    <!-- ─── FIX 2: STRATEGY SECTION — UPDATED GATEKEEPER TARGET ─── -->
     <section id="strategy" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <div class="mb-16">
@@ -208,11 +214,16 @@
                 <p class="text-slate-500 max-w-2xl mx-auto font-light">Executing through three parallel engines to establish category authority and a proprietary data moat.</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                <!-- FIX 2: Updated Gatekeeper card with concrete pricing -->
                 <div class="p-10 bg-stone-50 rounded-3xl border border-stone-200">
                     <h3 class="text-xl font-bold mb-4 text-slate-900 uppercase tracking-tight">Gatekeeper Attraction</h3>
-                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">The high-authority "Spark." Signature keynotes that move organizations from "Wellness Management" to "Structural Architecture."</p>
-                    <div class="text-[10px] font-bold text-[#064680] uppercase tracking-widest bg-white p-3 rounded-lg text-center shadow-sm">Target: 5-Figure Bookings</div>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">The high-authority "Spark." Signature keynotes and facilitated workshops that move organizations from wellness management to structural architecture.</p>
+                    <div class="space-y-2">
+                        <div class="text-[10px] font-bold text-[#064680] uppercase tracking-widest bg-white p-3 rounded-lg text-center shadow-sm">Keynotes from $3,500</div>
+                        <div class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-widest bg-white p-3 rounded-lg text-center shadow-sm">Intensives from $12,500</div>
+                    </div>
                 </div>
+                <!-- FIX 1 confirmed: $30K seed stays -->
                 <div class="p-10 bg-stone-50 rounded-3xl border border-stone-200">
                     <h3 class="text-xl font-bold mb-4 text-slate-900 uppercase tracking-tight">Capital & Funding</h3>
                     <p class="text-sm text-slate-500 mb-6 leading-relaxed">Securing non-dilutive R&D grants to automate the AI Acceleration Burnout Index™ diagnostic tool for federal readiness.</p>
@@ -220,14 +231,14 @@
                 </div>
                 <div class="p-10 bg-stone-50 rounded-3xl border border-stone-200">
                     <h3 class="text-xl font-bold mb-4 text-slate-900 uppercase tracking-tight">Recalibration Shop</h3>
-                    <p class="text-sm text-slate-500 mb-6 leading-relaxed text-center">Digital artifacts featuring tactical manuals and authority reset scripts for the Squeezed Middle.</p>
+                    <p class="text-sm text-slate-500 mb-6 leading-relaxed">Digital artifacts featuring tactical manuals and authority reset scripts for the Squeezed Middle.</p>
                     <a href="https://stan.store/nikkicates" target="_blank" class="text-[10px] font-bold text-white uppercase tracking-widest bg-[#064680] p-3 rounded-lg text-center block hover:bg-[#58bbc2] transition-all shadow-md">Explore Strategic Artifacts</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Investor Mega Briefing (Inclusive Hidden Section) -->
+    <!-- Investor Mega Briefing — $30K confirmed throughout -->
     <section id="investors" class="py-24 bg-[#020617] text-white hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-20">
@@ -235,7 +246,6 @@
                 <p class="text-teal-300 max-w-2xl mx-auto text-lg italic">"Transitioning from consultancy to a data-native diagnostic platform standard."</p>
             </div>
 
-            <!-- Financials Row -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
                 <div class="p-10 bg-white/5 border border-white/10 rounded-[2rem] shadow-2xl">
                     <h3 class="text-center font-bold text-white mb-2 text-[10px] uppercase tracking-widest">Seed Allocation & Logic</h3>
@@ -251,7 +261,7 @@
                 </div>
                 <div class="space-y-8">
                     <h3 class="text-3xl font-bold italic text-[#58bbc2] text-left leading-tight">Capital Deployment Strategy</h3>
-                    <p class="text-stone-300 text-lg leading-relaxed text-left">We are seeking $30,000 in seed velocity to transition our methodology into a scalable, automated diagnostic engine.</p>
+                    <p class="text-stone-300 text-lg leading-relaxed text-left">We are seeking <strong class="text-white">$30,000</strong> in seed velocity to transition our methodology into a scalable, automated diagnostic engine.</p>
                     <div class="space-y-6">
                         <div class="flex justify-between border-b border-white/10 pb-4">
                             <div>
@@ -275,14 +285,13 @@
                 </div>
             </div>
 
-            <!-- Revenue Mix Visualization -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="space-y-6">
                     <h3 class="text-3xl font-bold italic text-[#58bbc2] text-left">Revenue Source Forecast</h3>
                     <p class="text-stone-300 text-lg text-left leading-relaxed">Our dual-use model captures immediate cash flow through facilitation while building recurring long-tail licensing revenue.</p>
                     <div class="p-8 bg-white/10 rounded-2xl border border-white/5 shadow-inner">
                         <div class="text-sm font-bold uppercase tracking-widest opacity-60 mb-2 text-left">Year 1 Gross Target</div>
-                        <div class="text-5xl font-bold text-left tracking-tighter text-white">$96,000 - $134,500</div>
+                        <div class="text-5xl font-bold text-left tracking-tighter text-white">$96,000 – $134,500</div>
                     </div>
                 </div>
                 <div class="p-10 bg-white/5 border border-white/10 rounded-[2rem] shadow-2xl">
@@ -321,27 +330,22 @@
                         Discuss a custom structural diagnostic, keynote engagement, or workshop facilitation for your leadership core.
                     </p>
                     <div class="space-y-4">
-                        <a href="mailto:info@strategicunmasking.com" class="flex items-center gap-4 group">
-                            <div class="w-10 h-10 rounded-full bg-[#064680]/5 flex items-center justify-center text-[#064680] group-hover:bg-[#064680] group-hover:text-white transition-all text-lg">
-                                &#9993;
-                            </div>
+                        <a href="mailto:info@strategicunmasking.com?subject=Proposal%20Request%20%E2%80%94%20Strategic%20Transformations" class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 rounded-full bg-[#064680]/5 flex items-center justify-center text-[#064680] group-hover:bg-[#064680] group-hover:text-white transition-all text-lg">&#9993;</div>
                             <span class="text-sm font-bold uppercase tracking-widest text-slate-600 text-left">Request a Proposal</span>
                         </a>
                         <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="flex items-center gap-4 group">
-                            <div class="w-10 h-10 rounded-full bg-[#58bbc2]/10 flex items-center justify-center text-[#58bbc2] group-hover:bg-[#58bbc2] group-hover:text-white transition-all text-lg">
-                                &#128197;
-                            </div>
+                            <div class="w-10 h-10 rounded-full bg-[#58bbc2]/10 flex items-center justify-center text-[#58bbc2] group-hover:bg-[#58bbc2] group-hover:text-white transition-all text-lg">&#128197;</div>
                             <span class="text-sm font-bold uppercase tracking-widest text-slate-600 text-left">Schedule Briefing</span>
                         </a>
                     </div>
                 </div>
-                <!-- Inquiry Form -->
                 <div class="bg-stone-50 p-10 rounded-3xl border border-stone-200 shadow-inner">
                     <h4 class="font-bold text-slate-900 uppercase text-[10px] tracking-widest mb-6">Send Request to Strategist</h4>
                     <form action="mailto:info@strategicunmasking.com" method="post" enctype="text/plain" class="space-y-4">
                         <input type="text" name="name" placeholder="Name & Title" class="w-full bg-white border border-stone-200 rounded-xl p-4 text-sm focus:border-[#064680] outline-none">
                         <input type="email" name="email" placeholder="Organization Email" class="w-full bg-white border border-stone-200 rounded-xl p-4 text-sm focus:border-[#064680] outline-none">
-                        <textarea name="message" placeholder="Project Interest (e.g. Audit, Keynote)" class="w-full bg-white border border-stone-200 rounded-xl p-4 text-sm focus:border-[#064680] outline-none h-24 resize-none text-left"></textarea>
+                        <textarea name="message" placeholder="Project Interest (e.g. Audit, Keynote, Workshop)" class="w-full bg-white border border-stone-200 rounded-xl p-4 text-sm focus:border-[#064680] outline-none h-24 resize-none text-left"></textarea>
                         <button type="submit" class="w-full py-4 bg-[#064680] text-white font-bold rounded-xl uppercase tracking-widest text-xs hover:bg-slate-800 transition-all">Submit Briefing Request</button>
                     </form>
                 </div>
@@ -355,9 +359,8 @@
             <div class="flex items-center gap-3">
                 <div class="brand-logo-mark" style="width: 32px; height: 32px;">
                     <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#3b82f6" fill-opacity="0.8"/>
-                        <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#a855f7" fill-opacity="0.8"/>
-                        <path d="M60 35L77.32 45V65L60 75L42.68 65V45L60 35Z" stroke="#064680" stroke-width="2.5"/>
+                        <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#064680"/>
+                        <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#ac6dbf"/>
                         <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
                     </svg>
                 </div>
@@ -371,7 +374,6 @@
     </footer>
 
     <script>
-        // Mobile Menu Logic
         const menuBtn = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -380,10 +382,10 @@
             const isHidden = mobileMenu.classList.contains('hidden');
             if(isHidden) {
                 mobileMenu.classList.remove('hidden');
-                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12'); // Change to X
+                menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
             } else {
                 mobileMenu.classList.add('hidden');
-                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16'); // Change back to Hamburger
+                menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
             }
         });
 
@@ -392,7 +394,6 @@
             menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
         }
 
-        // Investor Toggles
         function toggleInvestors() {
             const section = document.getElementById('investors');
             section.classList.toggle('hidden');
@@ -405,7 +406,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Simulator
             const slider = document.getElementById('velocitySlider');
             const block = document.getElementById('managerBlock');
             const fill = document.getElementById('loadFill');
@@ -440,47 +440,26 @@
 
             new Chart(document.getElementById('fundsChart').getContext('2d'), {
                 type: 'doughnut',
-                data: { 
-                    labels: ['Engineering/Tech (40%)', 'IP & Market (30%)', 'Compliance (30%)'], 
-                    datasets: [{ 
-                        data: [40, 30, 30], 
-                        backgroundColor: ['#58bbc2', '#ffffff', '#064680'], 
-                        borderWidth: 2,
-                        borderColor: '#020617'
-                    }] 
+                data: {
+                    labels: ['Engineering/Tech (40%)', 'IP & Market (30%)', 'Compliance (30%)'],
+                    datasets: [{ data: [40, 30, 30], backgroundColor: ['#58bbc2', '#ffffff', '#064680'], borderWidth: 2, borderColor: '#020617' }]
                 },
-                options: { 
-                    responsive: true, 
-                    maintainAspectRatio: false, 
-                    plugins: { 
-                        legend: { 
-                            position: 'bottom', 
-                            labels: { color: '#ffffff', boxWidth: 12, padding: 20, font: { weight: 'bold', size: 11 } } 
-                        } 
-                    }, 
-                    cutout: '70%' 
-                }
+                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: '#ffffff', boxWidth: 12, padding: 20, font: { weight: 'bold', size: 11 } } } }, cutout: '70%' }
             });
 
             new Chart(document.getElementById('revenueChart').getContext('2d'), {
                 type: 'bar',
-                data: { 
-                    labels: ['Speaking', 'Enterprise Audits', 'IP Licensing', 'Digital Artifacts'], 
-                    datasets: [{ 
-                        label: 'Year 1 Forecast ($)', 
-                        data: [45000, 40000, 25000, 24500], 
-                        backgroundColor: '#58bbc2', 
-                        borderRadius: 4 
-                    }] 
+                data: {
+                    labels: ['Speaking', 'Enterprise Audits', 'IP Licensing', 'Digital Artifacts'],
+                    datasets: [{ label: 'Year 1 Forecast ($)', data: [45000, 40000, 25000, 24500], backgroundColor: '#58bbc2', borderRadius: 4 }]
                 },
-                options: { 
-                    responsive: true, 
-                    maintainAspectRatio: false, 
-                    plugins: { legend: { display: false } }, 
-                    scales: { 
-                        y: { beginAtZero: true, grid: { color: 'rgba(255, 255, 255, 0.1)' }, ticks: { color: '#ffffff', font: { weight: 'bold' } } },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.1)' }, ticks: { color: '#ffffff', font: { weight: 'bold' } } },
                         x: { ticks: { color: '#ffffff', font: { weight: 'bold', size: 9 } } }
-                    } 
+                    }
                 }
             });
         });
