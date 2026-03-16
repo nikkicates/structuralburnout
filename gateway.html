@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNMASK | Executive Briefing Portal</title>
+    <title>Strategic Transformations | Executive Gateway</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style>
@@ -11,23 +11,37 @@
         .font-serif { font-family: 'Lora', serif; }
         .glass { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); }
         .teal-glow { box-shadow: 0 0 30px rgba(88, 187, 194, 0.2); }
+        .hex { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
         .cta-btn { transition: all 0.3s ease; border: 1px solid rgba(88, 187, 194, 0.3); }
         .cta-btn:hover { background: #58bbc2; color: #070e24; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(88, 187, 194, 0.4); }
     </style>
 </head>
 <body class="selection:bg-[#58bbc2]/30">
 
+    <!-- Header Navigation -->
     <nav class="w-full px-8 py-6 flex justify-between items-center border-b border-white/5 sticky top-0 z-50 bg-[#070e24]/80 backdrop-blur-md">
-        <div class="flex items-center gap-3">
-             <div class="w-8 h-8 bg-[#58bbc2] rounded flex items-center justify-center font-black text-[#070e24] text-xs">UN</div>
-             <span class="text-xs font-black uppercase tracking-[0.4em]">Executive Gateway v1.1</span>
+        <div class="flex items-center gap-4">
+             <!-- ST Logo Component -->
+             <div class="relative w-10 h-10">
+                <div class="w-6 h-6 bg-[#064680] hex absolute top-0 left-1/2 -translate-x-1/2 z-20"></div>
+                <div class="w-6 h-6 bg-[#ac6dbf] hex absolute top-3 left-0 z-10"></div>
+                <div class="w-6 h-6 bg-[#58bbc2] hex absolute top-3 right-0 z-10 flex items-center justify-center p-[2px]">
+                    <div class="w-full h-full bg-[#070e24] hex"></div>
+                </div>
+             </div>
+             <div class="flex flex-col leading-none">
+                <span class="text-sm font-black uppercase tracking-tighter">Strategic</span>
+                <span class="text-[9px] font-black uppercase tracking-[0.4em] text-[#58bbc2]">Transformations</span>
+             </div>
         </div>
-        <div class="hidden md:flex gap-8 items-center">
-            <a href="#briefing" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-white transition-colors">Briefing Invitation</a>
-            <a href="#research" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-white transition-colors">The Logic</a>
+        <div class="hidden md:flex gap-10 items-center">
+            <a href="pitch.html" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#58bbc2] transition-colors">Investor Briefing</a>
+            <a href="services.html" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#58bbc2] transition-colors">Solutions Catalog</a>
+            <a href="#research" class="text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-[#58bbc2] transition-colors">Research Vault</a>
         </div>
     </nav>
 
+    <!-- HERO / PRIMARY CONVERSION -->
     <section id="briefing" class="max-w-6xl mx-auto px-6 pt-32 pb-40 text-center">
         <div class="text-[10px] font-black text-[#58bbc2] uppercase tracking-[0.5em] mb-8">Invitational Diagnostic Series</div>
         <h1 class="text-5xl md:text-8xl font-black tracking-tighter leading-none mb-10">
@@ -35,7 +49,7 @@
             <span class="text-[#58bbc2] italic font-serif font-bold tracking-tight">Invisible Extraction.</span>
         </h1>
         <p class="text-2xl text-slate-400 font-light leading-relaxed mb-16 max-w-3xl mx-auto">
-            "Your organization is likely extracting invisible labor from leaders while denying them the authority to fix the problems they are responsible for."
+            "Your organization is likely extracting invisible labor from leaders while <strong class="text-white">denying them the authority</strong> to fix the problems they are responsible for."
         </p>
         
         <div class="flex flex-col items-center gap-10">
@@ -49,30 +63,98 @@
         </div>
     </section>
 
+    <!-- STRATEGIC PATHWAYS -->
+    <section class="py-24 border-t border-white/5 bg-white/[0.01]">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+            <!-- Investor Briefing Card -->
+            <a href="pitch.html" class="glass p-12 rounded-[3rem] group hover:border-[#58bbc2]/30 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="text-[10px] font-black text-purple-400 uppercase tracking-widest mb-4">Strategic Thesis</div>
+                    <h3 class="text-4xl font-black mb-6 group-hover:text-[#58bbc2] transition-colors leading-tight">Investor <br/>Briefing Hub</h3>
+                    <p class="text-slate-400 font-light leading-relaxed text-lg mb-8">Review the executive case for structural recalibration. We quantify the 213% attrition cost and map the fiscal risk of uncompensated labor extraction.</p>
+                </div>
+                <div class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-500 border-t border-white/5 pt-8">
+                    View Business Case <span class="group-hover:translate-x-2 transition-transform">→</span>
+                </div>
+            </a>
+
+            <!-- Solutions/Services Card -->
+            <a href="services.html" class="glass p-12 rounded-[3rem] group hover:border-[#58bbc2]/30 transition-all flex flex-col justify-between">
+                <div>
+                    <div class="text-[10px] font-black text-teal-400 uppercase tracking-widest mb-4">Implementation</div>
+                    <h3 class="text-4xl font-black mb-6 group-hover:text-[#58bbc2] transition-colors leading-tight">Solutions <br/>Catalog</h3>
+                    <p class="text-slate-400 font-light leading-relaxed text-lg mb-8">Explore the 4-tier diagnostic ladder—from the individual Resilience Starter Kit to full-scale Enterprise Architectural Redesign.</p>
+                </div>
+                <div class="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-500 border-t border-white/5 pt-8">
+                    View Methodology <span class="group-hover:translate-x-2 transition-transform">→</span>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- RESEARCH & IMPLEMENTATION VAULT -->
     <section id="research" class="py-40 bg-white/5 border-t border-white/5">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-black mb-12">The Credibility <span class="text-[#58bbc2] italic font-serif">Vault.</span></h2>
-            <div class="grid gap-6">
-                <a href="https://stan.store/nikkicates" class="glass p-8 rounded-2xl flex justify-between items-center group">
-                    <div class="text-left">
-                        <h4 class="font-bold text-lg">Whitepaper: The Invisible Ledger</h4>
-                        <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">Research on Institutional Extraction & RAA Index</p>
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-black mb-4 uppercase">The Research <span class="text-[#58bbc2] italic font-serif">Vault.</span></h2>
+            <p class="text-xl text-slate-400 font-light mb-20 leading-relaxed max-w-3xl mx-auto">Evidence-based research and tactical blueprints for institutional resilience in the age of AI.</p>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- Whitepaper -->
+                <div class="glass p-12 rounded-[3.5rem] flex flex-col justify-between items-start text-left border-t-4 border-t-purple-500/30">
+                    <div>
+                        <div class="text-[10px] font-black text-purple-400 uppercase tracking-widest mb-4">Peer-Reviewed Briefing</div>
+                        <h4 class="font-bold text-2xl text-white mb-2 leading-tight">Whitepaper: <br/>The Hidden Workload</h4>
+                        <p class="text-sm text-slate-500 italic font-serif leading-relaxed mb-12">"Identifying the structural mechanics of labor extraction and authority asymmetry."</p>
                     </div>
-                    <div class="text-[#58bbc2] group-hover:translate-x-2 transition-transform">→</div>
-                </a>
-                <a href="https://nikkicates.github.io/unmask-manual/" class="glass p-8 rounded-2xl flex justify-between items-center group">
-                    <div class="text-left">
-                        <h4 class="font-bold text-lg">Master Manual: Volume 2</h4>
-                        <p class="text-xs text-slate-500 uppercase tracking-widest mt-1">The Interactive Recalibration Curriculum</p>
+                    <a href="https://stan.store/nikkicates" target="_blank" class="w-full bg-white/5 border border-white/10 text-white py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:bg-white hover:text-[#070e24] transition-all text-center">
+                        Request Research Access
+                    </a>
+                </div>
+
+                <!-- Vol 2 Manual -->
+                <div class="glass p-12 rounded-[3.5rem] flex flex-col justify-between items-start text-left border-t-4 border-t-[#58bbc2]/30">
+                    <div>
+                        <div class="text-[10px] font-black text-[#58bbc2] uppercase tracking-widest mb-4">Tactical Manual</div>
+                        <h4 class="font-bold text-2xl text-white mb-2 leading-tight">UNMASK Master <br/>Manual: Vol. 2</h4>
+                        <p class="text-sm text-slate-500 italic font-serif leading-relaxed mb-12">"The complete curriculum for redesigning leadership systems in the age of technological acceleration."</p>
                     </div>
-                    <div class="text-[#58bbc2] group-hover:translate-x-2 transition-transform">→</div>
-                </a>
+                    <a href="https://stan.store/nikkicates/p/unmask-vol-2-redesigning-systems-for-the-ai-era" target="_blank" class="w-full bg-[#58bbc2] text-[#070e24] py-5 rounded-2xl font-black uppercase tracking-widest text-[10px] hover:brightness-110 transition-all text-center shadow-lg shadow-[#58bbc2]/20">
+                        Purchase Implementation Toolkit
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-20 text-center border-t border-white/5">
-        <p class="text-[10px] text-slate-700 uppercase tracking-[1em] font-black mb-4">© 2026 Strategic Transformations</p>
+    <!-- METHODOLOGY FOOTNOTE -->
+    <section class="py-20 text-center opacity-30">
+        <p class="text-[10px] font-black uppercase tracking-[0.5em] mb-4">Proprietary Diagnostic Instruments</p>
+        <p class="text-[9px] font-bold uppercase tracking-widest text-slate-500">
+            Leadership Masking Index™ (v1.4) &bull; RAA Index™ (v1.0) &bull; AI Burnout Accelerator Index™ (v1.3)
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-24 text-center border-t border-white/5">
+        <div class="flex flex-col items-center gap-8">
+            <div class="flex items-center gap-4 opacity-40">
+                 <div class="relative w-8 h-8">
+                    <div class="w-5 h-5 bg-[#064680] hex absolute top-0 left-1/2 -translate-x-1/2 z-20"></div>
+                    <div class="w-5 h-5 bg-[#ac6dbf] hex absolute top-3 left-0 z-10"></div>
+                    <div class="w-5 h-5 bg-[#58bbc2] hex absolute top-3 right-0 z-10"></div>
+                 </div>
+                <span class="text-[11px] font-black uppercase tracking-[1em]">Strategic Transformations</span>
+            </div>
+            <p class="text-[10px] text-slate-600 uppercase tracking-[0.4em] font-bold max-w-md mx-auto leading-relaxed">
+                Structural Recalibration for high-stakes leadership systems.
+            </p>
+            <div class="pt-8">
+                <p class="text-[9px] text-slate-800 font-black tracking-widest mb-2">© 2026 STRATEGIC TRANSFORMATIONS | NIKKI CATES</p>
+                <p class="text-[8px] text-slate-900 font-black uppercase tracking-widest">
+                    Anonymized insights from our instruments contribute to global research on structural leadership strain.
+                </p>
+            </div>
+        </div>
     </footer>
 
 </body>
