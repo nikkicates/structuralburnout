@@ -735,7 +735,7 @@
             <span class="w-sub">Transformations</span>
         </div>
     </a>
-    <a href="https://nikkicates.github.io/structuralburnout/" class="nav-back">Back to Hub</a>
+    <a href="https://nikkicates.github.io/structuralburnout/" target="_blank" class="nav-back">Back to Hub</a>
 </nav>
 
 <div class="page">
@@ -853,6 +853,17 @@
             </div>
 
             <div class="form-group">
+                <label class="form-label">Email Address <span>*</span></label>
+                <input type="email" id="q_email" class="form-input" placeholder="Your work or preferred email" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <p class="form-sublabel">Optional. Used for SMS follow-up if applicable. We do not share your number.</p>
+                <input type="tel" id="q_phone" class="form-input" placeholder="e.g. (555) 000-0000">
+            </div>
+
+            <div class="form-group">
                 <label class="form-label">Organization and Role <span>*</span></label>
                 <input type="text" id="q_org" class="form-input" placeholder="e.g. VP of People Operations, Acme Corp" required>
             </div>
@@ -967,6 +978,8 @@
 <script>
 function scoreForm() {
     const name       = document.getElementById('q_name').value.trim();
+    const email      = document.getElementById('q_email').value.trim();
+    const phone      = document.getElementById('q_phone').value.trim();
     const org        = document.getElementById('q_org').value.trim();
     const prompt     = document.getElementById('q_prompt').value.trim();
     const size       = document.getElementById('q_size').value;
@@ -976,12 +989,11 @@ function scoreForm() {
     const commitment = document.querySelector('input[name="commitment"]:checked');
     const challenges = document.querySelectorAll('input[name="challenge"]:checked');
 
-    // Basic completeness check
-    if (!name || !org || !prompt || !size || !authority || !investment || !timeline || !commitment) {
+    // Completeness check
+    if (!name || !email || !org || !prompt || !size || !authority || !investment || !timeline || !commitment) {
         alert('Please complete all required fields before submitting.');
         return;
     }
-
     if (challenges.length === 0) {
         alert('Please select at least one primary challenge.');
         return;
@@ -991,43 +1003,83 @@ function scoreForm() {
     let score = 0;
     let disqualified = false;
 
-    // Hard disqualifiers
     if (authority.value === 'no')        disqualified = true;
     if (investment.value === 'no')       disqualified = true;
     if (commitment.value === 'no')       disqualified = true;
 
-    // Scoring points
     if (authority.value === 'yes')       score += 3;
     if (authority.value === 'influence') score += 2;
-
     if (investment.value === 'yes')      score += 3;
     if (investment.value === 'possibly') score += 1;
-
     if (timeline.value === 'immediate')  score += 3;
     if (timeline.value === 'quarter')    score += 2;
-    if (timeline.value === 'exploring')  score += 0;
+    if (prompt.length > 80)              score += 2;
+    if (prompt.length > 160)             score += 1;
+    score += challenges.length;
 
-    if (prompt.length > 80)              score += 2; // specific answer
-    if (prompt.length > 160)             score += 1; // detailed answer
-
-    score += challenges.length;          // more challenges = more urgency
-
-    // DECISION: qualify at 7+, disqualify below or if hard disqualified
     const qualified = !disqualified && score >= 7;
 
-    // Hide form
+    // Collect challenge labels
+    const challengeLabels = Array.from(challenges).map(c => {
+        const map = { burnout: 'Leadership burnout', attrition: 'Attrition / retention issues',
+            performance: 'Performance inconsistency', scaling: 'Organizational scaling strain',
+            ai: 'AI adoption creating operational strain' };
+        return map[c.value] || c.value;
+    }).join(', ');
+
+    // Build email body for Nikki
+    const outcome  = qualified ? 'QUALIFIED' : 'NOT QUALIFIED';
+    const subject  = encodeURIComponent(`Executive Briefing Application: ${outcome} — ${name}`);
+    const bodyText =
+`EXECUTIVE BRIEFING APPLICATION RECEIVED
+----------------------------------------
+OUTCOME: ${outcome}
+Score: ${score} ${disqualified ? '(Hard disqualifier triggered)' : ''}
+
+CONTACT INFORMATION
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Organization / Role: ${org}
+
+SECTION 2 — ORGANIZATIONAL CONTEXT
+Organization Size: ${size}
+Primary Challenges: ${challengeLabels}
+
+SECTION 3 — PROBLEM AWARENESS
+${prompt}
+
+SECTION 4 — INVESTMENT READINESS
+${investment.value}
+
+SECTION 5 — TIMELINE
+${timeline.value}
+
+SECTION 6 — COMMITMENT
+${commitment.value}
+
+----------------------------------------
+Sent automatically from executive-briefing.html`;
+
+    const mailtoLink = `mailto:nikki@strategicunmasking.com?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
+
+    // Hide form, show result
     document.getElementById('qForm').style.display = 'none';
 
     if (qualified) {
         document.getElementById('result-approved').style.display = 'block';
         document.getElementById('result-approved').scrollIntoView({ behavior: 'smooth' });
-        // Auto-redirect after 3 seconds
+        // Open email notification
+        window.location.href = mailtoLink;
+        // Auto-redirect to calendar after 4 seconds (slight delay to allow mail client to open)
         setTimeout(() => {
             window.open('https://calendar.google.com/appointments/schedules/AcZssZ2vSeEgImHim06s6W5Mc4hPJg3uCC01YgX4kx0ZTMnIFGUlx56VYkz-eQC0_OoFDi4BAqYL2GwR', '_blank');
-        }, 3000);
+        }, 4000);
     } else {
         document.getElementById('result-declined').style.display = 'block';
         document.getElementById('result-declined').scrollIntoView({ behavior: 'smooth' });
+        // Open email notification
+        window.location.href = mailtoLink;
     }
 }
 </script>
