@@ -502,6 +502,218 @@
             border-top: 1px solid rgba(255,255,255,0.04);
         }
 
+        /* QUALIFICATION FORM */
+        .qualify-section {
+            margin-bottom: 3rem;
+        }
+
+        .qualify-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .qualify-header .eyebrow { justify-content: center; }
+
+        .qualify-header h2 {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .qualify-header h2 em {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        .qualify-header p {
+            font-size: 0.875rem;
+            color: var(--slate);
+            font-weight: 300;
+            max-width: 480px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .qualify-form {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 1.75rem;
+            padding: clamp(1.75rem, 4vw, 3rem);
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+        .form-label {
+            font-size: 0.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: white;
+        }
+
+        .form-label span {
+            color: var(--teal);
+            margin-left: 0.25rem;
+        }
+
+        .form-sublabel {
+            font-size: 0.7rem;
+            font-weight: 300;
+            color: var(--muted);
+            margin-top: -0.25rem;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.6rem;
+            padding: 0.85rem 1rem;
+            color: white;
+            font-family: 'Urbanist', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+            width: 100%;
+        }
+
+        .form-input::placeholder, .form-textarea::placeholder { color: var(--muted); }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: rgba(88,187,194,0.5);
+            background: rgba(88,187,194,0.05);
+        }
+
+        .form-select { appearance: none; cursor: pointer; }
+        .form-select option { background: #0c1a3a; color: white; }
+
+        .form-textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+
+        .radio-group, .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .radio-label, .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--slate);
+            padding: 0.6rem 0.85rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.02);
+            transition: border-color 0.2s, background 0.2s, color 0.2s;
+        }
+
+        .radio-label:hover, .checkbox-label:hover {
+            border-color: rgba(88,187,194,0.3);
+            background: rgba(88,187,194,0.05);
+            color: white;
+        }
+
+        .radio-label input, .checkbox-label input { accent-color: var(--teal); width: 16px; height: 16px; flex-shrink: 0; }
+
+        .form-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.06);
+        }
+
+        .form-section-label {
+            font-size: 0.58rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            color: var(--teal);
+        }
+
+        .btn-submit {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--teal);
+            color: var(--navy);
+            padding: 1.1rem 2.5rem;
+            border-radius: 0.75rem;
+            font-family: 'Urbanist', sans-serif;
+            font-weight: 900;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 28px rgba(88,187,194,0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px rgba(88,187,194,0.45);
+        }
+
+        /* Result screens */
+        .result-screen {
+            display: none;
+            border-radius: 1.75rem;
+            padding: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+        }
+
+        .result-screen.approved {
+            background: linear-gradient(135deg, rgba(88,187,194,0.12) 0%, rgba(6,40,100,0.2) 100%);
+            border: 1px solid rgba(88,187,194,0.25);
+        }
+
+        .result-screen.declined {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .result-icon {
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .result-screen.approved .result-icon { background: rgba(88,187,194,0.15); }
+        .result-screen.declined .result-icon { background: rgba(255,255,255,0.06); }
+
+        .result-screen h3 {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 900;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+        }
+
+        .result-screen.approved h3 { color: white; }
+        .result-screen.declined h3 { color: var(--slate); }
+
+        .result-screen p {
+            font-size: 0.9rem;
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 480px;
+            margin: 0 auto 1.75rem;
+        }
+
+        .result-screen.approved p { color: var(--slate); }
+        .result-screen.declined p { color: var(--muted); }
+
         /* RESPONSIVE */
         @media (max-width: 600px) {
             .page { padding: 7rem 1.25rem 4rem; }
@@ -591,10 +803,9 @@
         <h2>Book Your Executive<br/><em>Briefing Today.</em></h2>
         <p>60 minutes. Real visibility. A clear path forward. No fluff, no generic frameworks. Just a precise structural read on where your organization is carrying unsustainable strain.</p>
         <div class="cta-primary-row">
-            <a href="https://calendar.google.com/appointments/schedules/AcZssZ2vSeEgImHim06s6W5Mc4hPJg3uCC01YgX4kx0ZTMnIFGUlx56VYkz-eQC0_OoFDi4BAqYL2GwR" target="_blank" class="btn-book">Schedule Briefing &nbsp;→</a>
-            <a href="mailto:nikki@strategicunmasking.com?subject=Executive%20Briefing%20Request" class="btn-request">Request Briefing &nbsp;→</a>
+            <button onclick="document.getElementById('qualify-form').scrollIntoView({behavior:'smooth'})" class="btn-book">Apply to Schedule &nbsp;→</button>
+            <a href="https://calendar.google.com/appointments/schedules/AcZssZ0wzeoxprLGxanzVAEMZB_aBMMuQycSnCwYHy3gsd1R3wpmUCMIHmegk-UbZzU2nRZb_XiI_I3o" target="_blank" class="btn-request">Book Me to Speak &nbsp;→</a>
         </div>
-
     </div>
 
     <div class="explore-label f7">Explore More</div>
@@ -622,9 +833,201 @@
         </a>
     </div>
 
+    <!-- QUALIFICATION FORM -->
+    <div id="qualify-form" class="qualify-section f7">
+
+        <div class="qualify-header">
+            <div class="eyebrow">Executive Briefing Application</div>
+            <h2>Let Us Make Sure This Is the<br/><em>Right Fit.</em></h2>
+            <p>This briefing is reserved for senior leaders responsible for organizational performance, retention, and leadership outcomes. Complete the short application below.</p>
+        </div>
+
+        <!-- THE FORM -->
+        <form class="qualify-form" id="qForm" onsubmit="return false;">
+
+            <div class="form-section-label">Section 1 — Authority</div>
+
+            <div class="form-group">
+                <label class="form-label">Your Name <span>*</span></label>
+                <input type="text" id="q_name" class="form-input" placeholder="Full name and title" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Organization and Role <span>*</span></label>
+                <input type="text" id="q_org" class="form-input" placeholder="e.g. VP of People Operations, Acme Corp" required>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Do you have decision-making authority over leadership strategy or budget? <span>*</span></label>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="authority" value="yes" required> Yes</label>
+                    <label class="radio-label"><input type="radio" name="authority" value="influence"> I have significant influence</label>
+                    <label class="radio-label"><input type="radio" name="authority" value="no"> No</label>
+                </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Section 2 — Organizational Context</div>
+
+            <div class="form-group">
+                <label class="form-label">Organization size <span>*</span></label>
+                <select id="q_size" class="form-select" required>
+                    <option value="" disabled selected>Select range</option>
+                    <option value="50-200">50 to 200 employees</option>
+                    <option value="200-1000">200 to 1,000 employees</option>
+                    <option value="1000+">1,000 or more employees</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Primary challenge (select all that apply) <span>*</span></label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" name="challenge" value="burnout"> Leadership burnout</label>
+                    <label class="checkbox-label"><input type="checkbox" name="challenge" value="attrition"> Attrition or retention issues</label>
+                    <label class="checkbox-label"><input type="checkbox" name="challenge" value="performance"> Performance inconsistency</label>
+                    <label class="checkbox-label"><input type="checkbox" name="challenge" value="scaling"> Organizational scaling strain</label>
+                    <label class="checkbox-label"><input type="checkbox" name="challenge" value="ai"> AI adoption creating operational strain</label>
+                </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Section 3 — Problem Awareness</div>
+
+            <div class="form-group">
+                <label class="form-label">What prompted you to seek this conversation? <span>*</span></label>
+                <p class="form-sublabel">Be specific. The more context you share, the more valuable the session will be.</p>
+                <textarea id="q_prompt" class="form-textarea" placeholder="Describe the situation, what has already been tried, and what is at stake..." required></textarea>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Section 4 — Investment Readiness</div>
+
+            <div class="form-group">
+                <label class="form-label">If a structural issue is identified, are you open to investing in a diagnostic process to address it? <span>*</span></label>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="investment" value="yes" required> Yes</label>
+                    <label class="radio-label"><input type="radio" name="investment" value="possibly"> Possibly — depends on findings</label>
+                    <label class="radio-label"><input type="radio" name="investment" value="no"> Not at this time</label>
+                </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Section 5 — Timeline</div>
+
+            <div class="form-group">
+                <label class="form-label">What is your timeline for addressing this issue? <span>*</span></label>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="timeline" value="immediate" required> Immediate — within 30 days</label>
+                    <label class="radio-label"><input type="radio" name="timeline" value="quarter"> This quarter</label>
+                    <label class="radio-label"><input type="radio" name="timeline" value="exploring"> Exploring — no defined timeline</label>
+                </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Section 6 — Commitment</div>
+
+            <div class="form-group">
+                <label class="form-label">This is a strategic executive session, not a general consultation. Are you prepared to engage at that level? <span>*</span></label>
+                <div class="radio-group">
+                    <label class="radio-label"><input type="radio" name="commitment" value="yes" required> Yes</label>
+                    <label class="radio-label"><input type="radio" name="commitment" value="no"> No</label>
+                </div>
+            </div>
+
+            <button type="button" class="btn-submit" onclick="scoreForm()">Submit Application &nbsp;→</button>
+
+        </form>
+
+        <!-- APPROVED RESULT -->
+        <div class="result-screen approved" id="result-approved">
+            <div class="result-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#58bbc2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3>You Qualify. Let's Talk.</h3>
+            <p>Based on your responses, this briefing is a strong fit. You are being redirected to the scheduling page now. If the redirect does not work, use the button below.</p>
+            <a href="https://calendar.google.com/appointments/schedules/AcZssZ2vSeEgImHim06s6W5Mc4hPJg3uCC01YgX4kx0ZTMnIFGUlx56VYkz-eQC0_OoFDi4BAqYL2GwR" target="_blank" class="btn-book" style="display:inline-flex;margin:0 auto;">Open Scheduling Page &nbsp;→</a>
+        </div>
+
+        <!-- DECLINED RESULT -->
+        <div class="result-screen declined" id="result-declined">
+            <div class="result-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3>Not the Right Fit Right Now</h3>
+            <p>Thank you for your interest. Based on your responses, this session may not be the best fit at this time. I recommend continuing with the content and resources below, and revisiting when this becomes a more immediate priority.</p>
+            <a href="https://nikkicates.github.io/structuralburnout/" target="_blank" class="btn-request" style="display:inline-flex;margin:0 auto;">Explore Resources &nbsp;→</a>
+        </div>
+
+    </div>
+
 </div>
 
 <footer>&copy; 2026 Strategic Transformations &bull; UNMASK Engine &bull; Proprietary System</footer>
 
-</body>
-</html>
+<script>
+function scoreForm() {
+    const name       = document.getElementById('q_name').value.trim();
+    const org        = document.getElementById('q_org').value.trim();
+    const prompt     = document.getElementById('q_prompt').value.trim();
+    const size       = document.getElementById('q_size').value;
+    const authority  = document.querySelector('input[name="authority"]:checked');
+    const investment = document.querySelector('input[name="investment"]:checked');
+    const timeline   = document.querySelector('input[name="timeline"]:checked');
+    const commitment = document.querySelector('input[name="commitment"]:checked');
+    const challenges = document.querySelectorAll('input[name="challenge"]:checked');
+
+    // Basic completeness check
+    if (!name || !org || !prompt || !size || !authority || !investment || !timeline || !commitment) {
+        alert('Please complete all required fields before submitting.');
+        return;
+    }
+
+    if (challenges.length === 0) {
+        alert('Please select at least one primary challenge.');
+        return;
+    }
+
+    // SCORING
+    let score = 0;
+    let disqualified = false;
+
+    // Hard disqualifiers
+    if (authority.value === 'no')        disqualified = true;
+    if (investment.value === 'no')       disqualified = true;
+    if (commitment.value === 'no')       disqualified = true;
+
+    // Scoring points
+    if (authority.value === 'yes')       score += 3;
+    if (authority.value === 'influence') score += 2;
+
+    if (investment.value === 'yes')      score += 3;
+    if (investment.value === 'possibly') score += 1;
+
+    if (timeline.value === 'immediate')  score += 3;
+    if (timeline.value === 'quarter')    score += 2;
+    if (timeline.value === 'exploring')  score += 0;
+
+    if (prompt.length > 80)              score += 2; // specific answer
+    if (prompt.length > 160)             score += 1; // detailed answer
+
+    score += challenges.length;          // more challenges = more urgency
+
+    // DECISION: qualify at 7+, disqualify below or if hard disqualified
+    const qualified = !disqualified && score >= 7;
+
+    // Hide form
+    document.getElementById('qForm').style.display = 'none';
+
+    if (qualified) {
+        document.getElementById('result-approved').style.display = 'block';
+        document.getElementById('result-approved').scrollIntoView({ behavior: 'smooth' });
+        // Auto-redirect after 3 seconds
+        setTimeout(() => {
+            window.open('https://calendar.google.com/appointments/schedules/AcZssZ2vSeEgImHim06s6W5Mc4hPJg3uCC01YgX4kx0ZTMnIFGUlx56VYkz-eQC0_OoFDi4BAqYL2GwR', '_blank');
+        }, 3000);
+    } else {
+        document.getElementById('result-declined').style.display = 'block';
+        document.getElementById('result-declined').scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
