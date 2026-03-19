@@ -955,8 +955,11 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#58bbc2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
             <h3>You Qualify. Let's Talk.</h3>
-            <p>Based on your responses, this briefing is a strong fit. You are being redirected to the scheduling page now. If the redirect does not work, use the button below.</p>
-            <a href="https://calendar.google.com/appointments/schedules/AcZssZ2vSeEgImHim06s6W5Mc4hPJg3uCC01YgX4kx0ZTMnIFGUlx56VYkz-eQC0_OoFDi4BAqYL2GwR" target="_blank" class="btn-book" style="display:inline-flex;margin:0 auto;">Open Scheduling Page &nbsp;→</a>
+            <p>Based on your responses, this briefing is a strong fit. Your calendar link is opening now. Please also click below to send us your application so we have your details before the session.</p>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.85rem;margin-top:0.5rem;">
+                <a href="https://calendar.google.com/appointments/schedules/AcZssZ2vSeEgImHim06s6W5Mc4hPJg3uCC01YgX4kx0ZTMnIFGUlx56VYkz-eQC0_OoFDi4BAqYL2GwR" target="_blank" class="btn-book" style="display:inline-flex;margin:0 auto;">Open Scheduling Page &nbsp;→</a>
+                <a id="mailto-approved" href="#" class="btn-request" style="display:inline-flex;margin:0 auto;font-size:0.65rem;">Send Us Your Application &nbsp;✉</a>
+            </div>
         </div>
 
         <!-- DECLINED RESULT -->
@@ -965,8 +968,13 @@
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
             <h3>Not the Right Fit Right Now</h3>
-            <p>Thank you for your interest. Based on your responses, this session may not be the best fit at this time. I recommend continuing with the content and resources below, and revisiting when this becomes a more immediate priority.</p>
-            <a href="https://nikkicates.github.io/structuralburnout/" target="_blank" class="btn-request" style="display:inline-flex;margin:0 auto;">Explore Resources &nbsp;→</a>
+            <p>Thank you for your interest. Based on your responses, this session may not be the best fit at this time. Stay connected — when the timing is right, you will know exactly where to find us.</p>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.85rem;margin-top:0.5rem;">
+                <a href="https://www.linkedin.com/newsletters/the-unmask-report-7430783001946525696/" target="_blank" class="btn-book" style="display:inline-flex;margin:0 auto;">Subscribe to The UNMASK Report &nbsp;→</a>
+                <p style="font-size:0.65rem;color:var(--muted);max-width:380px;line-height:1.6;margin:0 auto;">The UNMASK Report delivers structural leadership insights directly to your LinkedIn inbox. Stay ahead of the conversation.</p>
+                <a href="https://www.linkedin.com/in/nikkicatesmiller" target="_blank" class="btn-request" style="display:inline-flex;margin:0 auto;">Follow Nikki on LinkedIn &nbsp;→</a>
+                <a href="https://nikkicates.github.io/structuralburnout/services.html" target="_blank" class="btn-request" style="display:inline-flex;margin:0 auto;opacity:0.7;">Explore Speaking and Solutions &nbsp;→</a>
+            </div>
         </div>
 
     </div>
@@ -1063,23 +1071,22 @@ Sent automatically from executive-briefing.html`;
 
     const mailtoLink = `mailto:nikki@strategicunmasking.com?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
 
+    // Set mailto on approved result screen link only
+    document.getElementById('mailto-approved').href = mailtoLink;
+
     // Hide form, show result
     document.getElementById('qForm').style.display = 'none';
 
     if (qualified) {
         document.getElementById('result-approved').style.display = 'block';
         document.getElementById('result-approved').scrollIntoView({ behavior: 'smooth' });
-        // Open email notification
-        window.location.href = mailtoLink;
-        // Auto-redirect to calendar after 4 seconds (slight delay to allow mail client to open)
+        // Auto-open calendar after 3 seconds
         setTimeout(() => {
             window.open('https://calendar.google.com/appointments/schedules/AcZssZ2vSeEgImHim06s6W5Mc4hPJg3uCC01YgX4kx0ZTMnIFGUlx56VYkz-eQC0_OoFDi4BAqYL2GwR', '_blank');
-        }, 4000);
+        }, 3000);
     } else {
         document.getElementById('result-declined').style.display = 'block';
         document.getElementById('result-declined').scrollIntoView({ behavior: 'smooth' });
-        // Open email notification
-        window.location.href = mailtoLink;
     }
 }
 </script>
