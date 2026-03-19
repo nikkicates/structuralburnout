@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Briefing | Structural Leadership Diagnostic</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Urbanist:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --navy: #070e24;
+            --teal: #58bbc2;
+            --slate: #94a3b8;
+            --muted: #64748b;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Urbanist', sans-serif;
+            background: var(--navy);
+            color: white;
+            overflow-x: clip;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 70% 50% at 100% 0%, rgba(88,187,194,0.1) 0%, transparent 55%),
+                radial-gradient(ellipse 60% 60% at 0% 100%, rgba(6,70,128,0.18) 0%, transparent 55%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(88,187,194,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(88,187,194,0.025) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 50;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(7,14,36,0.88);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            text-decoration: none;
+        }
+
+        .nav-brand img {
+            height: 34px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-wordmark { display: flex; flex-direction: column; line-height: 1; }
+
+        .nav-wordmark .w-main {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: white;
+        }
+
+        .nav-wordmark .w-sub {
+            font-size: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            color: var(--teal);
+            margin-top: 0.2rem;
+        }
+
+        .nav-back {
+            font-size: 0.55rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: var(--teal); }
+
+        /* PAGE */
+        .page {
+            position: relative;
+            z-index: 1;
+            max-width: 920px;
+            margin: 0 auto;
+            padding: 8rem 1.5rem 5rem;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(22px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .f1 { animation: fadeUp 0.65s ease-out 0.1s both; }
+        .f2 { animation: fadeUp 0.65s ease-out 0.22s both; }
+        .f3 { animation: fadeUp 0.65s ease-out 0.34s both; }
+        .f4 { animation: fadeUp 0.65s ease-out 0.46s both; }
+        .f5 { animation: fadeUp 0.65s ease-out 0.58s both; }
+        .f6 { animation: fadeUp 0.65s ease-out 0.7s both; }
+        .f7 { animation: fadeUp 0.65s ease-out 0.82s both; }
+
+        /* EYEBROW */
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.58rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.45em;
+            color: var(--teal);
+            margin-bottom: 1.5rem;
+        }
+
+        .eyebrow::before {
+            content: '';
+            width: 20px;
+            height: 1.5px;
+            background: var(--teal);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+
+        /* HERO */
+        .hero { margin-bottom: 4.5rem; }
+
+        .hero h1 {
+            font-size: clamp(2.4rem, 6vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero h1 em {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        .hero-sub {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            font-weight: 300;
+            color: var(--slate);
+            line-height: 1.8;
+            max-width: 580px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-sub strong { color: white; font-weight: 700; }
+
+        .hero-note {
+            margin-top: 1rem;
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: var(--teal);
+        }
+
+        .session-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(88,187,194,0.07);
+            border: 1px solid rgba(88,187,194,0.18);
+            border-radius: 9999px;
+            padding: 0.55rem 1.1rem;
+            font-size: 0.65rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--teal);
+        }
+
+        .pulse-dot {
+            width: 6px; height: 6px;
+            background: var(--teal);
+            border-radius: 50%;
+            flex-shrink: 0;
+            animation: dot-pulse 2s infinite;
+        }
+
+        @keyframes dot-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.75); }
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 1.5rem;
+            padding: 1.75rem 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.25s, background 0.25s, transform 0.25s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(88,187,194,0.22);
+            background: rgba(88,187,194,0.04);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+        }
+
+        .card-who::before  { background: linear-gradient(90deg, var(--teal), transparent); }
+        .card-what::before { background: linear-gradient(90deg, #a78bfa, transparent); }
+        .card-get::before  { background: linear-gradient(90deg, #f59e0b, transparent); }
+
+        .card-label {
+            font-size: 0.54rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.35em;
+            margin-bottom: 1.25rem;
+        }
+
+        .card-who  .card-label { color: var(--teal); }
+        .card-what .card-label { color: #a78bfa; }
+        .card-get  .card-label { color: #f59e0b; }
+
+        .card-icon {
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .card-who  .card-icon { background: rgba(88,187,194,0.1); }
+        .card-what .card-icon { background: rgba(167,139,250,0.1); }
+        .card-get  .card-icon { background: rgba(245,158,11,0.1); }
+
+        .card ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+
+        .card ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.875rem;
+            font-weight: 300;
+            color: var(--slate);
+            line-height: 1.55;
+        }
+
+        .card ul li strong { color: white; font-weight: 700; }
+
+        .dot {
+            width: 5px; height: 5px;
+            border-radius: 50%;
+            margin-top: 0.42rem;
+            flex-shrink: 0;
+        }
+
+        .card-who  .dot { background: var(--teal); }
+        .card-what .dot { background: #a78bfa; }
+        .card-get  .dot { background: #f59e0b; }
+
+        /* QUOTE BREAK */
+        .quote-break {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            margin-bottom: 4rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .quote-break p {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+            color: rgba(255,255,255,0.7);
+            line-height: 1.65;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .quote-break p strong { color: var(--teal); font-style: normal; }
+
+        /* CTA BLOCK */
+        .cta-block {
+            background: linear-gradient(135deg, rgba(88,187,194,0.09) 0%, rgba(6,40,100,0.18) 100%);
+            border: 1px solid rgba(88,187,194,0.18);
+            border-radius: 2rem;
+            padding: clamp(2rem, 5vw, 3.5rem);
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cta-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.58rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.45em;
+            color: var(--teal);
+            margin-bottom: 1.25rem;
+        }
+
+        .cta-block h2 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 900;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .cta-block h2 em {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        .cta-block p {
+            font-size: 0.925rem;
+            font-weight: 300;
+            color: var(--slate);
+            line-height: 1.75;
+            max-width: 460px;
+            margin: 0 auto 2.25rem;
+        }
+
+        .cta-primary-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.85rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .btn-book {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--teal);
+            color: var(--navy);
+            padding: 1rem 2.25rem;
+            border-radius: 0.75rem;
+            font-weight: 900;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            box-shadow: 0 8px 28px rgba(88,187,194,0.35);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-book:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 32px rgba(88,187,194,0.45);
+        }
+
+        .btn-request {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.12);
+            color: white;
+            padding: 1rem 2.25rem;
+            border-radius: 0.75rem;
+            font-weight: 900;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+            transition: transform 0.2s, border-color 0.2s, background 0.2s;
+        }
+
+        .btn-request:hover {
+            transform: translateY(-2px);
+            border-color: rgba(88,187,194,0.35);
+            background: rgba(88,187,194,0.07);
+        }
+
+        /* EXPLORE LINKS */
+        .explore-label {
+            font-size: 0.55rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.4em;
+            color: var(--muted);
+            text-align: center;
+            margin-bottom: 0.85rem;
+        }
+
+        .explore {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .explore-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 1rem;
+            padding: 1.1rem 1.25rem;
+            text-decoration: none;
+            transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        }
+
+        .explore-card:hover {
+            border-color: rgba(88,187,194,0.25);
+            background: rgba(88,187,194,0.04);
+            transform: translateY(-2px);
+        }
+
+        .explore-text { flex: 1; min-width: 0; }
+
+        .explore-eyebrow {
+            font-size: 0.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--muted);
+            margin-bottom: 0.2rem;
+        }
+
+        .explore-title {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .explore-arrow {
+            font-size: 0.9rem;
+            color: var(--teal);
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+
+        .explore-card:hover .explore-arrow { transform: translateX(3px); }
+
+        /* FOOTER */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 1.5rem 1.5rem 2rem;
+            font-size: 0.55rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5em;
+            color: rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .page { padding: 7rem 1.25rem 4rem; }
+            .cta-primary-row { flex-direction: column; align-items: stretch; }
+            .btn-book, .btn-request { justify-content: center; }
+            nav { padding: 0.9rem 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="https://nikkicates.github.io/structuralburnout/nexus.html" class="nav-brand">
+        <img src="Strategic_Transformations_LOGO_GRAPHIC_ONLY_-_COLOR.png"
+             alt="Strategic Transformations"
+             onerror="this.style.display='none'">
+        <div class="nav-wordmark">
+            <span class="w-main">Strategic</span>
+            <span class="w-sub">Transformations</span>
+        </div>
+    </a>
+    <a href="https://nikkicates.github.io/structuralburnout/" class="nav-back">Back to Hub</a>
+</nav>
+
+<div class="page">
+
+    <div class="hero">
+        <div class="eyebrow f1">Executive Briefing</div>
+        <h1 class="f2">Structural Leadership<br/><em>Diagnostic.</em></h1>
+        <p class="hero-sub f3">
+            A focused 60-minute session for executive teams, founders, and organizational leaders who need
+            <strong>immediate clarity</strong> on the structural issues driving burnout, turnover, decision friction, and AI strain before they become larger organizational risks.
+        </p>
+        <p class="hero-note f4">Complimentary for qualified organizations and executive teams.</p>
+        <div class="session-pill f4">
+            <span class="pulse-dot"></span>
+            60-Minute Session &nbsp;·&nbsp; High-Level Diagnostic &nbsp;·&nbsp; Immediate Clarity
+        </div>
+    </div>
+
+    <div class="cards f5">
+
+        <div class="card card-who">
+            <div class="card-label">Who It Is For</div>
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#58bbc2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <ul>
+                <li><span class="dot"></span><strong>Executive teams</strong> navigating complexity, rapid change, or AI-driven strain</li>
+                <li><span class="dot"></span><strong>Founders</strong> sensing friction in their org without a clear diagnosis</li>
+                <li><span class="dot"></span><strong>Org leaders</strong> experiencing high turnover, decision paralysis, or leadership strain</li>
+            </ul>
+        </div>
+
+        <div class="card card-what">
+            <div class="card-label">What It Is</div>
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <ul>
+                <li><span class="dot"></span>A <strong>60-minute focused session</strong> with Nikki Cates, Structural Recalibration Strategist</li>
+                <li><span class="dot"></span>A <strong>high-level structural diagnostic</strong> of your leadership architecture</li>
+                <li><span class="dot"></span><strong>Clear visibility</strong> into where load, friction, and authority gaps are building</li>
+            </ul>
+        </div>
+
+        <div class="card card-get">
+            <div class="card-label">What You Leave With</div>
+            <div class="card-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <ul>
+                <li><span class="dot"></span>Identification of your <strong>key structural breakdown points</strong></li>
+                <li><span class="dot"></span>Insight into <strong>authority gaps and overload zones</strong> draining your leadership capacity</li>
+                <li><span class="dot"></span>A <strong>clear next-step recommendation</strong> tailored to your organization</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="quote-break f6">
+        <p>"You are not managing a performance problem. You are managing a <strong>structural one.</strong> This session shows you exactly where."</p>
+    </div>
+
+    <div class="cta-block f7">
+        <div class="cta-eyebrow">Ready to See the Structure</div>
+        <h2>Book Your Executive<br/><em>Briefing Today.</em></h2>
+        <p>60 minutes. Real visibility. A clear path forward. No fluff, no generic frameworks. Just a precise structural read on where your organization is carrying unsustainable strain.</p>
+        <div class="cta-primary-row">
+            <a href="https://calendar.google.com/appointments/schedules/AcZssZ2vSeEgImHim06s6W5Mc4hPJg3uCC01YgX4kx0ZTMnIFGUlx56VYkz-eQC0_OoFDi4BAqYL2GwR" target="_blank" class="btn-book">Schedule Briefing &nbsp;→</a>
+            <a href="mailto:nikki@strategicunmasking.com?subject=Executive%20Briefing%20Request" class="btn-request">Request Briefing &nbsp;→</a>
+        </div>
+
+    </div>
+
+    <div class="explore-label f7">Explore More</div>
+    <div class="explore f7">
+        <a href="https://nikkicates.github.io/structuralburnout/expo_graphics.html" target="_blank" class="explore-card">
+            <div class="explore-text">
+                <div class="explore-eyebrow">See the Framework</div>
+                <div class="explore-title">Diagnostic Models</div>
+            </div>
+            <span class="explore-arrow">→</span>
+        </a>
+        <a href="https://nikkicates.github.io/structuralburnout/services.html" target="_blank" class="explore-card">
+            <div class="explore-text">
+                <div class="explore-eyebrow">Full Engagement Menu</div>
+                <div class="explore-title">Solutions Catalog</div>
+            </div>
+            <span class="explore-arrow">→</span>
+        </a>
+        <a href="https://nikkicates.github.io/structuralburnout/" target="_blank" class="explore-card">
+            <div class="explore-text">
+                <div class="explore-eyebrow">Investor and Client Hub</div>
+                <div class="explore-title">Deep Dive Briefing</div>
+            </div>
+            <span class="explore-arrow">→</span>
+        </a>
+    </div>
+
+</div>
+
+<footer>&copy; 2026 Strategic Transformations &bull; UNMASK Engine &bull; Proprietary System</footer>
+
+</body>
+</html>
