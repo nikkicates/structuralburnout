@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Unbothered Resistance | Nikki Cates</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Urbanist:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Urbanist', sans-serif; background-color: #070e24; color: white; }
+        .font-serif { font-family: 'Lora', serif; }
+        .glass { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); }
+        .teal-border { border-left: 4px solid #58bbc2; }
+        .hex { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
+        .cta-btn { transition: all 0.3s ease; }
+        .cta-btn:hover { background: #58bbc2; color: #070e24; transform: scale(1.02); }
+    </style>
+</head>
+<body class="selection:bg-[#58bbc2]/30">
+
+    <nav class="w-full px-8 py-6 flex justify-between items-center border-b border-white/5">
+        <div class="flex items-center gap-4">
+             <div class="relative w-8 h-8">
+                <div class="w-5 h-5 bg-[#064680] hex absolute top-0 left-1/2 -translate-x-1/2 z-20"></div>
+                <div class="w-5 h-5 bg-[#ac6dbf] hex absolute top-2 left-0 z-10"></div>
+                <div class="w-5 h-5 bg-[#58bbc2] hex absolute top-2 right-0 z-10"></div>
+             </div>
+             <span class="text-[10px] font-black uppercase tracking-[0.3em]">The Unbothered Resistance</span>
+        </div>
+        <a href="index.html" class="text-[10px] font-black uppercase tracking-widest opacity-40 hover:opacity-100 transition-opacity">B2B / Speaking</a>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-24 text-center">
+        <div class="inline-block px-4 py-1 border border-[#58bbc2]/30 rounded-full text-[10px] font-black uppercase tracking-[0.4em] text-[#58bbc2] mb-8">
+            A Declaration of Structural Integrity
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-tight mb-12">
+            Extraction is a <br/>
+            <span class="text-[#58bbc2] italic font-serif">Choice.</span>
+        </h1>
+
+        <div class="text-left space-y-12 mb-20">
+            <div class="glass p-10 rounded-[2rem] teal-border">
+                <p class="text-xl md:text-2xl font-light leading-relaxed text-slate-300">
+                    "The Resistance is not about 'quitting' or 'hustling.' It is a clinical refusal to allow broken organizational load-paths to extract your identity, your judgment, and your nervous system."
+                </p>
+                <p class="mt-6 text-xs font-black uppercase tracking-[0.4em] text-slate-500">— Nikki Cates, The Principal Architect</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 pt-10">
+                <div class="space-y-4">
+                    <h3 class="text-sm font-black uppercase tracking-widest text-[#58bbc2]">The Diagnosis</h3>
+                    <p class="text-slate-400 leading-relaxed font-light">Burnout is not a personal failure of resilience. It is an industrial byproduct of holding 100% accountability with 30% authority. We stop fixing the person and start redesigning the system.</p>
+                </div>
+                <div class="space-y-4">
+                    <h3 class="text-sm font-black uppercase tracking-widest text-[#ac6dbf]">The Mission</h3>
+                    <p class="text-slate-400 leading-relaxed font-light">We provide the tools, the data, and the community for leaders to reclaim their cognitive margin and lead from a place of structural safety.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="grid md:grid-cols-2 gap-6">
+            <div class="glass p-12 rounded-[3rem] flex flex-col justify-between items-center text-center">
+                <div>
+                    <h4 class="text-2xl font-black mb-4">The Collective</h4>
+                    <p class="text-slate-400 text-sm font-light mb-8">Join the private research hub for high-capacity leaders practicing the URI frameworks.</p>
+                </div>
+                <a href="uri.html" class="cta-btn w-full py-4 border border-white/10 rounded-2xl font-black uppercase tracking-widest text-xs hover:bg-white hover:text-slate-900">Enter URI</a>
+            </div>
+
+            <div class="bg-[#58bbc2] p-12 rounded-[3rem] flex flex-col justify-between items-center text-center text-[#070e24]">
+                <div>
+                    <h4 class="text-2xl font-black mb-4">The Manual</h4>
+                    <p class="font-medium text-sm mb-8 opacity-80">Volume 2: The Leadership Architecture blueprint for the AI Era.</p>
+                </div>
+                <a href="https://nikkicates.github.io/unmask-manual/" class="cta-btn w-full py-4 bg-[#070e24] text-[#58bbc2] rounded-2xl font-black uppercase tracking-widest text-xs">Get the Blueprint</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-20 text-center opacity-20">
+        <p class="text-[9px] font-black uppercase tracking-[0.5em]">Strategic Transformations &bull; Authorized System 2026</p>
+    </footer>
+
+</body>
+</html>
