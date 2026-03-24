@@ -10,9 +10,10 @@
         :root { --navy: #050A18; --teal: #58BBC2; --gold: #D4AF37; --slate: #1e293b; }
         body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; color: var(--navy); margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
-        .st-logo { width: 35px; height: 35px; border: 2px solid var(--navy); display: flex; items-center: center; justify-content: center; font-weight: 900; color: var(--navy); border-radius: 6px; font-size: 14px; }
+        .st-logo { width: 35px; height: 35px; border: 2px solid var(--navy); display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--navy); border-radius: 6px; font-size: 14px; flex-shrink: 0; }
         .journey-line { position: relative; border-left: 2px solid #e2e8f0; padding-left: 2rem; margin-bottom: 3rem; }
         .journey-line::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--teal); border-radius: 50%; border: 4px solid white; }
+        .about-photo { width: 100%; aspect-ratio: 1/1; background: #e2e8f0; border-radius: 2rem; object-fit: cover; }
     </style>
 </head>
 <body class="p-8 md:p-16">
@@ -32,31 +33,31 @@
 
         <!-- THE UNMASK JOURNEY -->
         <section class="mb-40">
-            <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-12">The UNMASK™ Leadership Architecture</h2>
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-12">The UNMASK™ Leadership Architecture Journey</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
                 <div class="space-y-12">
                     <div class="journey-line">
                         <span class="text-[10px] font-bold text-teal-600 uppercase tracking-widest">Tier 01: Identity</span>
                         <h4 class="text-xl font-bold mt-2">Unbothered Resistance</h4>
-                        <p class="text-sm text-slate-500 mt-4">The individual transition from Masking to Sovereignty. Focus: Protecting the soul of the leader within extractive systems.</p>
+                        <p class="text-sm text-slate-500 mt-4 leading-relaxed">The individual transition from Masking to Sovereignty. Focus: Protecting the soul of the leader within extractive systems.</p>
                     </div>
                     <div class="journey-line" style="border-color: var(--navy);">
                         <span class="text-[10px] font-bold text-navy uppercase tracking-widest">Tier 02: Architecture</span>
                         <h4 class="text-xl font-bold mt-2">Structural Transformations</h4>
-                        <p class="text-sm text-slate-500 mt-4">The institutional deep-dive. Focus: Responsibility-Authority Asymmetry (RAA) mapping and load-path repair.</p>
+                        <p class="text-sm text-slate-500 mt-4 leading-relaxed">The institutional deep-dive. Focus: Responsibility-Authority Asymmetry (RAA) mapping and load-path repair.</p>
                     </div>
                     <div class="journey-line" style="border-color: var(--gold);">
                         <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Tier 03: Sovereignty</span>
                         <h4 class="text-xl font-bold mt-2">Sovereign Systems</h4>
-                        <p class="text-sm text-slate-500 mt-4">High-fidelity institutional resilience. Focus: Building systems that support capacity rather than extracting it.</p>
+                        <p class="text-sm text-slate-500 mt-4 leading-relaxed">High-fidelity institutional resilience. Focus: Building systems that support capacity rather than extracting it.</p>
                     </div>
                 </div>
-                <div class="bg-[#050A18] text-white p-12 rounded-[3rem] shadow-2xl">
+                <div class="bg-[#050A18] text-white p-12 rounded-[3rem] shadow-2xl h-fit">
                     <h5 class="text-gold font-bold uppercase text-[10px] tracking-widest mb-6 italic">ROI Benchmark</h5>
                     <p class="text-2xl font-serif italic mb-8">"Structural leadership is a mathematical mandate. Correcting the RAA Index is the only way to permanently halt the 213% attrition tax."</p>
                     <div class="space-y-4">
-                        <div class="flex justify-between text-xs"><span class="opacity-50">Diagnostic Value</span><span class="text-teal-400">High-Tier</span></div>
-                        <div class="w-full bg-white/10 h-1 rounded-full"><div class="bg-teal-500 h-full w-[85%]"></div></div>
+                        <div class="flex justify-between text-[10px] uppercase font-bold"><span class="opacity-50">Diagnostic Value</span><span class="text-teal-400">Industry-Leading</span></div>
+                        <div class="w-full bg-white/10 h-1 rounded-full"><div class="bg-teal-500 h-full w-[92%]"></div></div>
                     </div>
                 </div>
             </div>
@@ -66,17 +67,17 @@
         <section class="mb-40">
             <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-12">Signature Speaking Catalog</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white border p-10 rounded-3xl hover:border-teal-500 transition-all">
+                <div class="bg-white border p-10 rounded-3xl hover:border-teal-500 transition-all shadow-sm">
                     <span class="text-[9px] font-bold text-teal-600 uppercase mb-4 block tracking-widest">Anchor Keynote</span>
                     <h4 class="text-lg font-bold mb-4">Stop the Strain Transfer</h4>
                     <p class="text-xs text-slate-500 leading-relaxed">Reframing burnout as architectural failure. Moves from wellness to design. Fee: $7,500+</p>
                 </div>
-                <div class="bg-white border p-10 rounded-3xl hover:border-blue-500 transition-all">
+                <div class="bg-white border p-10 rounded-3xl hover:border-blue-500 transition-all shadow-sm">
                     <span class="text-[9px] font-bold text-blue-600 uppercase mb-4 block tracking-widest">Executive Summit</span>
                     <h4 class="text-lg font-bold mb-4">The Leadership Pipeline Leak</h4>
                     <p class="text-xs text-slate-500 leading-relaxed">Mapping the authority gap costing orgs millions in replacement. Fee: $7,500+</p>
                 </div>
-                <div class="bg-white border p-10 rounded-3xl hover:border-red-500 transition-all">
+                <div class="bg-white border p-10 rounded-3xl hover:border-red-500 transition-all shadow-sm">
                     <span class="text-[9px] font-bold text-red-600 uppercase mb-4 block tracking-widest">AI Track</span>
                     <h4 class="text-lg font-bold mb-4">When AI Breaks the Bridge</h4>
                     <p class="text-xs text-slate-500 leading-relaxed">Decision-rights protocols for the high-velocity automation era. Fee: $7,500+</p>
@@ -86,10 +87,10 @@
 
         <!-- ABOUT NIKKI -->
         <section class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center border-t pt-20">
-            <div class="st-logo h-48 w-48 text-5xl rounded-3xl shadow-xl">NC</div>
+            <img src="nikki_photo.png" alt="Nikki Cates" class="about-photo shadow-xl" onerror="this.src='https://via.placeholder.com/400x400?text=Nikki+Cates'">
             <div>
                 <span class="text-[10px] font-bold text-teal-600 uppercase tracking-widest mb-4 block">The Principal Architect</span>
-                <h3 class="text-3xl font-bold mb-6">Nikki Cates</h3>
+                <h3 class="text-4xl font-bold mb-6">Nikki Cates</h3>
                 <p class="text-sm text-slate-500 leading-relaxed italic mb-8">
                     "I build for the world I want to lead. My work is dedicated to the reclamation of structural sovereignty for those who have spent their careers navigating architectures built for their extraction."
                 </p>
