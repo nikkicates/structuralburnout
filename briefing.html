@@ -11,14 +11,18 @@
         body { font-family: 'Inter', sans-serif; background-color: white; color: var(--navy); margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
         .briefing-bar { background: var(--navy); color: white; border-radius: 2rem; }
+        .st-logo { width: 35px; height: 35px; border: 2px solid var(--teal); display: flex; items-center: center; justify-content: center; font-weight: 900; color: var(--teal); border-radius: 6px; font-size: 14px; }
     </style>
 </head>
 <body class="p-8 md:p-16">
     <div class="max-w-5xl mx-auto">
         <header class="mb-20">
             <div class="flex justify-between items-center mb-12">
+                <div class="flex items-center gap-3">
+                    <div class="st-logo">ST</div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Principal Briefing</span>
+                </div>
                 <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-navy transition-colors">← Investor Hub</a>
-                <span class="text-[10px] font-bold uppercase tracking-widest text-teal-600">Phase 01: Diagnostics</span>
             </div>
             <h1 class="text-5xl font-black mb-6">The 60-Minute <span class="serif text-teal-600 italic">Executive Briefing.</span></h1>
             <p class="text-xl text-slate-500 font-light leading-relaxed max-w-3xl">
@@ -26,6 +30,7 @@
             </p>
         </header>
 
+        <!-- MANDATORY ASSET SECTION -->
         <section class="briefing-bar p-12 mb-20 shadow-2xl relative overflow-hidden">
             <div class="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
@@ -39,32 +44,36 @@
                 <div class="bg-white/5 p-8 rounded-2xl border border-white/10">
                     <h4 class="text-xs font-bold uppercase mb-4 text-teal-400">Institutional Licensing</h4>
                     <p class="text-[11px] text-slate-300 leading-relaxed italic">
-                        "Single-unit purchase grants an internal license for up to 10 team members. For enterprise-wide deployment across multiple sites, a customized quote will be provided post-briefing."
+                        "Single-unit purchase grants an internal license for up to 10 team members. For enterprise-wide deployment, a customized quote will be provided post-briefing."
                     </p>
                 </div>
             </div>
         </section>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
+        <!-- OUTCOMES -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20 border-b pb-20">
             <div>
-                <h3 class="font-bold text-lg mb-4">Briefing Outcomes</h3>
-                <ul class="space-y-4 text-sm text-slate-600">
-                    <li class="flex gap-4"><strong>01</strong> <span>Identification of the "Junior Cliff" and high-attrition load-paths.</span></li>
+                <h3 class="font-bold text-lg mb-8 uppercase tracking-tighter">Strategic Outcomes</h3>
+                <ul class="space-y-6 text-sm text-slate-600">
+                    <li class="flex gap-4"><strong>01</strong> <span>Identification of the "Junior Cliff" and high-attrition load-paths in your specific pipeline.</span></li>
                     <li class="flex gap-4"><strong>02</strong> <span>Quantification of the Identity Tax on your marginalized leadership talent.</span></li>
                     <li class="flex gap-4"><strong>03</strong> <span>A prioritized 90-day intervention strategy for structural sovereignty.</span></li>
                 </ul>
             </div>
-            <div class="border-l border-slate-100 pl-12">
-                <h3 class="font-bold text-lg mb-4">Logistics</h3>
-                <p class="text-sm text-slate-500 mb-6">Duration: 60 Minutes<br>Medium: Virtual (Zoom/Teams)<br>Audience: C-Suite / Board Members</p>
-                <p class="text-2xl font-bold text-navy">$2,500 — $5,000</p>
+            <div class="bg-slate-50 p-10 rounded-3xl">
+                <h3 class="font-bold text-lg mb-4 uppercase tracking-tighter">Investment Logic</h3>
+                <p class="text-sm text-slate-500 mb-6 leading-relaxed">The Briefing is designed for decision-makers who need immediate clarity on why their best leaders are opting out.</p>
+                <div class="flex justify-between items-end">
+                    <div>
+                        <p class="text-[10px] font-bold text-slate-400 uppercase mb-1">Standard Fee</p>
+                        <p class="text-3xl font-black text-navy">$2,500 — $5,000</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <footer class="pt-20 border-t border-slate-100 text-center opacity-40">
-            <p class="text-[9px] max-w-2xl mx-auto italic leading-relaxed">
-                "Disclosure: This framework is practitioner-developed and currently moving toward empirical validation through formal academic study."
-            </p>
+        <footer class="pt-20 text-center opacity-40 italic text-[10px]">
+            Strategic Transformations — Principal Nikki Cates — 2026
         </footer>
     </div>
 </body>
