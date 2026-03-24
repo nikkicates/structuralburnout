@@ -11,8 +11,11 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--navy); color: white; margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
         .card { background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; }
+        .card:hover { border-color: var(--gold); background: rgba(255, 255, 255, 0.04); }
         .gold-gradient { background: linear-gradient(135deg, #D4AF37 0%, #F5E0A3 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .st-logo { width: 45px; height: 45px; border: 2px solid var(--gold); display: flex; items-center: center; justify-content: center; font-weight: 900; color: var(--gold); border-radius: 8px; font-size: 18px; letter-spacing: -1px; }
+        .st-logo { width: 45px; height: 45px; border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; font-weight: 900; color: var(--gold); border-radius: 8px; font-size: 18px; letter-spacing: -1px; flex-shrink: 0; }
+        .stat-bar { height: 4px; background: rgba(255,255,255,0.05); border-radius: 2px; overflow: hidden; }
+        .stat-progress { height: 100%; background: var(--teal); }
     </style>
 </head>
 <body class="min-h-screen pb-20">
@@ -36,50 +39,60 @@
         <header class="mb-32 max-w-4xl">
             <h1 class="text-6xl md:text-7xl font-bold mb-8 leading-tight">Architecting the <br><span class="serif gold-gradient italic">Intellectual Moat.</span></h1>
             <p class="text-xl text-slate-400 leading-relaxed font-light text-balance">
-                Moving from manual advisory to a scalable, data-driven synthesis engine. We solve the **Responsibility-Authority Asymmetry (RAA)** costing the enterprise 213% in leadership attrition.
+                Strategic Transformations is an industrial diagnostic firm transitioning from manual advisory to a scalable, data-driven synthesis engine. We solve the **Responsibility-Authority Asymmetry (RAA)** costing the enterprise 213% in leadership attrition.
             </p>
         </header>
 
-        <!-- THE ECONOMIC EMERGENCY (DATA SECTION) -->
+        <!-- THE ECONOMIC EMERGENCY (DATA RECOVERY) -->
         <section class="mb-40">
             <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-teal-400 mb-12">The Economic Emergency</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div class="card p-10 rounded-[2.5rem] border-l-4 border-l-teal-500">
-                    <p class="text-4xl font-bold mb-2">213%</p>
-                    <p class="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-4">Attrition Tax</p>
-                    <p class="text-xs text-slate-400 leading-relaxed">The literal cost to replace a mid-to-senior level leader who collapses under structural strain.</p>
+                    <p class="text-5xl font-bold mb-2">213%</p>
+                    <p class="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-6">Attrition Tax</p>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-6">The measurable cost to replace senior leadership who exit due to design flaws in authority-load.</p>
+                    <div class="stat-bar"><div class="stat-progress w-[85%]"></div></div>
                 </div>
                 <div class="card p-10 rounded-[2.5rem] border-l-4 border-l-gold">
-                    <p class="text-4xl font-bold mb-2">$4.3M</p>
-                    <p class="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-4">Capacity Leak</p>
-                    <p class="text-xs text-slate-400 leading-relaxed">Estimated annual loss for a 500-person org due to Responsibility-Authority Asymmetry (RAA).</p>
+                    <p class="text-5xl font-bold mb-2">$4.3M</p>
+                    <p class="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-6">Annual Capacity Leak</p>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-6">Calculated loss for a 500-person organization failing to align accountability with resources.</p>
+                    <div class="stat-bar"><div class="stat-progress w-[65%] bg-gold"></div></div>
                 </div>
                 <div class="card p-10 rounded-[2.5rem] border-l-4 border-l-white">
-                    <p class="text-4xl font-bold mb-2">30%</p>
-                    <p class="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-4">Performance Theater</p>
-                    <p class="text-xs text-slate-400 leading-relaxed">Amount of executive bandwidth lost to "Masking" behavior in extractive architectures.</p>
+                    <p class="text-5xl font-bold mb-2">30%</p>
+                    <p class="text-[10px] uppercase font-bold text-slate-500 tracking-widest mb-6">Masking Extraction</p>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-6">Executive bandwidth wasted on "Performance Theater" within extractive institutional systems.</p>
+                    <div class="stat-bar"><div class="stat-progress w-[30%] bg-white"></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- THE IP ASSET PIPELINE -->
+        <!-- SEED CAPITAL ROADMAP -->
         <section class="mb-40">
-            <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-gold mb-12">The IP Asset Pipeline</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="space-y-6">
-                    <h3 class="text-3xl font-bold serif italic">The UNMASK™ Trilogy</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">A tiered distribution architecture designed to capture authority at every institutional level.</p>
-                    <ul class="space-y-4 pt-4">
-                        <li class="flex items-start gap-4"><span class="text-gold font-bold">01</span> <div><p class="font-bold text-sm">Volume 1: Identity</p><p class="text-xs text-slate-500 italic">Physical credibility card (Amazon Print).</p></div></li>
-                        <li class="flex items-start gap-4"><span class="text-gold font-bold">02</span> <div><p class="font-bold text-sm">Volume 2: The Manual</p><p class="text-xs text-slate-500 italic">Institutional licensing asset ($197+).</p></div></li>
-                        <li class="flex items-start gap-4"><span class="text-gold font-bold">03</span> <div><p class="font-bold text-sm">Volume 3: Sovereignty</p><p class="text-xs text-slate-500 italic">The research foundation (In Synthesis).</p></div></li>
-                    </ul>
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-gold mb-12">Institutional Funding: $30,000 Seed Sprint</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h3 class="text-3xl font-bold serif italic">Infrastructure Hardening</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">We are seeking seed capital to move the UNMASK™ Framework from a practitioner-led model to a scalable industrial asset.</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5">
+                            <p class="text-[10px] font-bold text-teal-400 uppercase mb-2">Automation</p>
+                            <p class="text-lg font-bold">$12,000</p>
+                        </div>
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5">
+                            <p class="text-[10px] font-bold text-teal-400 uppercase mb-2">IP Protection</p>
+                            <p class="text-lg font-bold">$8,000</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="card p-12 rounded-[3rem] border-teal-500/20 flex flex-col justify-center bg-teal-500/[0.02]">
-                    <h4 class="text-xl font-bold mb-4">The Synthesis Engine™</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed mb-6">Moving from manual consulting to automated R&D. Our proprietary engine maps LMI and RAA indices to provide real-time structural health dashboards.</p>
-                    <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden"><div class="bg-teal-500 h-full w-[65%]"></div></div>
-                    <p class="text-[9px] uppercase font-bold text-teal-400 mt-3 tracking-[0.2em]">Development Status: Phase 2 Automation</p>
+                <div class="card p-12 rounded-[3rem] border-gold/20 bg-gold/[0.02]">
+                    <h4 class="text-xl font-bold mb-6">Phase 1: Diagnostic R&D</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed mb-6">Transitioning manual field research into a zero-touch, data-rich diagnostic engine for enterprise-level volume.</p>
+                    <div class="space-y-3">
+                        <div class="flex justify-between text-[10px] uppercase font-bold tracking-widest"><span class="opacity-50">Funding Goal</span><span class="text-gold">$30,000</span></div>
+                        <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden"><div class="bg-gold h-full w-[20%]"></div></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -87,7 +100,7 @@
         <!-- METHODOLOGICAL INTEGRITY -->
         <section class="bg-white/5 border border-white/10 p-16 rounded-[3rem] text-center mb-20">
             <h4 class="text-xs font-bold uppercase tracking-[0.3em] text-teal-400 mb-8">Methodological Disclosure</h4>
-            <p class="text-2xl font-serif italic text-slate-100 leading-relaxed max-w-4xl mx-auto mb-10">
+            <p class="text-2xl font-serif italic text-slate-100 leading-relaxed max-w-4xl mx-auto">
                 "This is a practitioner-developed framework grounded in lived experience, operational leadership, and ongoing qualitative research, currently moving toward empirical validation through formal academic study."
             </p>
         </section>
