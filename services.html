@@ -3,53 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solutions Catalog | Strategic Transformations</title>
+    <title>Solutions Catalog | Nikki Cates</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #050A18; --teal: #58BBC2; --gold: #D4AF37; }
+        :root { --navy: #050A18; --teal: #58BBC2; --gold: #D4AF37; --slate: #1e293b; }
         body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; color: var(--navy); margin: 0; }
-        .product-card { background: white; border: 1px solid #E5E7EB; transition: all 0.3s ease; }
-        .product-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+        .serif { font-family: 'Playfair Display', serif; }
+        .st-logo { width: 35px; height: 35px; border: 2px solid var(--navy); display: flex; items-center: center; justify-content: center; font-weight: 900; color: var(--navy); border-radius: 6px; font-size: 14px; }
+        .journey-line { position: relative; border-left: 2px solid #e2e8f0; padding-left: 2rem; margin-bottom: 3rem; }
+        .journey-line::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; background: var(--teal); border-radius: 50%; border: 4px solid white; }
     </style>
 </head>
 <body class="p-8 md:p-16">
     <div class="max-w-6xl mx-auto">
-        <nav class="mb-20 flex justify-between items-center">
-            <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest text-slate-400">← Back</a>
-            <span class="text-[10px] font-bold uppercase tracking-widest text-teal-600">The 2026 Solutions Catalog</span>
+        <nav class="flex justify-between items-center mb-20">
+            <div class="flex items-center gap-3">
+                <div class="st-logo">ST</div>
+                <span class="text-[10px] font-bold uppercase tracking-widest text-slate-400">Solutions Catalog</span>
+            </div>
+            <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest text-slate-400 hover:text-navy transition-colors">← Back to Hub</a>
         </nav>
 
-        <header class="mb-20">
-            <h1 class="text-4xl font-bold mb-4">Industrial-Grade <span class="serif italic text-teal-600">Diagnostics.</span></h1>
-            <p class="text-slate-500 font-light max-w-2xl">Modular interventions designed to identify and repair systemic leadership failures at the source.</p>
+        <header class="mb-32">
+            <h1 class="text-5xl font-black mb-6">Modular <span class="serif text-teal-600 italic">Interventions.</span></h1>
+            <p class="text-xl text-slate-500 font-light max-w-2xl leading-relaxed">From individual sovereignty to institutional architecture—we repair leadership systems at the source.</p>
         </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-            <div class="product-card p-12 rounded-[2rem] shadow-sm">
-                <span class="text-[10px] font-bold text-teal-600 uppercase mb-4 block">Flagship Diagnostic</span>
-                <h3 class="text-2xl font-bold mb-4">The UNMASK Structural Audit</h3>
-                <p class="text-sm text-slate-500 leading-relaxed mb-8">A comprehensive institutional deep-dive mapping the LMI and RAA indices across the entire leadership pipeline.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold">$22,500+</span>
-                    <a href="briefing.html" class="text-[10px] font-bold uppercase tracking-widest border-b-2 border-teal-500 pb-1">Request Audit</a>
+        <!-- THE UNMASK JOURNEY -->
+        <section class="mb-40">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-12">The UNMASK™ Leadership Architecture</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20">
+                <div class="space-y-12">
+                    <div class="journey-line">
+                        <span class="text-[10px] font-bold text-teal-600 uppercase tracking-widest">Tier 01: Identity</span>
+                        <h4 class="text-xl font-bold mt-2">Unbothered Resistance</h4>
+                        <p class="text-sm text-slate-500 mt-4">The individual transition from Masking to Sovereignty. Focus: Protecting the soul of the leader within extractive systems.</p>
+                    </div>
+                    <div class="journey-line" style="border-color: var(--navy);">
+                        <span class="text-[10px] font-bold text-navy uppercase tracking-widest">Tier 02: Architecture</span>
+                        <h4 class="text-xl font-bold mt-2">Structural Transformations</h4>
+                        <p class="text-sm text-slate-500 mt-4">The institutional deep-dive. Focus: Responsibility-Authority Asymmetry (RAA) mapping and load-path repair.</p>
+                    </div>
+                    <div class="journey-line" style="border-color: var(--gold);">
+                        <span class="text-[10px] font-bold text-gold uppercase tracking-widest">Tier 03: Sovereignty</span>
+                        <h4 class="text-xl font-bold mt-2">Sovereign Systems</h4>
+                        <p class="text-sm text-slate-500 mt-4">High-fidelity institutional resilience. Focus: Building systems that support capacity rather than extracting it.</p>
+                    </div>
+                </div>
+                <div class="bg-[#050A18] text-white p-12 rounded-[3rem] shadow-2xl">
+                    <h5 class="text-gold font-bold uppercase text-[10px] tracking-widest mb-6 italic">ROI Benchmark</h5>
+                    <p class="text-2xl font-serif italic mb-8">"Structural leadership is a mathematical mandate. Correcting the RAA Index is the only way to permanently halt the 213% attrition tax."</p>
+                    <div class="space-y-4">
+                        <div class="flex justify-between text-xs"><span class="opacity-50">Diagnostic Value</span><span class="text-teal-400">High-Tier</span></div>
+                        <div class="w-full bg-white/10 h-1 rounded-full"><div class="bg-teal-500 h-full w-[85%]"></div></div>
+                    </div>
                 </div>
             </div>
-            <div class="product-card p-12 rounded-[2rem] shadow-sm border-2 border-navy/5">
-                <span class="text-[10px] font-bold text-navy uppercase mb-4 block">Institutional Asset</span>
-                <h3 class="text-2xl font-bold mb-4 italic">The Volume 2 Manual</h3>
-                <p class="text-sm text-slate-500 leading-relaxed mb-8">The definitive manual for boardrooms and executive teams to navigate Responsiblity-Authority Asymmetry.</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-xl font-bold">$197+</span>
-                    <a href="https://stan.store/nikkicates" target="_blank" class="text-[10px] font-bold uppercase tracking-widest border-b-2 border-navy pb-1">Secure License</a>
-                </div>
-            </div>
-        </div>
+        </section>
 
-        <footer class="pt-20 border-t border-slate-200 text-center opacity-40">
-            <p class="text-[9px] max-w-2xl mx-auto italic leading-relaxed">
-                "Strategic Transformations: Practitioner-developed frameworks grounded in research and operational leadership."
-            </p>
+        <!-- SIGNATURE SPEAKING TRACKS -->
+        <section class="mb-40">
+            <h2 class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 mb-12">Signature Speaking Catalog</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white border p-10 rounded-3xl hover:border-teal-500 transition-all">
+                    <span class="text-[9px] font-bold text-teal-600 uppercase mb-4 block tracking-widest">Anchor Keynote</span>
+                    <h4 class="text-lg font-bold mb-4">Stop the Strain Transfer</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Reframing burnout as architectural failure. Moves from wellness to design. Fee: $7,500+</p>
+                </div>
+                <div class="bg-white border p-10 rounded-3xl hover:border-blue-500 transition-all">
+                    <span class="text-[9px] font-bold text-blue-600 uppercase mb-4 block tracking-widest">Executive Summit</span>
+                    <h4 class="text-lg font-bold mb-4">The Leadership Pipeline Leak</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Mapping the authority gap costing orgs millions in replacement. Fee: $7,500+</p>
+                </div>
+                <div class="bg-white border p-10 rounded-3xl hover:border-red-500 transition-all">
+                    <span class="text-[9px] font-bold text-red-600 uppercase mb-4 block tracking-widest">AI Track</span>
+                    <h4 class="text-lg font-bold mb-4">When AI Breaks the Bridge</h4>
+                    <p class="text-xs text-slate-500 leading-relaxed">Decision-rights protocols for the high-velocity automation era. Fee: $7,500+</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT NIKKI -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center border-t pt-20">
+            <div class="st-logo h-48 w-48 text-5xl rounded-3xl shadow-xl">NC</div>
+            <div>
+                <span class="text-[10px] font-bold text-teal-600 uppercase tracking-widest mb-4 block">The Principal Architect</span>
+                <h3 class="text-3xl font-bold mb-6">Nikki Cates</h3>
+                <p class="text-sm text-slate-500 leading-relaxed italic mb-8">
+                    "I build for the world I want to lead. My work is dedicated to the reclamation of structural sovereignty for those who have spent their careers navigating architectures built for their extraction."
+                </p>
+                <div class="flex gap-4">
+                    <span class="px-4 py-2 bg-slate-100 rounded-full text-[9px] font-bold uppercase tracking-widest">Researcher</span>
+                    <span class="px-4 py-2 bg-slate-100 rounded-full text-[9px] font-bold uppercase tracking-widest">Architect</span>
+                    <span class="px-4 py-2 bg-slate-100 rounded-full text-[9px] font-bold uppercase tracking-widest">Practitioner</span>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-40 text-center opacity-40 italic text-[10px]">
+            Strategic Transformations — Principal Nikki Cates — 2026
         </footer>
     </div>
 </body>
