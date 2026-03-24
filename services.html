@@ -1,327 +1,56 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Transformations | Solutions & Architecture</title>
+    <title>Solutions Catalog | Strategic Transformations</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Urbanist:wght@300;400;600;700;800;900&display=swap');
-        
-        :root {
-            --st-navy: #064680;
-            --st-teal: #58bbc2;
-            --bg: #fafaf9;
-        }
-
-        body { font-family: 'Urbanist', sans-serif; background-color: var(--bg); color: #0f172a; line-height: 1.6; overflow-x: hidden; }
-        h1, h2, h3, .font-serif { font-family: 'Lora', serif; }
-
-        .nav-link { font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; transition: all 0.3s; color: #64748b; }
-        .nav-link:hover { color: var(--st-navy); }
-
-        .chart-container { position: relative; width: 100%; max-width: 650px; height: 300px; margin: 0 auto; }
-        
-        .roi-stat-card { background: white; padding: 2rem; border-radius: 1rem; border: 1px solid #f1f5f9; transition: all 0.3s; }
-        .roi-stat-card:hover { border-color: var(--st-teal); transform: scale(1.02); }
-
-        .speaker-badge { background: var(--st-navy); color: white; padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; }
-
-        .talk-card { border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.5rem; background: white; transition: all 0.3s; cursor: default; }
-        .talk-card:hover { border-color: var(--st-teal); box-shadow: 0 4px 20px rgba(88,187,194,0.12); }
-        .talk-tag { display: inline-block; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.2rem 0.6rem; border-radius: 99px; margin-bottom: 0.75rem; }
+        :root { --navy: #050A18; --teal: #58BBC2; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; background-color: #F9FAFB; color: var(--navy); margin: 0; }
+        .product-card { background: white; border: 1px solid #E5E7EB; transition: all 0.3s ease; }
+        .product-card:hover { border-color: var(--teal); transform: translateY(-4px); }
     </style>
 </head>
-<body class="antialiased selection:bg-[#58bbc2]/30">
+<body class="p-8 md:p-16">
+    <div class="max-w-6xl mx-auto">
+        <nav class="mb-20 flex justify-between items-center">
+            <a href="index.html" class="text-[10px] font-bold uppercase tracking-widest text-slate-400">← Back</a>
+            <span class="text-[10px] font-bold uppercase tracking-widest text-teal-600">The 2026 Solutions Catalog</span>
+        </nav>
 
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-white/95 backdrop-blur-md border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-between h-20 items-center">
-            <a href="https://nikkicates.github.io/structuralburnout" class="flex items-center gap-3 no-underline group">
-                <div class="w-11 h-11">
-                    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M40 10L57.32 20V40L40 50L22.68 40V20L40 10Z" fill="#064680"/>
-                        <path d="M30 35L47.32 45V65L30 75L12.68 65V45L30 35Z" fill="#ac6dbf"/>
-                        <path d="M60 50L68.66 55V65L60 70L51.34 65V55L60 50Z" fill="#58bbc2"/>
-                    </svg>
+        <header class="mb-20">
+            <h1 class="text-4xl font-bold mb-4">Industrial-Grade <span class="serif italic text-teal-600">Diagnostics.</span></h1>
+            <p class="text-slate-500 font-light max-w-2xl">Modular interventions designed to identify and repair systemic leadership failures at the source.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+            <div class="product-card p-12 rounded-[2rem] shadow-sm">
+                <span class="text-[10px] font-bold text-teal-600 uppercase mb-4 block">Flagship Diagnostic</span>
+                <h3 class="text-2xl font-bold mb-4">The UNMASK Structural Audit</h3>
+                <p class="text-sm text-slate-500 leading-relaxed mb-8">A comprehensive institutional deep-dive mapping the LMI and RAA indices across the entire leadership pipeline.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold">$22,500+</span>
+                    <a href="briefing.html" class="text-[10px] font-bold uppercase tracking-widest border-b-2 border-teal-500 pb-1">Request Audit</a>
                 </div>
-                <div class="flex flex-col text-left">
-                    <div class="font-serif font-bold text-lg text-slate-900 uppercase leading-none">Strategic</div>
-                    <div class="text-[10px] font-bold text-[#58bbc2] uppercase tracking-[0.3em]">Transformations</div>
-                </div>
-            </a>
-            <div class="hidden lg:flex space-x-10 items-center">
-                <a href="https://nikkicates.github.io/structuralburnout" class="nav-link">Audit Home</a>
-                <a href="#speaker" class="nav-link">Speaking</a>
-                <a href="#journey" class="nav-link">The Journey</a>
-                <a href="#roi" class="nav-link">ROI</a>
             </div>
-            <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-6 py-2.5 bg-[#064680] text-white rounded text-[10px] font-bold uppercase tracking-widest transition-all hover:bg-[#58bbc2]">Schedule Briefing</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="pt-40 pb-20 px-6 text-center max-w-4xl mx-auto">
-        <div class="inline-block px-4 py-1.5 rounded-full bg-[#58bbc2]/10 text-[#064680] text-[10px] font-bold uppercase tracking-[0.3em] mb-8">Solutions Catalog</div>
-        <h1 class="text-5xl md:text-7xl font-serif font-bold text-slate-900 mb-8 leading-[1.1]">
-            Productizing <br/><span style="color: #064680" class="italic">Structural Expertise.</span>
-        </h1>
-        <p class="text-xl text-slate-500 font-light mb-10 leading-relaxed max-w-2xl mx-auto">
-            High-authority diagnostics and tactical recalibration tools. From signature keynotes that shift the room to full enterprise architectural redesign.
-        </p>
-    </header>
-
-    <!-- SPEAKER / FACILITATOR SECTION -->
-    <section id="speaker" class="py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-                
-                <!-- Bio & Presence -->
-                <div class="lg:col-span-5 space-y-8">
-                    <div class="flex items-center gap-3">
-                        <span class="speaker-badge">Authorized Speaker</span>
-                        <span class="text-[10px] font-black uppercase text-slate-400 tracking-widest">Nikki Cates</span>
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 leading-tight">Architecture for <br/><span class="text-[#58bbc2] italic">Sustainable Power.</span></h2>
-                    <p class="text-lg text-slate-600 font-light leading-relaxed">
-                        Nikki Cates redesigns systems that quietly extract from the people inside them. Her work names burnout, instability, and "everything is urgent" as structural, produced by authority gaps and false urgency, then offers practical recalibration.
-                    </p>
-                    <p class="text-sm text-slate-500 font-light leading-relaxed">
-                        With over a decade in operational leadership, Nikki brings a diagnostician's precision and a practitioner's credibility to every stage. She has delivered the UNMASK framework across nonprofit, corporate, and mission-driven environments, consistently producing the same recognition in leadership teams: <em>"This is the problem we never had language for."</em>
-                    </p>
-
-                    <!-- Engagement Types -->
-                    <div class="bg-stone-50 rounded-2xl p-6 border border-stone-100 space-y-4">
-                        <p class="text-[10px] font-black uppercase text-slate-400 tracking-widest mb-4">Engagement Formats</p>
-
-                        <div class="flex items-start gap-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#58bbc2] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <div>
-                                <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">Keynotes and Workshops <span class="text-[#58bbc2] normal-case font-normal">(Tier 01)</span></p>
-                                <p class="text-xs text-slate-500 font-light">Your audience leaves with a new language for the problem and a clear mandate for what to change. Available in-person and virtual.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#58bbc2] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <div>
-                                <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">UNMASK Diagnostic <span class="text-[#58bbc2] normal-case font-normal">(Tier 02)</span></p>
-                                <p class="text-xs text-slate-500 font-light">Executives gain precise clarity on where and why leadership systems are failing through a 4 to 6 week hybrid diagnostic process.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#58bbc2] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <div>
-                                <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">UNMASK Recalibration <span class="text-[#58bbc2] normal-case font-normal">(Tier 03)</span></p>
-                                <p class="text-xs text-slate-500 font-light">Organizations rebuild leadership systems over 90 days to eliminate root causes of burnout and restore sustainable performance.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-[#58bbc2] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-                            <div>
-                                <p class="text-xs font-bold text-slate-800 uppercase tracking-wide">UNMASK Stabilization <span class="text-[#58bbc2] normal-case font-normal">(Tier 04)</span></p>
-                                <p class="text-xs text-slate-500 font-light">3 to 6 month advisory retainer. Monthly checkpoints maintain structural integrity and prevent regression into dysfunction.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="inline-block px-8 py-4 bg-slate-900 text-white rounded-xl font-bold uppercase tracking-widest text-xs hover:bg-[#064680] transition-colors">Book Engagement</a>
-                </div>
-
-                <!-- Signature Talks -->
-                <div class="lg:col-span-7 space-y-6">
-                    <h3 class="text-xs font-black uppercase text-[#58bbc2] tracking-[0.4em] mb-8">Signature Talk Matrix</h3>
-                    
-                    <div class="talk-card">
-                        <span class="talk-tag bg-[#064680]/10 text-[#064680]">Anchor Keynote</span>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2">Stop the Strain Transfer: Why Your Best Leaders Are Burning Out</h4>
-                        <p class="text-sm text-slate-500 font-light">Burnout is not a resilience problem, it is a structural one. This talk dismantles the myth that wellness programs can fix an engineering failure and gives organizations a new diagnostic language for what is actually breaking their people.</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-4">Best for: Conferences · ERG Leadership Days · HR & People Ops Summits</p>
-                    </div>
-
-                    <div class="talk-card">
-                        <span class="talk-tag bg-[#ac6dbf]/10 text-[#ac6dbf]">Women's Leadership</span>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2">Sovereign Power: Leading Without Running on Empty</h4>
-                        <p class="text-sm text-slate-500 font-light">For high-performing leaders who have mastered the role and are quietly depleted by it. This talk aligns authentic capacity with institutional demand, so sustainable leadership stops being a goal and starts being a design.</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-4">Best for: Women's Leadership Events · ERGs · Founder Gatherings</p>
-                    </div>
-
-                    <div class="talk-card">
-                        <span class="talk-tag bg-orange-50 text-orange-600">Operations</span>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2">False Urgency: How "Everything Is Critical" Is Destroying Your Organization</h4>
-                        <p class="text-sm text-slate-500 font-light">The hidden architecture of overwork and decision chaos. This talk exposes how urgency became a management style, and provides a practical framework for redesigning operational cadence so your team can think clearly again.</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-4">Best for: Executive Teams · Operations Retreats · Mid-Market Leadership</p>
-                    </div>
-
-                    <div class="talk-card">
-                        <span class="talk-tag bg-[#58bbc2]/10 text-[#064680]">AI-Era Track ★</span>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2">When AI Breaks the Bridge: Protecting Human Architecture in the Age of Automation</h4>
-                        <p class="text-sm text-slate-500 font-light">AI accelerates whatever structure already exists. Organizations deploying AI onto misaligned human architecture are not gaining efficiency, they are automating their own collapse. This talk provides the decision-rights protocols that prevent it.</p>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-4">Best for: Tech-Adjacent Orgs · Healthcare Systems · AI Adoption Teams</p>
-                    </div>
-
-                    <div class="pt-4 text-left">
-                        <a href="https://docs.google.com/document/d/13kGyqa6O6GR68wuSyWa9RYmOXyBlvgUlngVn9D-2H5o/edit?usp=sharing" target="_blank" class="text-[10px] font-black uppercase text-slate-400 hover:text-[#58bbc2] tracking-widest transition-colors">↓ Download 1-Page Speaker Sheet (PDF)</a>
-                    </div>
+            <div class="product-card p-12 rounded-[2rem] shadow-sm border-2 border-navy/5">
+                <span class="text-[10px] font-bold text-navy uppercase mb-4 block">Institutional Asset</span>
+                <h3 class="text-2xl font-bold mb-4 italic">The Volume 2 Manual</h3>
+                <p class="text-sm text-slate-500 leading-relaxed mb-8">The definitive manual for boardrooms and executive teams to navigate Responsiblity-Authority Asymmetry.</p>
+                <div class="flex justify-between items-center">
+                    <span class="text-xl font-bold">$197+</span>
+                    <a href="https://stan.store/nikkicates" target="_blank" class="text-[10px] font-bold uppercase tracking-widest border-b-2 border-navy pb-1">Secure License</a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- ENGAGEMENT JOURNEY SECTION -->
-    <section id="journey" class="py-24 bg-[#064680]">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <div class="inline-block px-4 py-1.5 rounded-full bg-white/10 text-[#58bbc2] text-[10px] font-bold uppercase tracking-[0.3em] mb-6">How Engagements Work</div>
-                <h2 class="text-4xl font-serif font-bold text-white mb-4">The Recalibration Journey</h2>
-                <p class="text-slate-300 font-light max-w-xl mx-auto">Every engagement begins with a spark and scales to the depth your organization is ready for.</p>
-            </div>
-
-            <!-- Journey Steps -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-0 relative">
-                <div class="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-px bg-[#58bbc2]/30 z-0"></div>
-
-                <!-- Step 1 -->
-                <div class="relative z-10 flex flex-col items-center text-center px-6 mb-10 md:mb-0">
-                    <div class="w-24 h-24 rounded-full bg-[#58bbc2] flex items-center justify-center mb-6 shadow-lg shadow-[#58bbc2]/30">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
-                    </div>
-                    <div class="text-[9px] font-black uppercase tracking-[0.3em] text-[#58bbc2] mb-2">Tier 01</div>
-                    <h4 class="font-bold text-white text-lg mb-1">UNMASK</h4>
-                    <p class="text-[9px] font-bold text-white/50 uppercase tracking-widest mb-3">The Hidden Cost of Leadership Strain</p>
-                    <p class="text-slate-400 text-xs font-light leading-relaxed">The entry point. A signature keynote or workshop that surfaces hidden structural issues and gives organizations a shared language for what is breaking their people.</p>
-                    <div class="mt-4 px-3 py-1 bg-white/10 rounded-full text-[9px] font-bold text-slate-300 uppercase tracking-wide">Starting at $12,500</div>
-                </div>
-
-                <!-- Step 2 -->
-                <div class="relative z-10 flex flex-col items-center text-center px-6 mb-10 md:mb-0">
-                    <div class="w-24 h-24 rounded-full bg-white/10 border border-[#58bbc2]/40 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#58bbc2]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                    </div>
-                    <div class="text-[9px] font-black uppercase tracking-[0.3em] text-[#58bbc2] mb-2">Tier 02</div>
-                    <h4 class="font-bold text-white text-lg mb-1">UNMASK Diagnostic</h4>
-                    <p class="text-[9px] font-bold text-white/50 uppercase tracking-widest mb-3">Leadership Strain and Accountability Audit</p>
-                    <p class="text-slate-400 text-xs font-light leading-relaxed">4 to 6 weeks. Executives gain precise clarity on where and why leadership systems are failing, through diagnostic tools, interviews, assessments, and a full debrief.</p>
-                    <div class="mt-4 px-3 py-1 bg-white/10 rounded-full text-[9px] font-bold text-slate-300 uppercase tracking-wide">Starting at $22,000</div>
-                </div>
-
-                <!-- Step 3 -->
-                <div class="relative z-10 flex flex-col items-center text-center px-6 mb-10 md:mb-0">
-                    <div class="w-24 h-24 rounded-full bg-white/10 border border-[#58bbc2]/40 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#58bbc2]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
-                    </div>
-                    <div class="text-[9px] font-black uppercase tracking-[0.3em] text-[#58bbc2] mb-2">Tier 03</div>
-                    <h4 class="font-bold text-white text-lg mb-1">UNMASK Recalibration</h4>
-                    <p class="text-[9px] font-bold text-white/50 uppercase tracking-widest mb-3">Leadership Architecture Reset</p>
-                    <p class="text-slate-400 text-xs font-light leading-relaxed">90 days. Full system redesign, authority recalibration, executive sessions, and an implementation roadmap. Organizations rebuild leadership systems to eliminate the root causes of burnout.</p>
-                    <div class="mt-4 px-3 py-1 bg-white/10 rounded-full text-[9px] font-bold text-slate-300 uppercase tracking-wide">Starting at $45,000</div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="relative z-10 flex flex-col items-center text-center px-6">
-                    <div class="w-24 h-24 rounded-full bg-white/10 border border-[#58bbc2]/40 flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-[#58bbc2]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
-                    </div>
-                    <div class="text-[9px] font-black uppercase tracking-[0.3em] text-[#58bbc2] mb-2">Tier 04</div>
-                    <h4 class="font-bold text-white text-lg mb-1">UNMASK Stabilization</h4>
-                    <p class="text-[9px] font-bold text-white/50 uppercase tracking-widest mb-3">Leadership System Integrity Advisory</p>
-                    <p class="text-slate-400 text-xs font-light leading-relaxed">3 to 6 months. Advisory sessions, light monitoring, and executive check-ins that maintain structural integrity and prevent regression into dysfunction.</p>
-                    <div class="mt-4 px-3 py-1 bg-white/10 rounded-full text-[9px] font-bold text-slate-300 uppercase tracking-wide">Starting at $7,500/mo</div>
-                </div>
-            </div>
-
-            <!-- AI Track callout -->
-            <div class="mt-16 bg-white/5 border border-[#58bbc2]/20 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6">
-                <div class="flex-shrink-0">
-                    <div class="w-14 h-14 rounded-2xl bg-[#58bbc2]/20 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-[#58bbc2]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="text-[9px] font-black uppercase tracking-[0.3em] text-[#58bbc2] mb-2">AI-Era Diagnostic Track ★</div>
-                    <h4 class="font-bold text-white text-xl mb-2">AI Acceleration Burnout Audit</h4>
-                    <p class="text-slate-300 text-sm font-light">Your leadership team exits with a clear picture of exactly where AI is amplifying structural strain, not reducing it, plus an executive risk report and a targeted intervention roadmap. Built for technology-adjacent organizations deploying AI at scale.</p>
-                </div>
-                <div class="flex-shrink-0 text-right">
-                    <div class="text-[9px] font-bold text-slate-400 uppercase tracking-wide mb-1">Investment</div>
-                    <div class="text-white font-bold text-xl">Starting at $22,000</div>
-                    <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="inline-block mt-4 px-5 py-2.5 bg-[#58bbc2] text-[#064680] rounded-lg font-bold uppercase tracking-widest text-[9px] hover:bg-white transition-colors">Inquire</a>
-                </div>
-            </div>
-
-            <!-- Custom Enterprise Block -->
-            <div class="mt-8 bg-white/3 border border-white/10 rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6">
-                <div class="flex-shrink-0">
-                    <div class="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
-                    </div>
-                </div>
-                <div class="flex-1">
-                    <div class="text-[9px] font-black uppercase tracking-[0.3em] text-white/40 mb-2">Enterprise & Multi-Site Organizations</div>
-                    <h4 class="font-bold text-white text-xl mb-2">Custom Enterprise Engagements</h4>
-                    <p class="text-slate-400 text-sm font-light">Large-scale structural audits, multi-team deployments, and embedded advisory relationships are scoped individually. Engagements are priced based on organizational complexity, scope, and duration.</p>
-                </div>
-                <div class="flex-shrink-0 text-center md:text-right">
-                    <p class="text-[9px] font-bold text-slate-400 uppercase tracking-wide mb-3">Scope-based engagement</p>
-                    <a href="mailto:info@strategicunmasking.com?subject=Enterprise%20Engagement%20Inquiry%20%E2%80%94%20Strategic%20Transformations" class="inline-block px-5 py-2.5 border border-white/20 text-white rounded-lg font-bold uppercase tracking-widest text-[9px] hover:border-[#58bbc2] hover:text-[#58bbc2] transition-colors">Request a Proposal</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ROI Section -->
-    <section id="roi" class="py-32 bg-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-            <div class="text-left">
-                <div class="text-[10px] font-bold text-[#064680] uppercase tracking-[0.3em] mb-6">The Fiscal Impact</div>
-                <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900 mb-8 leading-tight">The Return on <br/><span class="italic">Structural Integrity.</span></h2>
-                <div class="space-y-6">
-                    <div class="roi-stat-card"><div class="text-3xl font-bold text-[#064680]">213%</div><p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Replacement Cost Avoidance</p></div>
-                    <div class="roi-stat-card"><div class="text-3xl font-bold text-[#58bbc2]">40%</div><p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Velocity Gain</p></div>
-                    <div class="roi-stat-card"><div class="text-3xl font-bold text-[#ac6dbf]">$190B</div><p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Annual U.S. Burnout Cost</p></div>
-                </div>
-            </div>
-            <div class="p-10 bg-slate-900 rounded-[3rem] border border-slate-800">
-                <h3 class="text-center font-bold text-white mb-8 text-[10px] uppercase tracking-widest">Attrition Risk vs. Structural Investment</h3>
-                <div class="chart-container"><canvas id="roiChart"></canvas></div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-20 bg-stone-50 border-t border-stone-200 text-center space-y-4">
-        <div class="flex justify-center gap-8 flex-wrap">
-            <a href="https://calendar.app.google/M75xXcnUFNTKFcSe6" target="_blank" class="px-6 py-3 bg-[#064680] text-white rounded-lg text-[10px] font-bold uppercase tracking-widest hover:bg-[#58bbc2] transition-colors">Schedule a Briefing</a>
-            <a href="mailto:info@strategicunmasking.com?subject=Proposal%20Request%20%E2%80%94%20Strategic%20Transformations" class="px-6 py-3 border border-slate-300 text-slate-600 rounded-lg text-[10px] font-bold uppercase tracking-widest hover:border-[#58bbc2] transition-colors">Request a Proposal</a>
-        </div>
-        <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-400 pt-6">© 2026 Nikki Cates | Strategic Transformations</p>
-    </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const ctxROI = document.getElementById('roiChart').getContext('2d');
-            new Chart(ctxROI, {
-                type: 'line',
-                data: {
-                    labels: ['M1', 'M3', 'M6', 'M12'],
-                    datasets: [
-                        { label: 'Unaddressed Risk Cost', data: [20, 60, 140, 310], borderColor: '#ea580c', borderWidth: 2, tension: 0.4, fill: false },
-                        { label: 'Structural Path', data: [15, 20, 25, 35], borderColor: '#58bbc2', borderWidth: 3, tension: 0.4, fill: false }
-                    ]
-                },
-                options: {
-                    responsive: true, maintainAspectRatio: false,
-                    scales: {
-                        y: { display: false },
-                        x: { grid: { display: false }, ticks: { color: '#ffffff', font: { size: 10 } } }
-                    },
-                    plugins: { legend: { position: 'bottom', labels: { color: '#ffffff', font: { size: 10 }, padding: 20 } } }
-                }
-            });
-        });
-    </script>
+        <footer class="pt-20 border-t border-slate-200 text-center opacity-40">
+            <p class="text-[9px] max-w-2xl mx-auto italic leading-relaxed">
+                "Strategic Transformations: Practitioner-developed frameworks grounded in research and operational leadership."
+            </p>
+        </footer>
+    </div>
 </body>
 </html>
