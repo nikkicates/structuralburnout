@@ -7,27 +7,29 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --navy: #050A18; --teal: #58BBC2; --gold: #D4AF37; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--navy); color: white; margin: 0; }
+        :root { --navy: #050A18; --teal: #58BBC2; --lilac: #AC6DBF; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, var(--navy) 0%, #0a132c 100%); color: white; margin: 0; min-height: 100vh; }
         .serif { font-family: 'Playfair Display', serif; }
         .nexus-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 1.25rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s; width: 100%; text-align: left; }
-        .nexus-btn:hover { background: rgba(88, 187, 194, 0.1); border-color: var(--teal); transform: translateY(-2px); }
-        .st-logo { width: 50px; height: 50px; border: 2px solid var(--gold); display: flex; items-center: center; justify-content: center; font-weight: 900; color: var(--gold); border-radius: 10px; font-size: 20px; }
+        .nexus-btn:hover { background: rgba(88, 187, 194, 0.1); border-color: var(--teal); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+        .profile-photo { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--teal); margin: 0 auto 2rem; object-fit: cover; box-shadow: 0 0 30px rgba(88,187,194,0.3); }
+        .uri-logo { height: 60px; width: auto; margin: 0 auto 2rem; display: block; }
     </style>
 </head>
-<body class="flex flex-col items-center justify-center min-h-screen p-6 overflow-hidden">
+<body class="flex flex-col items-center justify-center p-6">
 
-    <div class="max-w-md w-full text-center space-y-8">
-        <header class="mb-12">
-            <div class="st-logo mx-auto mb-6">ST</div>
+    <div class="max-w-md w-full text-center space-y-8 py-12">
+        <header>
+            <img src="nikki_photo.png" alt="Nikki Cates" class="profile-photo" onerror="this.src='https://via.placeholder.com/120x120?text=Nikki'">
+            <img src="Unbothered Resistance Logo LEAD.png" alt="Unbothered Resistance" class="uri-logo" onerror="this.style.display='none'">
             <h1 class="text-4xl font-bold mb-2">Nikki Cates</h1>
-            <p class="text-xs font-bold uppercase tracking-[0.4em] text-gold">Principal Architect</p>
-            <p class="text-sm text-slate-500 mt-4 italic serif">"Redesigning leadership architecture for the AI era."</p>
+            <p class="text-xs font-bold uppercase tracking-[0.4em] text-teal-400">Principal Architect</p>
+            <p class="text-sm text-slate-400 mt-4 italic serif">"Redesigning leadership architecture for the AI era."</p>
         </header>
 
         <div class="space-y-4">
             <!-- CTA 1: THE BRIEFING -->
-            <a href="briefing.html" class="nexus-btn group">
+            <a href="briefing.html" class="nexus-btn group border-l-4 border-l-teal-500">
                 <div>
                     <h3 class="font-bold text-teal-400 uppercase text-[10px] tracking-widest mb-1">Lead Intervention</h3>
                     <p class="text-lg font-bold">Executive Briefing</p>
@@ -45,19 +47,19 @@
             </a>
 
             <!-- CTA 3: NEWSLETTER -->
-            <a href="https://www.linkedin.com" target="_blank" class="nexus-btn group">
+            <a href="https://www.linkedin.com/newsletters/the-unmask-report-7430783001946525696/" target="_blank" class="nexus-btn group border-l-4 border-l-lilac">
                 <div>
-                    <h3 class="font-bold text-slate-500 uppercase text-[10px] tracking-widest mb-1">Weekly Metrics</h3>
-                    <p class="text-lg font-bold text-balance">The UNMASK Report</p>
+                    <h3 class="font-bold text-lilac uppercase text-[10px] tracking-widest mb-1">Weekly Metrics</h3>
+                    <p class="text-lg font-bold text-balance italic">The UNMASK Report</p>
                 </div>
-                <span class="text-slate-500 group-hover:translate-x-1 transition-transform">→</span>
+                <span class="text-lilac group-hover:translate-x-1 transition-transform">→</span>
             </a>
 
             <!-- CTA 4: INVESTOR HUB -->
-            <a href="index.html" class="nexus-btn group border-gold/30">
+            <a href="index.html" class="nexus-btn group border-l-4 border-l-gold">
                 <div>
                     <h3 class="font-bold text-gold uppercase text-[10px] tracking-widest mb-1">Architecture</h3>
-                    <p class="text-lg font-bold">Investor Relations Hub</p>
+                    <p class="text-lg font-bold">Investor Briefing Hub</p>
                 </div>
                 <span class="text-gold group-hover:translate-x-1 transition-transform">→</span>
             </a>
