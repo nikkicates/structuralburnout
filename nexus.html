@@ -3,107 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNMASK | Nikki Cates Nexus</title>
+    <title>Networking Nexus | Nikki Cates</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,700;1,700&family=Urbanist:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:italic,wght@700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Urbanist', sans-serif; background-color: #070e24; color: white; }
-        .font-serif { font-family: 'Lora', serif; }
-        .nexus-btn {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .nexus-btn:active { transform: scale(0.98); background: rgba(88, 187, 194, 0.1); border-color: #58bbc2; }
+        :root { --navy: #050A18; --teal: #58BBC2; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--navy); color: white; margin: 0; }
+        .serif { font-family: 'Playfair Display', serif; }
+        .nexus-btn { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 1.25rem; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s; width: 100%; text-align: left; }
+        .nexus-btn:hover { background: rgba(88, 187, 194, 0.1); border-color: var(--teal); transform: translateY(-2px); }
+        .st-logo { width: 50px; height: 50px; border: 2px solid var(--gold); display: flex; items-center: center; justify-content: center; font-weight: 900; color: var(--gold); border-radius: 10px; font-size: 20px; }
     </style>
 </head>
-<body class="flex flex-col items-center px-6 py-12 min-h-screen selection:bg-[#58bbc2]/30">
+<body class="flex flex-col items-center justify-center min-h-screen p-6 overflow-hidden">
 
-    <!-- Profile Header -->
-    <div class="text-center mb-10">
-        <div class="w-24 h-24 rounded-full border-2 border-[#58bbc2] p-1 mx-auto mb-4 overflow-hidden shadow-[0_0_20px_rgba(88,187,194,0.3)]">
-            <img src="Boss%20Vibez.png" alt="Nikki Cates" class="w-full h-full object-cover rounded-full">
+    <div class="max-w-md w-full text-center space-y-8">
+        <header class="mb-12">
+            <div class="st-logo mx-auto mb-6">ST</div>
+            <h1 class="text-4xl font-bold mb-2">Nikki Cates</h1>
+            <p class="text-xs font-bold uppercase tracking-[0.4em] text-gold">Principal Architect</p>
+            <p class="text-sm text-slate-500 mt-4 italic serif">"Redesigning leadership architecture for the AI era."</p>
+        </header>
+
+        <div class="space-y-4">
+            <!-- CTA 1: THE BRIEFING -->
+            <a href="briefing.html" class="nexus-btn group">
+                <div>
+                    <h3 class="font-bold text-teal-400 uppercase text-[10px] tracking-widest mb-1">Lead Intervention</h3>
+                    <p class="text-lg font-bold">Executive Briefing</p>
+                </div>
+                <span class="text-teal-500 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+
+            <!-- CTA 2: SPEAKING -->
+            <a href="https://nikkicates.github.io/structural-speaker-pages/" target="_blank" class="nexus-btn group">
+                <div>
+                    <h3 class="font-bold text-slate-500 uppercase text-[10px] tracking-widest mb-1">Keynotes & Stages</h3>
+                    <p class="text-lg font-bold">Speaker Portfolio</p>
+                </div>
+                <span class="text-slate-500 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+
+            <!-- CTA 3: NEWSLETTER -->
+            <a href="https://www.linkedin.com" target="_blank" class="nexus-btn group">
+                <div>
+                    <h3 class="font-bold text-slate-500 uppercase text-[10px] tracking-widest mb-1">Weekly Metrics</h3>
+                    <p class="text-lg font-bold text-balance">The UNMASK Report</p>
+                </div>
+                <span class="text-slate-500 group-hover:translate-x-1 transition-transform">→</span>
+            </a>
+
+            <!-- CTA 4: INVESTOR HUB -->
+            <a href="index.html" class="nexus-btn group border-gold/30">
+                <div>
+                    <h3 class="font-bold text-gold uppercase text-[10px] tracking-widest mb-1">Architecture</h3>
+                    <p class="text-lg font-bold">Investor Relations Hub</p>
+                </div>
+                <span class="text-gold group-hover:translate-x-1 transition-transform">→</span>
+            </a>
         </div>
-        <h1 class="text-3xl font-black uppercase tracking-tighter">Nikki Cates</h1>
-        <p class="text-[9px] font-black uppercase tracking-[0.3em] text-[#58bbc2] mb-1">Structural Recalibration Strategist</p>
-        <p class="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 mb-4 italic">BD Director, Global Women of Impact</p>
-        <p class="text-slate-500 text-sm font-serif italic max-w-[280px] mx-auto">"I repair the architecture that produces burnout on a global scale."</p>
+
+        <footer class="mt-16 pt-8 border-t border-white/5">
+            <p class="text-[9px] uppercase font-bold tracking-[0.5em] text-slate-600">Strategic Transformations — 2026</p>
+        </footer>
     </div>
 
-    <!-- Main Actions -->
-    <div class="w-full max-w-sm space-y-4">
-        
-        <!-- SAVE CONTACT -->
-        <button onclick="downloadVCard()" class="nexus-btn w-full p-6 rounded-2xl flex items-center justify-between group">
-            <div class="text-left">
-                <span class="block text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">Network</span>
-                <span class="text-lg font-bold">Save Contact Info</span>
-            </div>
-            <div class="bg-white/5 p-3 rounded-xl group-active:text-[#58bbc2]">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-            </div>
-        </button>
-
-        <!-- INVESTOR BRIEF -->
-        <a href="pitch.html" class="nexus-btn w-full p-6 rounded-2xl flex items-center justify-between group">
-            <div class="text-left">
-                <span class="block text-[10px] font-black uppercase tracking-widest text-purple-400 mb-1">Executive Thesis</span>
-                <span class="text-lg font-bold">Investor Briefing</span>
-            </div>
-            <div class="bg-purple-500/10 p-3 rounded-xl text-purple-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M13 8H7"/><path d="M17 12H7"/></svg>
-            </div>
-        </a>
-
-        <!-- MASTER MANUAL (Updated Button Text & Link) -->
-        <a href="https://stan.store/nikkicates/p/unmask-vol-2-redesigning-systems-for-the-ai-era" class="nexus-btn w-full p-6 rounded-2xl flex items-center justify-between group">
-            <div class="text-left">
-                <span class="block text-[10px] font-black uppercase tracking-widest text-teal-500 mb-1">Deep Curriculum</span>
-                <span class="text-lg font-bold">UNMASK Master Manual: Vol. 2</span>
-            </div>
-            <div class="bg-teal-500/10 p-3 rounded-xl text-teal-400">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            </div>
-        </a>
-
-        <!-- STAN STORE -->
-        <a href="https://stan.store/nikkicates/p/the-unmask-org-readiness-pack" class="w-full p-6 rounded-2xl bg-[#58bbc2] text-[#070e24] flex items-center justify-between group shadow-[0_10px_30px_rgba(88,187,194,0.3)]">
-            <div class="text-left">
-                <span class="block text-[10px] font-black uppercase tracking-widest opacity-60 mb-1">Direct Checkout</span>
-                <span class="text-lg font-black uppercase">Buy Structural Audit</span>
-            </div>
-            <div class="bg-black/10 p-3 rounded-xl">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            </div>
-        </a>
-
-    </div>
-
-    <!-- Footer -->
-    <div class="mt-16 text-center">
-        <p class="text-[9px] font-black uppercase tracking-[0.5em] text-slate-700 mb-2">Strategic Transformations © 2026</p>
-        <p class="text-[8px] font-bold text-slate-800 uppercase tracking-widest leading-relaxed">Authorized Proprietary System v6.8<br/>Director, Global Women of Impact</p>
-    </div>
-
-    <script>
-        function downloadVCard() {
-            const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:Nikki Cates
-TITLE:Structural Recalibration Strategist | BD Director GWOI
-ORG:Strategic Transformations
-TEL:1-202-910-4573
-EMAIL:info@strategicunmasking.com
-URL:https://nikkicates.github.io/structuralburnout/
-END:VCARD`;
-            const blob = new Blob([vcard], { type: "text/vcard" });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "Nikki_Cates_Architect.vcf";
-            a.click();
-        }
-    </script>
 </body>
 </html>
