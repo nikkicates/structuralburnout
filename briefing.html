@@ -984,7 +984,41 @@
 <footer>&copy; 2026 Strategic Transformations &bull; UNMASK Engine &bull; Proprietary System</footer>
 
 <script>
-function scoreForm() {
+async function sendToGHL(data) {
+  const webhookURL = "PASTE_YOUR_GHL_WEBHOOK_URL_HERE";
+
+  const payload = {
+    firstName:     data.name.split(' ')[0] || data.name,
+    lastName:      data.name.split(' ').slice(1).join(' ') || '',
+    email:         data.email,
+    phone:         data.phone,
+    companyName:   data.org,
+    orgSize:       data.size,
+    authority:     data.authority,
+    challenges:    data.challenges,
+    problemPrompt: data.prompt,
+    investment:    data.investment,
+    timeline:      data.timeline,
+    commitment:    data.commitment,
+    qualScore:     data.score,
+    qualOutcome:   data.qualified ? 'QUALIFIED' : 'NOT QUALIFIED',
+    leadSource:    'Executive Briefing Form',
+    tags:          data.qualified
+                     ? 'Executive Briefing Applicant, Qualified Lead'
+                     : 'Executive Briefing Applicant, Not Qualified'
+  };
+
+  try {
+    await fetch(webhookURL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+  } catch (err) {
+    console.error("GHL sync failed silently:", err);
+  }
+}
+    async function scoreForm() {
     const name       = document.getElementById('q_name').value.trim();
     const email      = document.getElementById('q_email').value.trim();
     const phone      = document.getElementById('q_phone').value.trim();
@@ -1026,6 +1060,22 @@ function scoreForm() {
     score += challenges.length;
 
     const qualified = !disqualified && score >= 7;
+    // Send to GHL CRM (silent, non-blocking)
+    await sendToGHL({
+      name:       name,
+      email:      email,
+      phone:      phone,
+      org:        org,
+      size:       size,
+      authority:  authority.value,
+      challenges: Array.from(challenges).map(c => c.value).join(', '),
+      prompt:     prompt,
+      investment: investment.value,
+      timeline:   timeline.value,
+      commitment: commitment.value,
+      score:      score,
+      qualified:  qualified
+    });
 
     // Collect challenge labels
     const challengeLabels = Array.from(challenges).map(c => {
